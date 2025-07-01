@@ -1,0 +1,63 @@
+:root {
+  /* ColorHunt Warm Professional Theme - #213555, #3E5879, #D8C4B6, #F5EFE7 */
+  --primary-dark: #213555;
+  --primary-medium: #3E5879;
+  --primary-light: #5a7a9b;
+  --accent-blue: #3E5879;
+  --accent-warm: #D8C4B6;
+  --accent-cream: #F5EFE7;
+  --accent-gold: #C9A96E;
+  --warning: #D8944A;
+  --success: #8B9A6B;
+  --error: #B85450;
+  --text-primary: #F5EFE7;
+  --text-secondary: #D8C4B6;
+  --text-muted: #8B9A8B;
+  --text-accent: #D8C4B6;
+  --background-primary: #213555;
+  --background-secondary: #3E5879;
+  --background-card: rgba(62, 88, 121, 0.8);
+  --background-elevated: rgba(216, 196, 182, 0.1);
+  --border-primary: rgba(216, 196, 182, 0.2);
+  --border-accent: #D8C4B6;
+  --shadow-sm: 0 1px 3px 0 rgba(33, 53, 85, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(33, 53, 85, 0.4), 0 2px 4px -1px rgba(33, 53, 85, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(33, 53, 85, 0.5), 0 4px 6px -2px rgba(33, 53, 85, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(33, 53, 85, 0.6), 0 10px 10px -5px rgba(33, 53, 85, 0.5);
+  --shadow-glow: 0 0 20px rgba(216, 196, 182, 0.4);
+  --gradient-primary: linear-gradient(135deg, #D8C4B6 0%, #F5EFE7 100%);
+  --gradient-accent: linear-gradient(135deg, #3E5879 0%, #D8C4B6 100%);
+  --gradient-dark: linear-gradient(135deg, #213555 0%, #3E5879 100%);
+}
+
+/* Light Theme - ColorHunt Warm Light Variant */
+[data-theme="light"] {
+  --primary-dark: #213555;
+  --primary-medium: #3E5879;
+  --primary-light: #5a7a9b;
+  --accent-blue: #3E5879;
+  --accent-warm: #D8C4B6;
+  --accent-cream: #F5EFE7;
+  --accent-gold: #C9A96E;
+  --warning: #D8944A;
+  --success: #8B9A6B;
+  --error: #B85450;
+  --text-primary: #213555;
+  --text-secondary: #3E5879;
+  --text-muted: #6b7280;
+  --text-accent: #3E5879;
+  --background-primary: #F5EFE7;
+  --background-secondary: #ffffff;
+  --background-card: #ffffff;
+  --background-elevated: rgba(216, 196, 182, 0.2);
+  --border-primary: rgba(62, 88, 121, 0.2);
+  --border-accent: #3E5879;
+  --shadow-sm: 0 1px 3px 0 rgba(33, 53, 85, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(33, 53, 85, 0.15), 0 2px 4px -1px rgba(33, 53, 85, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(33, 53, 85, 0.2), 0 4px 6px -2px rgba(33, 53, 85, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(33, 53, 85, 0.25), 0 10px 10px -5px rgba(33, 53, 85, 0.15);
+  --shadow-glow: 0 0 20px rgba(62, 88, 121, 0.3);
+  --gradient-primary: linear-gradient(135deg, #213555 0%, #3E5879 100%);
+  --gradient-accent: linear-gradient(135deg, #D8C4B6 0%, #F5EFE7 100%);
+  --gradient-dark: linear-gradient(135deg, #F5EFE7 0%, #ffffff 100%);
+} 

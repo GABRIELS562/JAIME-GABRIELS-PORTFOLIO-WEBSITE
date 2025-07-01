@@ -1,0 +1,181 @@
+.header {
+  align-items: center;
+  background: var(--background-primary);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, "DM Sans", "Segoe UI", Arial, sans-serif;
+  justify-content: center;
+  margin: 0;
+  min-height: 60vh;
+  overflow: hidden;
+  padding: 8rem 2rem;
+  position: relative;
+  text-align: center;
+  transform: translateZ(0);
+  width: 100vw;
+  will-change: auto;
+}
+
+.header::after {
+  background: var(--background-primary);
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0.4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.header::before {
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.75), rgba(26, 26, 26, 0.65) 50%, rgba(10, 10, 10, 0.75));
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+/* Light mode adjustments */
+:global([data-theme="light"]) .header::after {
+  opacity: 0.6;
+}
+
+:global([data-theme="light"]) .header::before {
+  background: linear-gradient(135deg, rgba(180, 160, 140, 0.85), rgba(200, 185, 170, 0.8) 50%, rgba(180, 160, 140, 0.85));
+}
+
+.greeting {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: 400;
+  height: 1.5rem;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.5rem;
+  min-height: 1.5rem;
+  position: relative;
+  text-transform: none;
+  z-index: 3;
+}
+
+.name {
+  animation: glow 3s ease-in-out infinite alternate;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin: 0 0 1rem;
+  position: relative;
+  text-shadow: 0 0 40px rgba(216, 196, 182, 0.5);
+  z-index: 3;
+}
+
+.title {
+  backdrop-filter: blur(10px);
+  background: rgba(216, 196, 182, 0.2);
+  border: 2px solid var(--border-accent);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 400;
+  height: 2.5rem;
+  letter-spacing: 0.4em;
+  margin: 0 0 2rem;
+  min-height: 2.5rem;
+  min-width: 300px;
+  opacity: 0.9;
+  padding: 0.6rem 2.5rem;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: var(--accent-warm);
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 15px rgba(216, 196, 182, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0 0 25px rgba(245, 239, 231, 0.8));
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .header {
+    padding: 6rem 1.5rem;
+  }
+  
+  .name {
+    font-size: 4rem;
+  }
+  
+  .title {
+    font-size: 0.8rem;
+    letter-spacing: 0.35em;
+    padding: 0.5rem 2.2rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header {
+    background-size: cover;
+    min-height: 50vh;
+    padding: 4rem 1rem;
+  }
+  
+  .name {
+    font-size: 3rem;
+  }
+  
+  .title {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    padding: 0.4rem 2rem;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .header {
+    padding: 3rem 0.5rem;
+    min-height: 45vh;
+  }
+  
+  .name {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .title {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    padding: 0.35rem 1.8rem;
+  }
+}

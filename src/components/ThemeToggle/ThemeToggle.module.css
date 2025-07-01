@@ -1,0 +1,87 @@
+.themeToggle {
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: var(--background-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  color: var(--text-accent);
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  padding: 0;
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
+  transition: all 0.3s ease;
+  width: 40px;
+  z-index: 1000;
+}
+
+.themeToggle:hover {
+  background: var(--accent-warm);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-lg);
+  color: var(--primary-dark);
+  transform: translateY(-1px) scale(1.05);
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  transition: all 0.3s ease;
+}
+
+.iconPath {
+  transition: all 0.3s ease;
+}
+
+.themeToggle:hover .iconPath {
+  transform: scale(1.1);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .themeToggle {
+    height: 36px;
+    right: 1.2rem;
+    top: 1.2rem;
+    width: 36px;
+  }
+  
+  .icon {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .themeToggle {
+    height: 32px;
+    right: 1rem;
+    top: 1rem;
+    width: 32px;
+  }
+  
+  .icon {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .themeToggle {
+    height: 28px;
+    right: 0.8rem;
+    top: 0.8rem;
+    width: 28px;
+  }
+  
+  .icon {
+    height: 14px;
+    width: 14px;
+  }
+}
