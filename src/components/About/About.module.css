@@ -1,30 +1,142 @@
-.about {
+.aboutSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.topSection {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.videoContainer {
+  flex: 1;
+  min-height: 65vh;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.backgroundVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.aboutSummary {
+  flex: 1;
   background: var(--background-card);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--border-primary);
   border-radius: 2.5rem;
   box-shadow: var(--shadow-lg);
   color: var(--text-primary);
   font-family: Inter, "DM Sans", "Segoe UI", Arial, sans-serif;
-  margin: 0 auto 4rem;
-  max-width: 900px;
-  padding: 3.5rem 2.5rem;
+  padding: 2rem 2.5rem;
   perspective: 1000px;
   transform-style: preserve-3d;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0.9;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.about:hover,
-.about:focus-within {
+.bottomSection {
+  background: var(--background-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-primary);
+  border-radius: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  color: var(--text-primary);
+  font-family: Inter, "DM Sans", "Segoe UI", Arial, sans-serif;
+  padding: 2rem 2.5rem;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0.9;
+}
+
+.aboutSummary:hover,
+.aboutSummary:focus-within,
+.bottomSection:hover,
+.bottomSection:focus-within {
   box-shadow: var(--shadow-xl);
   transform: perspective(1000px) rotateX(6deg) translateY(-8px) scale(1.02);
+  opacity: 1;
+}
+
+.aboutSummary h2,
+.bottomSection h2 {
+  color: var(--text-primary);
+  font-size: 2.2rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  color: var(--accent-blue);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--accent-warm) 0%, var(--accent-gold) 100%);
+  border-radius: 1rem;
+  color: var(--primary-dark);
+}
+
+.expertise, .achievements, .approach {
+  margin-bottom: 2rem;
+}
+
+.aboutSummary h3,
+.bottomSection h3 {
+  color: var(--accent-blue);
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
 }
 
 .text {
   color: var(--text-primary);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.achievementList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievementList li {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.achievementList li:before {
+  content: "✓";
+  color: var(--accent-blue);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
 }
 
 .socialLinks {
@@ -83,13 +195,44 @@
 
 /* Tablet styles */
 @media (max-width: 1024px) {
-  .about {
-    margin: 0 2rem 3.5rem;
-    padding: 3rem 2rem;
+  .aboutSection {
+    padding: 0 1.5rem;
+  }
+  
+  .topSection {
+    gap: 1.5rem;
+  }
+  
+  .videoContainer {
+    min-height: 55vh;
+  }
+  
+  .aboutSummary {
+    min-height: 55vh;
+    padding: 1.5rem 2rem;
+  }
+  
+  .bottomSection {
+    padding: 1.5rem 2rem;
+  }
+  
+  .aboutSummary h2,
+  .bottomSection h2 {
+    font-size: 2rem;
+  }
+  
+  .highlight {
+    font-size: 1.2rem;
+  }
+  
+  .aboutSummary h3,
+  .bottomSection h3 {
+    font-size: 1.3rem;
   }
   
   .text {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
   }
   
   .socialLinks {
@@ -99,15 +242,52 @@
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .about {
+  .aboutSection {
+    padding: 0 1rem;
+  }
+  
+  .topSection {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .videoContainer {
+    min-height: 40vh;
+  }
+  
+  .aboutSummary {
+    min-height: 40vh;
     border-radius: 1.5rem;
-    margin: 0 1rem 3rem;
-    padding: 2rem 1.2rem;
+    padding: 1.5rem 1.5rem;
+  }
+  
+  .bottomSection {
+    border-radius: 1.5rem;
+    padding: 1.5rem 1.5rem;
+  }
+  
+  .aboutSummary h2,
+  .bottomSection h2 {
+    font-size: 1.8rem;
+  }
+  
+  .highlight {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+  
+  .aboutSummary h3,
+  .bottomSection h3 {
+    font-size: 1.2rem;
   }
   
   .text {
-    font-size: 1.05rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .achievementList li {
+    font-size: 1rem;
   }
   
   .socialLinks {
@@ -124,15 +304,45 @@
 
 /* Small mobile styles */
 @media (max-width: 480px) {
-  .about {
-    margin: 0 0.5rem 2.5rem;
-    padding: 1.5rem 1rem;
+  .aboutSection {
+    padding: 0 0.5rem;
+  }
+  
+  .videoContainer {
+    min-height: 35vh;
+  }
+  
+  .aboutSummary {
+    min-height: 35vh;
+    padding: 1.2rem 1rem;
+  }
+  
+  .bottomSection {
+    padding: 1.2rem 1rem;
+  }
+  
+  .aboutSummary h2,
+  .bottomSection h2 {
+    font-size: 1.6rem;
+  }
+  
+  .highlight {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+  
+  .aboutSummary h3,
+  .bottomSection h3 {
+    font-size: 1.1rem;
   }
   
   .text {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .achievementList li {
+    font-size: 0.95rem;
   }
   
   .socialLinks {
@@ -144,5 +354,38 @@
     padding: 0.6rem 1rem;
     width: 100%;
     text-align: center;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+  .topSection {
+    gap: 1rem;
+  }
+  
+  .videoContainer,
+  .aboutSummary {
+    min-height: 30vh;
+  }
+  
+  .aboutSummary h2,
+  .bottomSection h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  
+  .aboutSummary h3,
+  .bottomSection h3 {
+    font-size: 1rem;
+  }
+  
+  .text {
+    font-size: 0.9rem;
+    line-height: 1.3;
   }
 }

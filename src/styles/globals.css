@@ -29,7 +29,7 @@ main {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 4rem 1.5rem;
+  padding: 1rem 1.5rem 4rem 1.5rem;
 }
 
 /* Tablet styles */
@@ -38,7 +38,7 @@ main {
     font-size: 17px;
   }
   main {
-    padding: 3rem 1.5rem;
+    padding: 1rem 1.5rem 3rem 1.5rem;
   }
   h1 { font-size: 2.3rem; }
   h2 { font-size: 1.7rem; }
@@ -52,7 +52,7 @@ main {
     font-size: 16px;
   }
   main {
-    padding: 2rem 1rem 3rem 1rem;
+    padding: 0.5rem 1rem 3rem 1rem;
   }
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
@@ -66,12 +66,23 @@ main {
     font-size: 15px;
   }
   main {
-    padding: 1rem 0.5rem 2rem 0.5rem;
+    padding: 0.3rem 0.5rem 2rem 0.5rem;
   }
   h1 { font-size: 1.8rem; }
   h2 { font-size: 1.3rem; }
   h3 { font-size: 1.1rem; }
   h4 { font-size: 1rem; }
+}
+
+/* Landscape mobile styles */
+@media (max-height: 500px) and (orientation: landscape) {
+  main {
+    padding: 0.5rem 0.5rem 2rem 0.5rem;
+  }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.2rem; }
+  h3 { font-size: 1rem; }
+  h4 { font-size: 0.9rem; }
 }
 
 h1, h2, h3, h4 {

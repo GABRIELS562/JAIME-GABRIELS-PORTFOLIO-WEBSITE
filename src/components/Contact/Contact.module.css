@@ -140,7 +140,7 @@
   }
   
   .contactCard {
-    max-width: 95vw;
+    max-width: 95%;
     padding: 1.5rem 1rem;
   }
   
@@ -171,7 +171,7 @@
   }
   
   .contactCard {
-    max-width: 98vw;
+    max-width: 98%;
     padding: 1.2rem 0.8rem;
     border-radius: 2rem;
   }
