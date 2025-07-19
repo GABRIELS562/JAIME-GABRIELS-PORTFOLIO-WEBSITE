@@ -13,6 +13,14 @@ const About = () => {
             muted 
             playsInline
             preload="auto"
+            controls={false}
+            disablePictureInPicture
+            onLoadedData={(e) => {
+              e.target.play().catch(console.error);
+            }}
+            onEnded={(e) => {
+              e.target.play().catch(console.error);
+            }}
           >
             <source src="/merged-background-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -40,27 +48,9 @@ const About = () => {
       <div className={styles.bottomSection}>
         <div className={styles.achievements}>
           <h3>Key Achievements</h3>
-          <ul className={styles.achievementList}>
-            <li>Reduced deployment time by 75% through automated CI/CD pipelines</li>
-            <li>Managed infrastructure serving 10M+ requests per month</li>
-            <li>Led cloud migration projects saving 40% on infrastructure costs</li>
-            <li>Implemented monitoring solutions improving system uptime to 99.9%</li>
-          </ul>
-        </div>
-
-        <div className={styles.approach}>
-          <h3>My Approach</h3>
           <p className={styles.text}>
-            I believe in infrastructure as code, security-first design, and continuous improvement. 
-            Every system I build is designed to be scalable, maintainable, and resilient. 
-            I focus on creating systems that not only work today but can evolve with your business needs.
+            Reduced deployment time by 75% through automated CI/CD pipelines and managed infrastructure serving 10M+ requests per month. Led cloud migration projects saving 40% on infrastructure costs while implementing monitoring solutions that improved system uptime to 99.9%.
           </p>
-        </div>
-
-        <div className={styles.socialLinks}>
-          <a href="#" className={styles.link}>LinkedIn</a>
-          <a href="#" className={styles.link}>GitHub</a>
-          <a href="#" className={styles.link}>Email</a>
         </div>
       </div>
     </section>

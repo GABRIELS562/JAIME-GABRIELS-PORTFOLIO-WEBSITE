@@ -4,18 +4,26 @@ import styles from './Projects.module.css';
 const Projects = () => {
   const projects = [
     {
-      title: "CI/CD Pipeline Automation",
-      description: "Implemented end-to-end CI/CD pipeline using Jenkins, Docker, and Kubernetes for microservices deployment.",
+      title: "Paternity Testing LIMS",
+      description: "Laboratory Information Management System for paternity testing workflows with automated reporting and compliance tracking.",
       links: [
-        { text: "GitHub", url: "#" },
+        { text: "GitHub", url: "https://github.com/GABRIELS562/LABSCIENTIFIC-LIMS" },
+        { text: "Documentation", url: "#" }
+      ]
+    },
+    {
+      title: "Zero Downtime Pipeline",
+      description: "Terraform-based AWS infrastructure provisioning with automated scaling and monitoring solutions.",
+      links: [
+        { text: "GitHub", url: "https://github.com/GABRIELS562/zero-downtime-pipeline" },
         { text: "Live Demo", url: "#" }
       ]
     },
     {
-      title: "Infrastructure as Code",
-      description: "Terraform-based AWS infrastructure provisioning with automated scaling and monitoring solutions.",
+      title: "Compliance Automation Platform",
+      description: "Automated compliance monitoring and reporting system ensuring regulatory adherence across development and deployment processes.",
       links: [
-        { text: "GitHub", url: "#" },
+        { text: "GitHub", url: "https://github.com/GABRIELS562/compliance-automation-platform" },
         { text: "Documentation", url: "#" }
       ]
     }
