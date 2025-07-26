@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 8rem 2rem 2rem;
 }
 
 .topSection {
@@ -210,7 +210,7 @@
 /* Tablet styles */
 @media (max-width: 1024px) {
   .aboutSection {
-    padding: 0 1.5rem;
+    padding: 6rem 1.5rem 0;
   }
   
   .topSection {
@@ -257,7 +257,7 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .aboutSection {
-    padding: 0 1rem;
+    padding: 5rem 1rem 0;
   }
   
   .topSection {
@@ -319,7 +319,7 @@
 /* Small mobile styles */
 @media (max-width: 480px) {
   .aboutSection {
-    padding: 0 0.5rem;
+    padding: 5rem 0.5rem 0;
   }
   
   .videoContainer {

@@ -52,6 +52,52 @@
   text-align: left;
 }
 
+.contactMethods {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(62, 88, 121, 0.2);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.contactItem:last-child {
+  margin-bottom: 0;
+}
+
+.contactLabel {
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 80px;
+}
+
+.contactLink {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.contactLink:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.contactText {
+  color: var(--primary-medium);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
 .contactForm {
   display: flex;
   flex-direction: column;
@@ -131,6 +177,20 @@
   .contactDesc {
     font-size: 1.1rem;
   }
+  
+  .contactMethods {
+    padding: 1.2rem;
+  }
+  
+  .contactLabel {
+    font-size: 0.95rem;
+    min-width: 75px;
+  }
+  
+  .contactLink,
+  .contactText {
+    font-size: 0.95rem;
+  }
 }
 
 /* Mobile styles */
@@ -150,6 +210,28 @@
   
   .contactDesc {
     font-size: 1rem;
+  }
+  
+  .contactMethods {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contactItem {
+    margin-bottom: 0.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  
+  .contactLabel {
+    font-size: 0.9rem;
+    min-width: auto;
+  }
+  
+  .contactLink,
+  .contactText {
+    font-size: 0.9rem;
   }
   
   .formGroup input,
@@ -184,6 +266,27 @@
   .contactDesc {
     font-size: 0.95rem;
     margin-bottom: 1.2rem;
+  }
+  
+  .contactMethods {
+    padding: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .contactItem {
+    margin-bottom: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  
+  .contactLabel {
+    font-size: 0.85rem;
+  }
+  
+  .contactLink,
+  .contactText {
+    font-size: 0.85rem;
   }
   
   .contactForm {

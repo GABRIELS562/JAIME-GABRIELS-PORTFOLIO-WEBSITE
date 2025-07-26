@@ -25,8 +25,27 @@ const Contact = () => {
       <div className={styles.contactCard}>
         <h2 className={styles.contactTitle}>Get In Touch</h2>
         <p className={styles.contactDesc}>
-          Let's discuss your DevOps needs and how I can help optimize your infrastructure.
+          Interested in connecting? Let's discuss opportunities, collaborations, or share insights about the DevOps journey.
         </p>
+        
+        <div className={styles.contactMethods}>
+          <div className={styles.contactItem}>
+            <span className={styles.contactLabel}>📧 Email:</span>
+            <a href="mailto:jaime.gabriels@example.com" className={styles.contactLink}>jaime.gabriels@example.com</a>
+          </div>
+          <div className={styles.contactItem}>
+            <span className={styles.contactLabel}>💼 LinkedIn:</span>
+            <a href="https://linkedin.com/in/jaime-gabriels" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>linkedin.com/in/jaime-gabriels</a>
+          </div>
+          <div className={styles.contactItem}>
+            <span className={styles.contactLabel}>💻 GitHub:</span>
+            <a href="https://github.com/GABRIELS562" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>github.com/GABRIELS562</a>
+          </div>
+          <div className={styles.contactItem}>
+            <span className={styles.contactLabel}>📍 Location:</span>
+            <span className={styles.contactText}>Cape Town, South Africa</span>
+          </div>
+        </div>
         <form className={styles.contactForm} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label htmlFor="name">Name</label>

@@ -30,16 +30,15 @@ const About = () => {
           <h2>About Me</h2>
           <div className={styles.intro}>
             <p className={styles.highlight}>
-              DevOps Engineer with 5+ years of experience transforming how teams build, deploy, and scale applications.
+              Forensic Scientist transitioning to DevOps Engineer. Bringing scientific rigor and analytical thinking to modern infrastructure challenges.
             </p>
           </div>
           
-          <div className={styles.expertise}>
-            <h3>What I Do</h3>
+          <div className={styles.certifications}>
+            <h3>Certifications & Education</h3>
             <p className={styles.text}>
-              I specialize in creating robust CI/CD pipelines, orchestrating containerized applications with Kubernetes, 
-              and architecting cloud-native solutions on AWS and GCP. My passion lies in automating complex workflows 
-              and empowering development teams to deliver software faster, safer, and more reliably.
+              <strong>Certifications:</strong> AWS Solutions Architect Associate • CKA • Linux Foundation Certified System Administrator • Terraform<br/>
+              <strong>Education:</strong> BSc Biotechnology • Master of Business Leadership (SBL)
             </p>
           </div>
         </div>
@@ -47,9 +46,10 @@ const About = () => {
 
       <div className={styles.bottomSection}>
         <div className={styles.achievements}>
-          <h3>Key Achievements</h3>
+          <h3>Learning Projects</h3>
           <p className={styles.text}>
-            Reduced deployment time by 75% through automated CI/CD pipelines and managed infrastructure serving 10M+ requests per month. Led cloud migration projects saving 40% on infrastructure costs while implementing monitoring solutions that improved system uptime to 99.9%.
+            Building practical DevOps skills through projects: Laboratory Information Management System (LIMS), 
+            Zero-Downtime Pipeline, and Compliance Automation Platform.
           </p>
         </div>
       </div>
