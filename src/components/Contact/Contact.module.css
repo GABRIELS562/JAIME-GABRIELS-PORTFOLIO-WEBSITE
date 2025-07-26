@@ -122,6 +122,31 @@
   color: var(--primary-dark);
 }
 
+/* Contact method specific colors */
+.email .contactIcon {
+  background: var(--warning-orange);
+}
+
+.email:hover .contactIcon {
+  background: var(--primary-dark);
+}
+
+.linkedin .contactIcon {
+  background: var(--info-teal);
+}
+
+.linkedin:hover .contactIcon {
+  background: var(--primary-dark);
+}
+
+.github .contactIcon {
+  background: var(--accent-purple);
+}
+
+.github:hover .contactIcon {
+  background: var(--primary-dark);
+}
+
 
 /* Tablet styles */
 @media (max-width: 1024px) {

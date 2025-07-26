@@ -94,6 +94,85 @@
   text-align: center;
 }
 
+/* Category-based colors */
+.foundation {
+  border-left: 3px solid var(--info-teal);
+}
+
+.foundation:hover {
+  background: var(--info-teal);
+  color: white;
+}
+
+.foundation:hover .label {
+  color: white;
+}
+
+.web {
+  border-left: 3px solid var(--accent-purple);
+}
+
+.web:hover {
+  background: var(--accent-purple);
+  color: white;
+}
+
+.web:hover .label {
+  color: white;
+}
+
+.cloud {
+  border-left: 3px solid var(--warning-orange);
+}
+
+.cloud:hover {
+  background: var(--warning-orange);
+  color: white;
+}
+
+.cloud:hover .label {
+  color: white;
+}
+
+.container {
+  border-left: 3px solid var(--success-green);
+}
+
+.container:hover {
+  background: var(--success-green);
+  color: white;
+}
+
+.container:hover .label {
+  color: white;
+}
+
+.cicd {
+  border-left: 3px solid var(--warning-orange);
+}
+
+.cicd:hover {
+  background: var(--warning-orange);
+  color: white;
+}
+
+.cicd:hover .label {
+  color: white;
+}
+
+.monitoring {
+  border-left: 3px solid var(--accent-purple);
+}
+
+.monitoring:hover {
+  background: var(--accent-purple);
+  color: white;
+}
+
+.monitoring:hover .label {
+  color: white;
+}
+
 /* Tablet styles */
 @media (max-width: 1024px) {
   .technologies {

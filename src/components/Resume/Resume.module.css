@@ -38,11 +38,11 @@
 }
 
 .button {
-  background: var(--accent-blue);
+  background: var(--success-green);
   border: none;
   border-radius: 1.5rem;
   box-shadow: var(--shadow-sm);
-  color: var(--text-light);
+  color: white;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -57,15 +57,15 @@
 
 .button:hover,
 .button:focus {
-  background: var(--accent-warm);
+  background: var(--info-teal);
   box-shadow: var(--shadow-md);
-  color: var(--primary-dark);
+  color: white;
   transform: translateY(-2px) scale(1.04);
 }
 
 .button.downloading {
-  background: var(--accent-gold);
-  color: var(--primary-dark);
+  background: var(--warning-orange);
+  color: white;
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -95,28 +95,28 @@
 /* Dark mode button styling */
 :global([data-theme="dark"]) .button,
 :global(:not([data-theme])) .button {
-  background: var(--accent-warm) !important;
-  color: var(--primary-dark) !important;
+  background: var(--success-green) !important;
+  color: white !important;
 }
 
 :global([data-theme="dark"]) .button:hover,
 :global([data-theme="dark"]) .button:focus,
 :global(:not([data-theme])) .button:hover,
 :global(:not([data-theme])) .button:focus {
-  background: var(--accent-gold) !important;
-  color: var(--primary-dark) !important;
+  background: var(--info-teal) !important;
+  color: white !important;
 }
 
 /* Light mode button styling */
 :global([data-theme="light"]) .button {
-  background: var(--accent-warm) !important;
-  color: var(--primary-dark) !important;
+  background: var(--success-green) !important;
+  color: white !important;
 }
 
 :global([data-theme="light"]) .button:hover,
 :global([data-theme="light"]) .button:focus {
-  background: var(--accent-gold) !important;
-  color: var(--primary-dark) !important;
+  background: var(--info-teal) !important;
+  color: white !important;
 }
 
 /* Tablet styles */
