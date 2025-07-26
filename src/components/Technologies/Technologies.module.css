@@ -1,23 +1,26 @@
 .technologies {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+.container {
   background: var(--background-card);
+  backdrop-filter: blur(10px);
   border: none;
   border-radius: 2.5rem;
   box-shadow: var(--shadow-lg);
   color: var(--text-primary);
   font-family: Inter, "DM Sans", "Segoe UI", Arial, sans-serif;
-  margin: 0 auto 4rem;
+  margin: 0 auto;
   max-width: 1100px;
   padding: 3rem 2.5rem;
   perspective: 1000px;
-  text-align: left;
   transform-style: preserve-3d;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.technologies:hover,
-.technologies:focus-within {
-  box-shadow: var(--shadow-xl);
-}
 
 .title {
   color: var(--text-primary);
@@ -25,220 +28,173 @@
   font-weight: 900;
   letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
-  text-align: left;
+  text-align: center;
 }
 
 .subtitle {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 400;
-  margin-bottom: 2rem;
-  text-align: left;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
-.grid {
-  align-items: end;
+.categoriesGrid {
   display: grid;
-  gap: 1.8rem;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.categorySection {
+  text-align: center;
+}
+
+.categoryTitle {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.categoryTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--success-green);
+  border-radius: 1px;
+}
+
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 1rem;
   justify-items: center;
 }
 
-.item {
-  align-items: center;
-  background: var(--background-elevated);
-  border: none;
-  border-radius: 1.2rem;
-  box-shadow: var(--shadow-sm);
+.techItem {
   display: flex;
   flex-direction: column;
-  height: 120px;
-  width: 120px;
-  justify-content: center;
-  padding: 1.2rem;
-  transition: all 0.2s;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  background: var(--background-elevated);
+  border-radius: 1rem;
+  border: 1px solid var(--border-primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 85px;
 }
 
-.item:hover {
-  background: var(--accent-warm);
+.techItem:hover {
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
-  color: var(--primary-dark);
-  transform: translateY(-4px) scale(1.04);
+  background: var(--background-card);
 }
 
-.item:hover .label {
-  color: var(--primary-dark);
+.iconWrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
 }
 
 .icon {
-  height: 52px;
-  width: 52px;
-  margin-bottom: 0.5rem;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+.iconFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--success-green);
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 50%;
 }
 
 .label {
   color: var(--text-primary);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin-top: 0;
   text-align: center;
   line-height: 1.2;
 }
 
-.item span {
-  color: var(--text-primary);
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: 0;
-  text-align: center;
-}
-
-/* Category-based colors */
-.foundation {
-  border-left: 3px solid var(--info-teal);
-}
-
+/* Category-specific hover colors */
 .foundation:hover {
-  background: var(--info-teal);
-  color: white;
-}
-
-.foundation:hover .label {
-  color: white;
-}
-
-.web {
-  border-left: 3px solid var(--accent-purple);
+  border-color: var(--info-teal);
+  background: linear-gradient(135deg, var(--info-teal), rgba(20, 184, 166, 0.1));
 }
 
 .web:hover {
-  background: var(--accent-purple);
-  color: white;
-}
-
-.web:hover .label {
-  color: white;
-}
-
-.cloud {
-  border-left: 3px solid var(--warning-orange);
+  border-color: var(--accent-purple);
+  background: linear-gradient(135deg, var(--accent-purple), rgba(139, 92, 246, 0.1));
 }
 
 .cloud:hover {
-  background: var(--warning-orange);
-  color: white;
-}
-
-.cloud:hover .label {
-  color: white;
-}
-
-.container {
-  border-left: 3px solid var(--success-green);
+  border-color: var(--warning-orange);
+  background: linear-gradient(135deg, var(--warning-orange), rgba(245, 158, 11, 0.1));
 }
 
 .container:hover {
-  background: var(--success-green);
-  color: white;
-}
-
-.container:hover .label {
-  color: white;
-}
-
-.cicd {
-  border-left: 3px solid var(--warning-orange);
+  border-color: var(--success-green);
+  background: linear-gradient(135deg, var(--success-green), rgba(16, 185, 129, 0.1));
 }
 
 .cicd:hover {
-  background: var(--warning-orange);
-  color: white;
-}
-
-.cicd:hover .label {
-  color: white;
-}
-
-.monitoring {
-  border-left: 3px solid var(--accent-purple);
+  border-color: var(--accent-blue);
+  background: linear-gradient(135deg, var(--accent-blue), rgba(59, 130, 246, 0.1));
 }
 
 .monitoring:hover {
-  background: var(--accent-purple);
-  color: white;
-}
-
-.monitoring:hover .label {
-  color: white;
+  border-color: var(--accent-purple);
+  background: linear-gradient(135deg, var(--accent-purple), rgba(139, 92, 246, 0.1));
 }
 
 /* Tablet styles */
 @media (max-width: 1024px) {
   .technologies {
-    margin: 0 2rem 3.5rem;
+    padding: 2rem 1.5rem 3rem;
+  }
+  
+  .container {
+    margin: 0 2rem;
     padding: 2.5rem 2rem;
   }
   
   .title {
     font-size: 2rem;
-    margin-bottom: 0.4rem;
   }
   
   .subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.8rem;
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
   }
   
-  .grid {
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
-  .item {
-    height: 110px;
-    width: 110px;
-    padding: 1rem;
+  .techGrid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.8rem;
   }
   
-  .icon {
-    height: 46px;
-    width: 46px;
-  }
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .technologies {
-    border-radius: 1.5rem;
-    margin: 0 1rem 3rem;
-    padding: 2rem 1.2rem;
-  }
-  
-  .title {
-    font-size: 1.5rem;
-    margin-bottom: 0.3rem;
-  }
-  
-  .subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .grid {
-    gap: 1.2rem 0.8rem;
-    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-  }
-  
-  .item {
-    height: 85px;
-    width: 85px;
-    padding: 0.6rem;
-  }
-  
-  .icon {
-    height: 36px;
-    width: 36px;
+  .iconWrapper {
+    width: 35px;
+    height: 35px;
   }
   
   .label {
@@ -246,40 +202,102 @@
   }
 }
 
-/* Small mobile styles */
-@media (max-width: 480px) {
+/* Mobile styles */
+@media (max-width: 768px) {
   .technologies {
-    margin: 0 0.5rem 2.5rem;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem 3rem;
+  }
+  
+  .container {
+    border-radius: 1.5rem;
+    margin: 0 1rem;
+    padding: 2rem 1.5rem;
   }
   
   .title {
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.8rem;
   }
   
   .subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 1.3rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
   
-  .grid {
-    gap: 1rem 0.6rem;
-    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  .categoriesGrid {
+    gap: 1.5rem;
   }
   
-  .item {
-    height: 75px;
-    width: 75px;
-    padding: 0.5rem;
+  .categoryTitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
   
-  .icon {
-    height: 32px;
-    width: 32px;
+  .techGrid {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 0.6rem;
+  }
+  
+  .techItem {
+    padding: 0.8rem 0.4rem;
+    min-width: 70px;
+  }
+  
+  .iconWrapper {
+    width: 30px;
+    height: 30px;
   }
   
   .label {
     font-size: 0.7rem;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .technologies {
+    padding: 1.5rem 0.5rem 2.5rem;
+  }
+  
+  .container {
+    margin: 0 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .categoriesGrid {
+    gap: 1.2rem;
+  }
+  
+  .categoryTitle {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .techGrid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .techItem {
+    padding: 0.6rem 0.3rem;
+    min-width: 60px;
+  }
+  
+  .iconWrapper {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .label {
+    font-size: 0.65rem;
   }
 }

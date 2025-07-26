@@ -11,6 +11,7 @@ const Technologies = () => {
     // Web Technologies
     { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', category: 'web' },
     { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', category: 'web' },
+    { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg', category: 'web' },
     { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', category: 'web' },
     { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: 'web' },
     
@@ -47,26 +48,56 @@ const Technologies = () => {
     { name: 'Nginx', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg', category: 'web' }
   ];
 
+  const categoryOrder = ['foundation', 'cloud', 'container', 'cicd', 'monitoring', 'web'];
+  const categoryLabels = {
+    foundation: 'Foundation',
+    cloud: 'Cloud & Infrastructure',
+    container: 'Containerization & Orchestration',
+    cicd: 'CI/CD & Automation',
+    monitoring: 'Monitoring & Observability',
+    web: 'Application Development'
+  };
+
+  const groupedTechnologies = categoryOrder.map(category => ({
+    category,
+    label: categoryLabels[category],
+    techs: technologies.filter(tech => tech.category === category)
+  }));
+
   return (
     <section id="technologies" className={styles.technologies}>
-      <h2 className={styles.title}>DevOps Learning Journey</h2>
-      <p className={styles.subtitle}>Skills in Development</p>
-      <div className={styles.grid}>
-        {technologies.map((tech, index) => (
-          <div key={index} className={`${styles.item} ${styles[tech.category]}`}>
-            <img 
-              src={tech.icon} 
-              alt={tech.name}
-              className={styles.icon}
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'block';
-              }}
-            />
-            <span style={{ display: 'none' }}>{tech.name}</span>
-            <span className={styles.label}>{tech.name}</span>
-          </div>
-        ))}
+      <div className={styles.container}>
+        <h2 className={styles.title}>Technology Stack</h2>
+        <p className={styles.subtitle}>Currently developing skills across the DevOps pipeline</p>
+        
+        <div className={styles.categoriesGrid}>
+          {groupedTechnologies.map(group => (
+            <div key={group.category} className={styles.categorySection}>
+              <h3 className={styles.categoryTitle}>{group.label}</h3>
+              <div className={styles.techGrid}>
+                {group.techs.map((tech, index) => (
+                  <div key={index} className={`${styles.techItem} ${styles[tech.category]}`}>
+                    <div className={styles.iconWrapper}>
+                      <img 
+                        src={tech.icon} 
+                        alt={tech.name}
+                        className={styles.icon}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className={styles.iconFallback} style={{ display: 'none' }}>
+                        {tech.name.charAt(0)}
+                      </div>
+                    </div>
+                    <span className={styles.label}>{tech.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
