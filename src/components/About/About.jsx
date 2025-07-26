@@ -38,21 +38,12 @@ const About = () => {
             <h3>Certifications & Education</h3>
             <p className={styles.text}>
               <strong>Certifications:</strong> AWS Solutions Architect Associate • CKA • Linux Foundation Certified System Administrator • Terraform<br/>
-              <strong>Education:</strong> BSc Biotechnology • Master of Business Leadership (SBL)
+              <strong>Education:</strong> BSc Biotechnology • Master of Business Leadership (MBL)
             </p>
           </div>
         </div>
       </div>
 
-      <div className={styles.bottomSection}>
-        <div className={styles.achievements}>
-          <h3>Learning Projects</h3>
-          <p className={styles.text}>
-            Building practical DevOps skills through projects: Laboratory Information Management System (LIMS), 
-            Zero-Downtime Pipeline, and Compliance Automation Platform.
-          </p>
-        </div>
-      </div>
     </section>
   );
 };

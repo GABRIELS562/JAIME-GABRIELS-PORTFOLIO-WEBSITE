@@ -1,3 +1,206 @@
+/* Pipeline Styles */
+.pipelineHeader {
+  margin-bottom: 4rem;
+}
+
+.pipelineCard {
+  background: var(--background-card);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  color: var(--text-primary);
+  margin: 0 auto 2rem;
+  max-width: 1100px;
+  padding: 3rem 2.5rem;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pipelineCard:hover {
+  box-shadow: var(--shadow-xl);
+  transform: perspective(1000px) rotateX(3deg) translateY(-4px) scale(1.01);
+}
+
+.sectionTitle {
+  color: var(--text-primary);
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.sectionSubtitle {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.timelineContainer {
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+.timelinePath {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timelineNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.timelineNode:hover {
+  transform: translateY(-5px);
+}
+
+.nodeIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--background-elevated);
+  border: 3px solid var(--border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.4s ease;
+}
+
+.nodeActive .nodeIcon {
+  border-color: var(--success-green);
+  background: var(--success-green);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.nodeLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.nodeActive .nodeLabel {
+  color: var(--text-primary);
+}
+
+.timelineConnection {
+  flex: 1;
+  height: 3px;
+  background: var(--background-elevated);
+  margin: 0 -10px;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.connectionActive {
+  background: linear-gradient(90deg, var(--success-green), var(--info-teal));
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.nodeTooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--background-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 200px;
+  max-width: 280px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.timelineNode:hover .nodeTooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.nodeTooltip h4 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+}
+
+.nodeTooltip p {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.4;
+}
+
+.tooltipTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tooltipBadge {
+  background: var(--accent-warm);
+  color: var(--primary-dark);
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.compactProgress {
+  background: var(--background-elevated);
+  border-radius: 0.5rem;
+  height: 4px;
+  margin: 1.5rem 0 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.compactProgressFill {
+  background: linear-gradient(90deg, var(--info-teal), var(--success-green), var(--warning-orange), var(--accent-purple), var(--accent-blue));
+  height: 100%;
+  transition: width 0.6s ease;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+/* Projects Container */
+.projectsContainer {
+  margin-top: 2rem;
+}
+
+.projectsTitle {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
 .card {
   background: var(--background-card);
   border: none;
