@@ -1,5 +1,7 @@
 .nav {
-  background: none;
+  background: rgba(13, 17, 23, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-family: Inter, "DM Sans", "Segoe UI", Arial, sans-serif;
   margin: 0;
   padding: 1rem 0 0.5rem;
@@ -8,6 +10,44 @@
   top: 0;
   width: 100%;
   z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.mobileMenuBtn {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 24px;
+  justify-content: space-between;
+}
+
+.mobileMenuBtn span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--text-secondary);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.mobileMenuBtn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobileMenuBtn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuBtn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
 }
 
 .navList {
@@ -17,26 +57,48 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease;
 }
 
 .link {
   background: transparent;
   border: none;
   color: var(--text-secondary);
+  cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  border-radius: 1rem;
 }
 
 .link:hover,
 .link:focus {
   color: var(--accent-warm);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px) scale(1.05);
+}
+
+.link.active {
+  color: var(--accent-warm);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--accent-warm);
+  border-radius: 50%;
 }
 
 /* Remove theme-specific overrides since we're using the same bubble style */
@@ -44,50 +106,75 @@
 /* Tablet styles */
 @media (max-width: 1024px) {
   .nav {
-    padding: 1.8rem 1rem;
+    padding: 1rem 1rem;
   }
   
   .navList {
-    gap: 2rem;
+    gap: 1.8rem;
   }
   
   .link {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
   }
 }
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .nav {
-    border-radius: 1.5rem;
-    padding: 1.5rem 1rem;
+  .mobileMenuBtn {
+    display: flex;
   }
   
   .navList {
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(13, 17, 23, 0.98);
+    backdrop-filter: blur(15px);
+    border-radius: 0 0 1rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navList.mobileOpen {
+    display: flex;
+  }
+  
+  .navList li {
+    width: 100%;
   }
   
   .link {
-    font-size: 0.95rem;
-    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+    display: block;
+  }
+  
+  .link.active::after {
+    display: none;
+  }
+  
+  .link.active {
+    background: rgba(255, 255, 255, 0.2);
   }
 }
 
 /* Small mobile styles */
 @media (max-width: 480px) {
   .nav {
-    padding: 1rem 0.5rem;
-  }
-  
-  .navList {
-    gap: 0.7rem;
+    padding: 0.8rem 1rem;
   }
   
   .link {
-    font-size: 0.85rem;
-    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
   }
 }

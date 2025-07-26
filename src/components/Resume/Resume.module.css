@@ -43,13 +43,16 @@
   border-radius: 1.5rem;
   box-shadow: var(--shadow-sm);
   color: var(--text-light);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   padding: 0.8rem 1.6rem;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 .button:hover,
@@ -58,6 +61,35 @@
   box-shadow: var(--shadow-md);
   color: var(--primary-dark);
   transform: translateY(-2px) scale(1.04);
+}
+
+.button.downloading {
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.downloadIcon {
+  transition: transform 0.3s ease;
+}
+
+.button:hover .downloadIcon {
+  transform: translateY(2px);
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Dark mode button styling */
