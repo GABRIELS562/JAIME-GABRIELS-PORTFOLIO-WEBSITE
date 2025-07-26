@@ -44,192 +44,152 @@
   text-align: center;
 }
 
-.pipelineFlow {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  position: relative;
+.timelineContainer {
+  margin: 2rem 0;
+  padding: 1rem 0;
 }
 
-.stageContainer {
-  position: relative;
+.timelinePath {
   display: flex;
   align-items: center;
-}
-
-.connector {
-  position: absolute;
-  left: 2.5rem;
-  top: 5rem;
-  width: 3px;
-  height: 2rem;
-  background: var(--background-elevated);
-  transition: all 0.6s ease;
-  z-index: 1;
-}
-
-.connectorActive {
-  background: var(--connector-color);
-  box-shadow: 0 0 10px var(--connector-color);
-  animation: flowAnimation 2s ease-in-out infinite;
-}
-
-@keyframes flowAnimation {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; box-shadow: 0 0 20px var(--connector-color); }
-}
-
-.stage {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  background: var(--background-elevated);
-  border: 2px solid transparent;
-  border-radius: 1.5rem;
-  padding: 2rem;
-  transition: all 0.5s ease;
+  justify-content: space-between;
   position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timelineNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
   z-index: 2;
-  width: 100%;
-  opacity: 0.6;
-  transform: translateX(-20px);
 }
 
-.stageActive {
-  opacity: 1;
-  transform: translateX(0);
-  border-color: var(--stage-color);
-  background: var(--background-card);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+.timelineNode:hover {
+  transform: translateY(-5px);
 }
 
-.stageIcon {
-  font-size: 3rem;
+.nodeIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--background-elevated);
+  border: 3px solid var(--border-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: var(--background-elevated);
-  border-radius: 50%;
-  border: 3px solid var(--stage-color);
-  flex-shrink: 0;
-  transition: all 0.5s ease;
-}
-
-.stageActive .stageIcon {
-  background: var(--stage-color);
-  transform: scale(1.1);
-  animation: pulseIcon 2s ease-in-out infinite;
-}
-
-@keyframes pulseIcon {
-  0%, 100% { transform: scale(1.1); }
-  50% { transform: scale(1.2); }
-}
-
-.stageContent {
-  flex: 1;
-}
-
-.stageTitle {
-  color: var(--text-primary);
   font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
+  transition: all 0.4s ease;
+}
+
+.nodeActive .nodeIcon {
+  border-color: var(--success-green);
+  background: var(--success-green);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.nodeLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
   transition: color 0.3s ease;
 }
 
-.stageActive .stageTitle {
-  color: var(--stage-color);
+.nodeActive .nodeLabel {
+  color: var(--text-primary);
 }
 
-.stageDescription {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.5;
-}
-
-.stageTechnologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.techBadge {
+.timelineConnection {
+  flex: 1;
+  height: 3px;
   background: var(--background-elevated);
+  margin: 0 -10px;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.connectionActive {
+  background: linear-gradient(90deg, var(--success-green), var(--info-teal));
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.nodeTooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: var(--background-card);
   border: 1px solid var(--border-primary);
   border-radius: 1rem;
+  padding: 1rem;
+  min-width: 200px;
+  max-width: 280px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.timelineNode:hover .nodeTooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.nodeTooltip h4 {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+}
+
+.nodeTooltip p {
   color: var(--text-secondary);
   font-size: 0.8rem;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.4;
+}
+
+.tooltipTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tooltipBadge {
+  background: var(--accent-warm);
+  color: var(--primary-dark);
+  font-size: 0.7rem;
   font-weight: 500;
-  padding: 0.4rem 0.8rem;
-  transition: all 0.4s ease;
-  opacity: 0;
-  transform: translateY(10px);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
 }
 
-.techBadgeActive {
-  opacity: 1;
-  transform: translateY(0);
-  background: var(--badge-color);
-  color: white;
-  border-color: var(--badge-color);
-  animation: slideInBadge 0.5s ease forwards;
-}
-
-@keyframes slideInBadge {
-  from {
-    opacity: 0;
-    transform: translateY(10px) scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.progressBar {
+.compactProgress {
   background: var(--background-elevated);
-  border-radius: 1rem;
-  height: 8px;
-  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  height: 4px;
+  margin: 1.5rem 0 0 0;
   overflow: hidden;
   position: relative;
 }
 
-.progressFill {
+.compactProgressFill {
   background: linear-gradient(90deg, var(--info-teal), var(--success-green), var(--warning-orange), var(--accent-purple), var(--accent-blue));
   height: 100%;
   transition: width 0.6s ease;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   position: relative;
-}
-
-.progressFill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 10px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  animation: shimmer 2s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.progressText {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-  margin: 0;
 }
 
 /* Stage-specific colors */
@@ -265,7 +225,7 @@
   }
   
   .pipelineCard {
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
   }
   
   .title {
@@ -274,26 +234,27 @@
   
   .subtitle {
     font-size: 1.1rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
   
-  .stage {
-    gap: 1rem;
-    padding: 1.5rem;
+  .timelinePath {
+    max-width: 600px;
   }
   
-  .stageIcon {
-    width: 60px;
-    height: 60px;
-    font-size: 2.5rem;
-  }
-  
-  .stageTitle {
+  .nodeIcon {
+    width: 50px;
+    height: 50px;
     font-size: 1.3rem;
   }
   
-  .stageDescription {
-    font-size: 0.95rem;
+  .nodeLabel {
+    font-size: 0.8rem;
+  }
+  
+  .nodeTooltip {
+    min-width: 180px;
+    max-width: 220px;
+    padding: 0.8rem;
   }
 }
 
@@ -314,45 +275,42 @@
   
   .subtitle {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
-  .pipelineFlow {
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .stage {
+  .timelinePath {
     flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-    padding: 1.2rem;
+    gap: 1.5rem;
+    max-width: none;
   }
   
-  .connector {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 8rem;
-    height: 1.5rem;
+  .timelineConnection {
+    width: 3px;
+    height: 40px;
+    margin: -5px 0;
   }
   
-  .stageIcon {
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
-  }
-  
-  .stageTitle {
+  .nodeIcon {
+    width: 45px;
+    height: 45px;
     font-size: 1.2rem;
   }
   
-  .stageDescription {
-    font-size: 0.9rem;
+  .nodeLabel {
+    font-size: 0.75rem;
   }
   
-  .techBadge {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
+  .nodeTooltip {
+    min-width: 160px;
+    max-width: 200px;
+    padding: 0.7rem;
+    left: 120%;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  
+  .timelineNode:hover .nodeTooltip {
+    transform: translateY(50%);
   }
 }
 

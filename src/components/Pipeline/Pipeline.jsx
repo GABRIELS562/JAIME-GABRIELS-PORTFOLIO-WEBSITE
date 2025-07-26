@@ -73,84 +73,56 @@ const Pipeline = () => {
   return (
     <section id="pipeline" className={styles.pipeline}>
       <div className={styles.pipelineCard}>
-        <h2 className={styles.title}>DevOps Learning Pipeline</h2>
-        <p className={styles.subtitle}>My journey through the software delivery lifecycle</p>
+        <h2 className={styles.title}>DevOps Learning Journey</h2>
+        <p className={styles.subtitle}>Hover stages to explore technologies</p>
         
-        {/* Debug info */}
-        <div style={{ 
-          background: 'rgba(255,255,255,0.1)', 
-          padding: '10px', 
-          margin: '10px 0', 
-          borderRadius: '5px',
-          fontSize: '14px'
-        }}>
-          Active Stage: {activeStage} | Auto Mode: {isAutoMode ? 'Yes' : 'No'}
-        </div>
-        
-        <div className={styles.pipelineFlow}>
-          {pipelineStages.map((stage, index) => (
-            <div key={stage.id} className={styles.stageContainer}>
-              {/* Pipeline Connection Line */}
-              {index < pipelineStages.length - 1 && (
+        <div className={styles.timelineContainer}>
+          <div className={styles.timelinePath}>
+            {pipelineStages.map((stage, index) => (
+              <React.Fragment key={stage.id}>
+                {/* Stage Node */}
                 <div 
-                  className={`${styles.connector} ${
-                    activeStage > index ? styles.connectorActive : ''
-                  }`}
-                  style={{
-                    '--connector-color': stage.color,
-                    backgroundColor: activeStage > index ? '#10B981' : 'var(--background-elevated)'
-                  }}
-                />
-              )}
-              
-              {/* Stage Node */}
-              <div 
-                className={`${styles.stage} ${
-                  activeStage >= index ? styles.stageActive : ''
-                } ${styles[stage.id]}`}
-                style={{
-                  '--stage-color': stage.color,
-                  borderColor: activeStage >= index ? '#10B981' : 'transparent'
-                }}
-              >
-                <div className={styles.stageIcon}>{stage.icon}</div>
-                <div className={styles.stageContent}>
-                  <h3 className={styles.stageTitle}>{stage.title}</h3>
-                  <p className={styles.stageDescription}>{stage.description}</p>
-                  <div className={styles.stageTechnologies}>
-                    {stage.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={tech} 
-                        className={`${styles.techBadge} ${
-                          activeStage >= index ? styles.techBadgeActive : ''
-                        }`}
-                        style={{
-                          animationDelay: `${techIndex * 0.1}s`,
-                          '--badge-color': stage.color
-                        }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  className={`${styles.timelineNode} ${
+                    activeStage >= index ? styles.nodeActive : ''
+                  } ${styles[stage.id]}`}
+                  onMouseEnter={() => setActiveStage(index)}
+                >
+                  <div className={styles.nodeIcon}>{stage.icon}</div>
+                  <div className={styles.nodeLabel}>{stage.title}</div>
+                  
+                  {/* Hover tooltip */}
+                  <div className={styles.nodeTooltip}>
+                    <h4>{stage.title}</h4>
+                    <p>{stage.description}</p>
+                    <div className={styles.tooltipTech}>
+                      {stage.technologies.map(tech => (
+                        <span key={tech} className={styles.tooltipBadge}>{tech}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+                
+                {/* Connection Line */}
+                {index < pipelineStages.length - 1 && (
+                  <div 
+                    className={`${styles.timelineConnection} ${
+                      activeStage > index ? styles.connectionActive : ''
+                    }`}
+                  />
+                )}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
         
-        <div className={styles.progressBar}>
+        <div className={styles.compactProgress}>
           <div 
-            className={styles.progressFill}
+            className={styles.compactProgressFill}
             style={{
               width: `${((activeStage + 1) / pipelineStages.length) * 100}%`
             }}
           />
         </div>
-        
-        <p className={styles.progressText}>
-          Pipeline Progress: {Math.round(((activeStage + 1) / pipelineStages.length) * 100)}% Complete
-        </p>
       </div>
     </section>
   );
