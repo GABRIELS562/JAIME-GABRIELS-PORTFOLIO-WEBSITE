@@ -1,0 +1,385 @@
+.pipeline {
+  background: var(--primary-dark);
+  background-image: 
+    radial-gradient(circle at 30% 20%, rgba(62, 88, 121, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(33, 53, 85, 0.4) 0%, transparent 50%);
+  font-family: Inter, "DM Sans", "Segoe UI", Arial, sans-serif;
+  padding: 4rem 2rem;
+}
+
+.pipelineCard {
+  background: var(--background-card);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  color: var(--text-primary);
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 3.5rem 2.5rem;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pipelineCard:hover {
+  box-shadow: var(--shadow-xl);
+  transform: perspective(1000px) rotateX(3deg) translateY(-4px) scale(1.01);
+}
+
+.title {
+  color: var(--text-primary);
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.pipelineFlow {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.stageContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.connector {
+  position: absolute;
+  left: 2.5rem;
+  top: 5rem;
+  width: 3px;
+  height: 2rem;
+  background: var(--background-elevated);
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+
+.connectorActive {
+  background: var(--connector-color);
+  box-shadow: 0 0 10px var(--connector-color);
+  animation: flowAnimation 2s ease-in-out infinite;
+}
+
+@keyframes flowAnimation {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; box-shadow: 0 0 20px var(--connector-color); }
+}
+
+.stage {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: var(--background-elevated);
+  border: 2px solid transparent;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  opacity: 0.6;
+  transform: translateX(-20px);
+}
+
+.stageActive {
+  opacity: 1;
+  transform: translateX(0);
+  border-color: var(--stage-color);
+  background: var(--background-card);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stageIcon {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--background-elevated);
+  border-radius: 50%;
+  border: 3px solid var(--stage-color);
+  flex-shrink: 0;
+  transition: all 0.5s ease;
+}
+
+.stageActive .stageIcon {
+  background: var(--stage-color);
+  transform: scale(1.1);
+  animation: pulseIcon 2s ease-in-out infinite;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1.1); }
+  50% { transform: scale(1.2); }
+}
+
+.stageContent {
+  flex: 1;
+}
+
+.stageTitle {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.stageActive .stageTitle {
+  color: var(--stage-color);
+}
+
+.stageDescription {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.stageTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techBadge {
+  background: var(--background-elevated);
+  border: 1px solid var(--border-primary);
+  border-radius: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.techBadgeActive {
+  opacity: 1;
+  transform: translateY(0);
+  background: var(--badge-color);
+  color: white;
+  border-color: var(--badge-color);
+  animation: slideInBadge 0.5s ease forwards;
+}
+
+@keyframes slideInBadge {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.progressBar {
+  background: var(--background-elevated);
+  border-radius: 1rem;
+  height: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressFill {
+  background: linear-gradient(90deg, var(--info-teal), var(--success-green), var(--warning-orange), var(--accent-purple), var(--accent-blue));
+  height: 100%;
+  transition: width 0.6s ease;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.progressFill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progressText {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+/* Stage-specific colors */
+.code.stageActive {
+  border-color: var(--info-teal) !important;
+  background: rgba(20, 184, 166, 0.1);
+}
+
+.build.stageActive {
+  border-color: var(--success-green) !important;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.test.stageActive {
+  border-color: var(--warning-orange) !important;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.deploy.stageActive {
+  border-color: var(--accent-purple) !important;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.monitor.stageActive {
+  border-color: var(--accent-blue) !important;
+  background: rgba(62, 88, 121, 0.1);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .pipeline {
+    padding: 3rem 2rem;
+  }
+  
+  .pipelineCard {
+    padding: 3rem 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .stage {
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .stageIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+  }
+  
+  .stageTitle {
+    font-size: 1.3rem;
+  }
+  
+  .stageDescription {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .pipeline {
+    padding: 2rem 1rem;
+  }
+  
+  .pipelineCard {
+    border-radius: 1.5rem;
+    padding: 2rem 1.2rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .pipelineFlow {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stage {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+  
+  .connector {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8rem;
+    height: 1.5rem;
+  }
+  
+  .stageIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+  
+  .stageTitle {
+    font-size: 1.2rem;
+  }
+  
+  .stageDescription {
+    font-size: 0.9rem;
+  }
+  
+  .techBadge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .pipeline {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .pipelineCard {
+    padding: 1.5rem 1rem;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .stage {
+    padding: 1rem;
+  }
+  
+  .stageTechnologies {
+    justify-content: center;
+  }
+}
