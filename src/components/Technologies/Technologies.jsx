@@ -41,7 +41,10 @@ const Technologies = () => {
     // Monitoring & Observability
     { name: 'Prometheus', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg' },
     { name: 'Grafana', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg' },
-    { name: 'Elasticsearch', icon: 'https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg' }
+    { name: 'Elasticsearch', icon: 'https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg' },
+    
+    // Web Server
+    { name: 'Nginx', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg' }
   ];
 
   return (

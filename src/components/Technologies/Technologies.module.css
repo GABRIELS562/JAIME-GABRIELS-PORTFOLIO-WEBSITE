@@ -6,8 +6,8 @@
   color: var(--text-primary);
   font-family: Inter, "DM Sans", "Segoe UI", Arial, sans-serif;
   margin: 0 auto 4rem;
-  max-width: 1200px;
-  padding: 3.5rem 2.5rem 4rem;
+  max-width: 1100px;
+  padding: 3rem 2.5rem;
   perspective: 1000px;
   text-align: left;
   transform-style: preserve-3d;
@@ -32,15 +32,15 @@
   color: var(--text-secondary);
   font-size: 1.1rem;
   font-weight: 400;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   text-align: left;
 }
 
 .grid {
   align-items: end;
   display: grid;
-  gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   justify-items: center;
 }
 
@@ -48,14 +48,14 @@
   align-items: center;
   background: var(--background-elevated);
   border: none;
-  border-radius: 1.5rem;
+  border-radius: 1.2rem;
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  height: 140px;
-  width: 140px;
+  height: 120px;
+  width: 120px;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1.2rem;
   transition: all 0.2s;
 }
 
@@ -71,8 +71,8 @@
 }
 
 .icon {
-  height: 56px;
-  width: 56px;
+  height: 52px;
+  width: 52px;
   margin-bottom: 0.5rem;
   object-fit: contain;
 }
@@ -83,6 +83,7 @@
   font-weight: 600;
   margin-top: 0;
   text-align: center;
+  line-height: 1.2;
 }
 
 .item span {
@@ -97,7 +98,7 @@
 @media (max-width: 1024px) {
   .technologies {
     margin: 0 2rem 3.5rem;
-    padding: 3rem 2rem 3.5rem;
+    padding: 2.5rem 2rem;
   }
   
   .title {
@@ -107,18 +108,23 @@
   
   .subtitle {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
   }
   
   .grid {
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   }
   
   .item {
-    min-height: 110px;
-    min-width: 110px;
-    padding: 1.8rem 1rem;
+    height: 110px;
+    width: 110px;
+    padding: 1rem;
+  }
+  
+  .icon {
+    height: 46px;
+    width: 46px;
   }
 }
 
@@ -127,7 +133,7 @@
   .technologies {
     border-radius: 1.5rem;
     margin: 0 1rem 3rem;
-    padding: 2rem 1.2rem 2.5rem;
+    padding: 2rem 1.2rem;
   }
   
   .title {
@@ -137,22 +143,27 @@
   
   .subtitle {
     font-size: 0.95rem;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.5rem;
   }
   
   .grid {
-    gap: 1.5rem 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.2rem 0.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
   }
   
   .item {
-    min-height: 100px;
-    min-width: 100px;
-    padding: 1.2rem 0.7rem;
+    height: 85px;
+    width: 85px;
+    padding: 0.6rem;
   }
   
-  .item span {
-    font-size: 0.85rem;
+  .icon {
+    height: 36px;
+    width: 36px;
+  }
+  
+  .label {
+    font-size: 0.75rem;
   }
 }
 
@@ -160,7 +171,7 @@
 @media (max-width: 480px) {
   .technologies {
     margin: 0 0.5rem 2.5rem;
-    padding: 1.5rem 1rem 2rem;
+    padding: 1.5rem 1rem;
   }
   
   .title {
@@ -170,22 +181,26 @@
   
   .subtitle {
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.3rem;
   }
   
   .grid {
-    gap: 1rem 0.8rem;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem 0.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
   }
   
   .item {
-    min-height: 80px;
-    min-width: 80px;
-    padding: 1rem 0.5rem;
+    height: 75px;
+    width: 75px;
+    padding: 0.5rem;
   }
   
-  .item span {
-    font-size: 0.75rem;
-    margin-top: 0.5rem;
+  .icon {
+    height: 32px;
+    width: 32px;
+  }
+  
+  .label {
+    font-size: 0.7rem;
   }
 }

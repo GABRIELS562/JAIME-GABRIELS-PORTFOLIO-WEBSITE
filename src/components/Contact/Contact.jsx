@@ -49,10 +49,6 @@ const Contact = () => {
           </a>
         </div>
 
-        <div className={styles.locationInfo}>
-          <span className={styles.locationIcon}>📍</span>
-          <span className={styles.locationText}>Cape Town, South Africa</span>
-        </div>
       </div>
     </section>
   );
