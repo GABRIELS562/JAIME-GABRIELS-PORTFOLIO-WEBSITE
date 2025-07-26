@@ -131,31 +131,14 @@
   line-height: 1.2;
 }
 
-/* Category-specific hover colors */
-.foundation:hover {
-  border-color: var(--info-teal);
-  background: linear-gradient(135deg, var(--info-teal), rgba(20, 184, 166, 0.1));
-}
-
-.web:hover {
-  border-color: var(--accent-purple);
-  background: linear-gradient(135deg, var(--accent-purple), rgba(139, 92, 246, 0.1));
-}
-
-.cloud:hover {
-  border-color: var(--warning-orange);
-  background: linear-gradient(135deg, var(--warning-orange), rgba(245, 158, 11, 0.1));
-}
-
-
-.cicd:hover {
-  border-color: var(--accent-blue);
-  background: linear-gradient(135deg, var(--accent-blue), rgba(59, 130, 246, 0.1));
-}
-
+/* Consistent hover colors */
+.foundation:hover,
+.web:hover,
+.cloud:hover,
+.cicd:hover,
 .monitoring:hover {
-  border-color: var(--accent-purple);
-  background: linear-gradient(135deg, var(--accent-purple), rgba(139, 92, 246, 0.1));
+  border-color: var(--success-green);
+  background: linear-gradient(135deg, var(--success-green), rgba(16, 185, 129, 0.1));
 }
 
 /* Tablet styles */

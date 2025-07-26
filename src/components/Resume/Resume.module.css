@@ -92,31 +92,12 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Dark mode button styling */
-:global([data-theme="dark"]) .button,
-:global(:not([data-theme])) .button {
-  background: var(--success-green) !important;
-  color: white !important;
-}
-
-:global([data-theme="dark"]) .button:hover,
-:global([data-theme="dark"]) .button:focus,
-:global(:not([data-theme])) .button:hover,
-:global(:not([data-theme])) .button:focus {
-  background: var(--info-teal) !important;
-  color: white !important;
-}
-
-/* Light mode button styling */
-:global([data-theme="light"]) .button {
-  background: var(--success-green) !important;
-  color: white !important;
-}
-
-:global([data-theme="light"]) .button:hover,
-:global([data-theme="light"]) .button:focus {
-  background: var(--info-teal) !important;
-  color: white !important;
+/* Resume button hover enhancement */
+.button:hover,
+.button:focus {
+  background: var(--info-teal);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Tablet styles */

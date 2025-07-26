@@ -115,11 +115,11 @@ a {
   font-weight: 500;
 }
 a:hover, a:focus {
-  color: var(--accent-teal);
+  color: var(--info-teal);
   outline: none;
 }
 a:focus-visible {
-  outline: 2px solid var(--accent-teal);
+  outline: 2px solid var(--info-teal);
   outline-offset: 2px;
 }
 
@@ -130,8 +130,8 @@ button, .button {
   border: 1px solid var(--border-accent);
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
-  background: var(--gradient-primary);
-  color: var(--text-primary);
+  background: var(--accent-warm);
+  color: var(--primary-dark);
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-md);
@@ -141,12 +141,12 @@ button, .button {
   overflow: hidden;
 }
 button:hover, button:focus, .button:hover, .button:focus {
-  background: var(--accent-warm);
-  box-shadow: var(--shadow-lg);
+  background: var(--accent-gold);
   transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-lg);
   color: var(--primary-dark);
   outline: none;
-  border-color: var(--accent-warm);
+  border-color: var(--accent-gold);
 }
 button::before, .button::before {
   content: '';
@@ -174,12 +174,12 @@ img {
 
 ::-webkit-scrollbar {
   width: 8px;
-  background: var(--background-subtle);
+  background: var(--background-elevated);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--text-muted);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-dark);
+  background: var(--text-primary);
 } 

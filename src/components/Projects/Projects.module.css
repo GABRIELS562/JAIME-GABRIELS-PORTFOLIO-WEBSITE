@@ -258,11 +258,11 @@
 }
 
 .link {
-  background: var(--background-elevated);
+  background: var(--success-green);
   border: none;
   border-radius: 1.5rem;
   box-shadow: var(--shadow-sm);
-  color: var(--accent-blue);
+  color: white;
   font-size: 1.05rem;
   font-weight: 700;
   padding: 0.8rem 1.6rem;
@@ -272,38 +272,12 @@
 
 .link:hover,
 .link:focus {
-  background: var(--accent-warm);
+  background: var(--info-teal);
   box-shadow: var(--shadow-md);
-  color: var(--primary-dark);
+  color: white;
   transform: translateY(-2px) scale(1.04);
 }
 
-/* Dark mode button styling */
-:global([data-theme="dark"]) .link,
-:global(:not([data-theme])) .link {
-  background: var(--accent-warm) !important;
-  color: var(--primary-dark) !important;
-}
-
-:global([data-theme="dark"]) .link:hover,
-:global([data-theme="dark"]) .link:focus,
-:global(:not([data-theme])) .link:hover,
-:global(:not([data-theme])) .link:focus {
-  background: var(--accent-gold) !important;
-  color: var(--primary-dark) !important;
-}
-
-/* Light mode button styling */
-:global([data-theme="light"]) .link {
-  background: var(--accent-warm) !important;
-  color: var(--primary-dark) !important;
-}
-
-:global([data-theme="light"]) .link:hover,
-:global([data-theme="light"]) .link:focus {
-  background: var(--accent-gold) !important;
-  color: var(--primary-dark) !important;
-}
 
 /* Tablet styles */
 @media (max-width: 1024px) {
