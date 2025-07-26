@@ -4,14 +4,31 @@ import styles from './ThemeToggle.module.css';
 const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(() => {
     // Check localStorage or default to dark theme
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? savedTheme === 'dark' : true;
+    let initialTheme = true; // Default to dark
+    
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      initialTheme = savedTheme ? savedTheme === 'dark' : true;
+    } catch (error) {
+      // localStorage not available, use default
+      console.warn('localStorage not available, using default theme');
+    }
+    
+    // Apply theme immediately during initialization to prevent flash
+    document.documentElement.setAttribute('data-theme', initialTheme ? 'dark' : 'light');
+    
+    return initialTheme;
   });
 
   useEffect(() => {
-    // Apply theme on mount
+    // Apply theme when state changes
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    try {
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch (error) {
+      console.warn('Failed to save theme to localStorage:', error);
+    }
   }, [isDark]);
 
   const toggleTheme = () => {
