@@ -40,6 +40,33 @@
   border-radius: 1.5rem;
 }
 
+.videoFallback {
+  width: 100%;
+  height: calc(100% - 4rem);
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-blue) 100%);
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fallbackContent {
+  text-align: center;
+  color: white;
+}
+
+.fallbackContent h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.fallbackContent p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
 .aboutSummary {
   flex: 1;
   background: var(--background-card);
@@ -58,7 +85,8 @@
   min-height: 75vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-y: auto;
 }
 
 .bottomSection {
@@ -110,8 +138,16 @@
   color: white;
 }
 
-.expertise, .achievements, .approach {
-  margin-bottom: 2rem;
+.expertise, .achievements, .approach, .transition {
+  margin-bottom: 1.5rem;
+}
+
+.transition {
+  margin-bottom: 1.5rem;
+}
+
+.certifications {
+  margin-bottom: 0;
 }
 
 .aboutSummary h3,

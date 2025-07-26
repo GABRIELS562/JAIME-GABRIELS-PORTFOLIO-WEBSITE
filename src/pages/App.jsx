@@ -1,10 +1,12 @@
 import React from 'react';
 import '../styles/variables.css';
 import '../styles/globals.css';
+import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 import Header from '../components/Header/Header';
 import Navigation from '../components/Navigation/Navigation';
 import Footer from '../components/Footer/Footer';
 import About from '../components/About/About';
+import Certifications from '../components/Certifications/Certifications';
 import Projects from '../components/Projects/Projects';
 import Resume from '../components/Resume/Resume';
 import Technologies from '../components/Technologies/Technologies';
@@ -17,12 +19,25 @@ const App = () => (
     <Navigation />
     <Header />
     <main>
-      <About />
-      <Projects />
-      <Resume />
-      <Technologies />
+      <ErrorBoundary>
+        <About />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Certifications />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Projects />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Resume />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Technologies />
+      </ErrorBoundary>
     </main>
-    <Contact />
+    <ErrorBoundary>
+      <Contact />
+    </ErrorBoundary>
     <Footer />
   </div>
 );

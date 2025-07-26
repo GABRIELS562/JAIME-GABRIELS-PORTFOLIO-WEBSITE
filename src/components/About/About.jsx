@@ -15,16 +15,29 @@ const About = () => {
             preload="auto"
             controls={false}
             disablePictureInPicture
+            poster="/video-fallback.jpg"
             onLoadedData={(e) => {
               e.target.play().catch(console.error);
             }}
             onEnded={(e) => {
               e.target.play().catch(console.error);
             }}
+            onError={(e) => {
+              console.warn('Video failed to load:', e);
+              e.target.style.display = 'none';
+              const fallback = e.target.nextElementSibling;
+              if (fallback) fallback.style.display = 'block';
+            }}
           >
             <source src="/merged-background-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+          <div className={styles.videoFallback} style={{display: 'none'}}>
+            <div className={styles.fallbackContent}>
+              <h3>DevOps Infrastructure</h3>
+              <p>Building modern, scalable systems</p>
+            </div>
+          </div>
         </div>
         <div className={styles.aboutSummary}>
           <h2>About Me</h2>
@@ -34,13 +47,14 @@ const About = () => {
             </p>
           </div>
           
-          <div className={styles.certifications}>
-            <h3>Certifications & Education</h3>
+          <div className={styles.transition}>
+            <h3>Why DevOps?</h3>
             <p className={styles.text}>
-              <strong>Certifications:</strong> AWS Solutions Architect Associate • CKA • Linux Foundation Certified System Administrator • Terraform<br/>
-              <strong>Education:</strong> BSc Biotechnology • Master of Business Leadership (MBL)
+              <strong>Forensics → DevOps:</strong> Same analytical rigor, different systems. 
+              From tracing evidence to tracing code pipelines, both demand precision and systematic problem-solving.
             </p>
           </div>
+          
         </div>
       </div>
 
