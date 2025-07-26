@@ -147,10 +147,6 @@
   background: linear-gradient(135deg, var(--warning-orange), rgba(245, 158, 11, 0.1));
 }
 
-.container:hover {
-  border-color: var(--success-green);
-  background: linear-gradient(135deg, var(--success-green), rgba(16, 185, 129, 0.1));
-}
 
 .cicd:hover {
   border-color: var(--accent-blue);
