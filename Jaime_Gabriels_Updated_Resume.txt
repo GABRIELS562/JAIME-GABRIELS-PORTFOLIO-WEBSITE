@@ -1,0 +1,135 @@
+================================================================================
+                                JAIME GABRIELS
+         DevOps Engineer | Forensic Scientist Transitioning to Cloud Infrastructure
+================================================================================
+
+CONTACT INFORMATION
+-------------------
+Email: jaime.gabriels@example.com
+LinkedIn: linkedin.com/in/jaime-gabriels
+GitHub: github.com/GABRIELS562
+Website: [Your website URL here]
+
+PROFESSIONAL SUMMARY
+--------------------
+Forensic Scientist transitioning to DevOps Engineer, bringing scientific rigor and analytical thinking to modern infrastructure challenges. Combining laboratory precision with cloud-native technologies to build scalable, reliable systems. Passionate about applying systematic problem-solving skills from forensic investigations to CI/CD pipelines, infrastructure automation, and observability solutions.
+
+Core competencies include cloud infrastructure design, containerization, infrastructure as code, and continuous integration/deployment. Currently developing expertise across the complete DevOps pipeline while leveraging analytical background from forensic science to ensure precision and compliance in automated systems.
+
+TECHNICAL SKILLS
+----------------
+
+Foundation:
+• Linux (System Administration & Command Line)
+• Git/GitHub/GitLab (Version Control & Collaboration)
+• Python (Automation, Scripting & Programming)
+
+Cloud & Infrastructure:
+• AWS (EC2, S3, VPC, IAM, CloudFormation)
+• Terraform (Infrastructure as Code)
+• Ansible (Configuration Management)
+
+Containerization & Orchestration:
+• Docker (Containerization & Image Management)
+• Kubernetes (Container Orchestration)
+• Helm (Package Management for Kubernetes)
+
+CI/CD & Automation:
+• Jenkins (Continuous Integration)
+• ArgoCD (GitOps Deployment)
+
+Monitoring & Observability:
+• Prometheus (Metrics Collection)
+• Grafana (Visualization & Dashboards)
+• Elasticsearch (Log Analytics & Search)
+
+Application Development:
+• JavaScript, HTML, CSS
+• React (Frontend Development)
+• Tailwind CSS (Styling Framework)
+• Nginx (Web Server Configuration)
+
+CERTIFICATIONS
+--------------
+• AWS Solutions Architect Associate (2025)
+• Certified Kubernetes Administrator (CKA) (2025)
+• Linux Foundation System Administrator (2025)
+• HashiCorp Terraform Associate (2025)
+• PCAP Python Programming (2024)
+
+EDUCATION
+---------
+Software Development Bootcamp
+CodeSpace Academy, 2024
+
+BSc Biotechnology
+University, 2018
+
+Master of Business Leadership
+Business School, 2018
+
+KEY PROJECTS
+------------
+
+Paternity Testing LIMS
+Laboratory Information Management System for paternity testing workflows with automated reporting and compliance tracking. Implemented comprehensive data management solution ensuring regulatory adherence and streamlined laboratory operations.
+• Technologies: Python, Database Management, Compliance Automation
+• GitHub: github.com/GABRIELS562/LABSCIENTIFIC-LIMS
+
+Zero Downtime Pipeline
+Terraform-based AWS infrastructure provisioning with automated scaling and monitoring solutions. Designed and implemented cloud-native architecture ensuring high availability and seamless deployment processes.
+• Technologies: Terraform, AWS, Infrastructure as Code, Monitoring
+• GitHub: github.com/GABRIELS562/zero-downtime-pipeline
+
+Compliance Automation Platform
+Automated compliance monitoring and reporting system ensuring regulatory adherence across development and deployment processes. Created comprehensive solution for maintaining audit trails and regulatory compliance in CI/CD environments.
+• Technologies: Automation, Compliance Monitoring, Reporting Systems
+• GitHub: github.com/GABRIELS562/compliance-automation-platform
+
+DEVOPS LEARNING JOURNEY
+-----------------------
+Following a structured approach through the DevOps pipeline:
+
+Code → Build → Test → Deploy → Monitor
+
+1. CODE: Development & Version Control
+   Technologies: Git, GitHub, Python, JavaScript, HTML, CSS, React
+
+2. BUILD: Containerization & Packaging
+   Technologies: Docker, Nginx
+
+3. TEST: Quality Assurance & Validation
+   Technologies: Linux, Ansible
+
+4. DEPLOY: Infrastructure & Orchestration
+   Technologies: AWS, Terraform, Kubernetes, Helm, Jenkins, ArgoCD
+
+5. MONITOR: Observability & Analytics
+   Technologies: Prometheus, Grafana, Elasticsearch
+
+CORE COMPETENCIES
+-----------------
+• Infrastructure as Code (Terraform, Ansible)
+• Container Orchestration (Kubernetes, Docker)
+• Cloud Architecture Design (AWS)
+• CI/CD Pipeline Development (Jenkins, ArgoCD)
+• Monitoring & Observability (Prometheus, Grafana)
+• Analytical Problem Solving
+• Regulatory Compliance
+• Laboratory Quality Systems
+• Scientific Method Application
+• Cross-functional Collaboration
+
+CAREER TRANSITION FOCUS
+-----------------------
+Forensics → DevOps: Applying the same analytical rigor used in forensic investigations to modern infrastructure challenges. From tracing evidence to tracing code pipelines, both disciplines demand precision, systematic problem-solving, and meticulous attention to detail. This unique background provides a strong foundation for ensuring reliability, compliance, and observability in DevOps environments.
+
+The transition from forensic science to DevOps leverages:
+• Scientific rigor in system design and troubleshooting
+• Attention to detail in configuration management
+• Systematic approach to problem-solving
+• Experience with compliance and regulatory requirements
+• Strong analytical and investigative skills
+• Methodical documentation and reporting practices
+
+================================================================================
