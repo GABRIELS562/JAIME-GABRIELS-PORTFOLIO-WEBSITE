@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Favicon - JAGDEV</title>
+</head>
+<body>
+    <h1>Creating JAGDEV Favicon</h1>
+    <canvas id="favicon" width="32" height="32"></canvas>
+    <br>
+    <a id="downloadLink" download="favicon.ico">Download favicon.ico</a>
+    
+    <script>
+        const canvas = document.getElementById('favicon');
+        const ctx = canvas.getContext('2d');
+        
+        // Create gradient background
+        const gradient = ctx.createLinearGradient(0, 0, 32, 32);
+        gradient.addColorStop(0, '#4a90e2');
+        gradient.addColorStop(1, '#213555');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 32, 32);
+        
+        // Draw JD text
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 14px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('JD', 16, 16);
+        
+        // Convert to base64 and create download link
+        canvas.toBlob(function(blob) {
+            const url = URL.createObjectURL(blob);
+            document.getElementById('downloadLink').href = url;
+        });
+    </script>
+</body>
+</html>

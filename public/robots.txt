@@ -1,0 +1,15 @@
+# Robots.txt for Jaime Gabriels Portfolio
+# Allow all web crawlers
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://jagdev.com/sitemap.xml
+
+# Disallow access to sensitive directories
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/
+Disallow: /build/static/
