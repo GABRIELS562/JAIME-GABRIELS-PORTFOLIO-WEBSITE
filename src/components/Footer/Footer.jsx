@@ -65,7 +65,7 @@ const Footer = () => {
               </svg>
               LinkedIn
             </a>
-            <a href="mailto:jaime.gabriels@example.com" className={styles.socialLink}>
+            <a href="mailto:contact@jagdevops.com" className={styles.socialLink}>
               <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
                 <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.819L12 10.09l9.545-6.269h.819c.904 0 1.636.732 1.636 1.636z"/>
               </svg>
@@ -77,8 +77,8 @@ const Footer = () => {
 
       {/* Copyright and Last Updated */}
       <div className={styles.footerBottom}>
-        <p>&copy; 2024 Jaime Gabriels. All rights reserved.</p>
-        <p className={styles.lastUpdated}>Last updated: December 2024</p>
+        <p>&copy; 2025 Jaime Gabriels. All rights reserved.</p>
+        <p className={styles.lastUpdated}>Last updated: January 2025</p>
       </div>
 
       {/* Back to Top Button */}

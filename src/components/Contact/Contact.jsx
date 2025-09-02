@@ -12,7 +12,7 @@ const Contact = () => {
         </p>
         
         <div className={styles.contactList}>
-          <a href="mailto:jaime.gabriels@example.com" className={styles.contactItem}>
+          <a href="mailto:contact@jagdevops.com" className={styles.contactItem}>
             <div className={styles.contactContent}>
               <div className={styles.contactIcon}>
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
@@ -21,13 +21,13 @@ const Contact = () => {
               </div>
               <div className={styles.contactDetails}>
                 <span className={styles.contactLabel}>Email</span>
-                <span className={styles.contactValue}>jaime.gabriels@example.com</span>
+                <span className={styles.contactValue}>contact@jagdevops.com</span>
               </div>
             </div>
             <span className={styles.contactAction}>→</span>
           </a>
 
-          <a href="https://linkedin.com/in/jaime-gabriels" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
             <div className={styles.contactContent}>
               <div className={styles.contactIcon}>
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">

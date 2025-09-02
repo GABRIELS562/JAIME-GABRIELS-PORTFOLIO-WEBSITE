@@ -71,27 +71,27 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Paternity Testing LIMS",
-      description: "Laboratory Information Management System for paternity testing workflows with automated reporting and compliance tracking.",
+      title: "DNA Analysis LIMS",
+      description: "Full-stack Laboratory Information Management System for forensic DNA analysis. Features STR analysis capabilities, sample tracking, automated report generation, and comprehensive CI/CD pipeline with Docker/Kubernetes deployment.",
       links: [
-        { text: "GitHub", url: "https://github.com/GABRIELS562/LABSCIENTIFIC-LIMS" },
-        { text: "Documentation", url: "#" }
+        { text: "GitHub", url: "https://github.com/GABRIELS562/JAG-LABSCIENTIFIC-DNA" },
+        { text: "Live Demo", url: "https://gabriels562.github.io/JAG-LABSCIENTIFIC-DNA/" }
       ]
     },
     {
       title: "Zero Downtime Pipeline",
-      description: "Terraform-based AWS infrastructure provisioning with automated scaling and monitoring solutions.",
+      description: "Enterprise-grade deployment pipeline achieving 99.5% success rate with 3-minute recovery time. Implements blue-green and canary deployments, automated rollback mechanisms, FDA/SOX compliance validation, and comprehensive monitoring with Prometheus/Grafana.",
       links: [
         { text: "GitHub", url: "https://github.com/GABRIELS562/zero-downtime-pipeline" },
-        { text: "Live Demo", url: "#" }
+        { text: "Documentation", url: "https://github.com/GABRIELS562/zero-downtime-pipeline#readme" }
       ]
     },
     {
       title: "Compliance Automation Platform",
-      description: "Automated compliance monitoring and reporting system ensuring regulatory adherence across development and deployment processes.",
+      description: "Forensic-grade compliance monitoring platform with Infrastructure as Code. Features automated control validation, real-time compliance scoring, audit trail generation, and comprehensive monitoring stack using Prometheus/Grafana/Elasticsearch.",
       links: [
         { text: "GitHub", url: "https://github.com/GABRIELS562/compliance-automation-platform" },
-        { text: "Documentation", url: "#" }
+        { text: "Documentation", url: "https://github.com/GABRIELS562/compliance-automation-platform#readme" }
       ]
     }
   ];
@@ -164,7 +164,7 @@ const Projects = () => {
               <p className={styles.description}>{project.description}</p>
               <div className={styles.links}>
                 {project.links.map((link, linkIndex) => (
-                  <a key={linkIndex} href={link.url} className={styles.link}>
+                  <a key={linkIndex} href={link.url} target="_blank" rel="noopener noreferrer" className={styles.link}>
                     {link.text}
                   </a>
                 ))}
