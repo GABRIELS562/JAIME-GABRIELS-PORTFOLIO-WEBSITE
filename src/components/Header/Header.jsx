@@ -11,7 +11,7 @@ const Header = () => {
   const [loopCount, setLoopCount] = useState(0);
   
   const greeting = "Hi 👋 I'm";
-  const title = "Passionate DevOps Engineer";
+  const title = "Forensic Scientist transitioning to DevOps Engineer";
 
   useEffect(() => {
     const observer = new MutationObserver((mutations) => {

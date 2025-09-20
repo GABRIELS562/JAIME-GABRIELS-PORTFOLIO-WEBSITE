@@ -3,35 +3,35 @@ import styles from './Certifications.module.css';
 
 const Certifications = () => {
   const certifications = [
-    { 
-      name: "AWS Solutions Architect Associate", 
+    {
+      name: "AWS Solutions Architect Associate",
       year: "2025",
       icon: "https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white",
       color: "#232F3E"
     },
-    { 
-      name: "Certified Kubernetes Administrator (CKA)", 
-      year: "2025",
-      icon: "https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=flat&logo=kubernetes&logoColor=white",
-      color: "#326ce5"
-    },
-    { 
-      name: "Linux Foundation System Administrator", 
-      year: "2025",
-      icon: "https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black",
-      color: "#FCC624"
-    },
-    { 
-      name: "HashiCorp Terraform Associate", 
+    {
+      name: "HashiCorp Terraform Associate",
       year: "2025",
       icon: "https://img.shields.io/badge/terraform-%235835CC.svg?style=flat&logo=terraform&logoColor=white",
       color: "#5835CC"
     },
-    { 
-      name: "PCAP Python Programming", 
+    {
+      name: "PCAP Python Programming",
       year: "2024",
       icon: "https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54",
       color: "#3670A0"
+    },
+    {
+      name: "Certified Kubernetes Administrator (CKA)",
+      year: "Pending - November 2025",
+      icon: "https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=flat&logo=kubernetes&logoColor=white",
+      color: "#326ce5"
+    },
+    {
+      name: "Linux Foundation Certified System Administrator (LFCS)",
+      year: "Pending - December 2025",
+      icon: "https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black",
+      color: "#FCC624"
     }
   ];
 
@@ -68,7 +68,18 @@ const Certifications = () => {
               {certifications.map((cert, index) => (
                 <div key={index} className={styles.gridItem}>
                   <img src={cert.icon} alt={cert.name} className={styles.gridIcon} />
-                  <span className={styles.gridText}>{cert.name}</span>
+                  <span className={styles.gridText}>
+                    {cert.name}
+                    {cert.year && (
+                      <span className={styles.yearText}>
+                        {cert.year.includes('Pending') ? (
+                          <> (<strong>Pending</strong> - {cert.year.split(' - ')[1]})</>
+                        ) : (
+                          <> ({cert.year})</>
+                        )}
+                      </span>
+                    )}
+                  </span>
                 </div>
               ))}
             </div>

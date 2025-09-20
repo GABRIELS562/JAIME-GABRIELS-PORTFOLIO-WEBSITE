@@ -280,6 +280,19 @@
   line-height: 1.3;
 }
 
+.yearText {
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 0.85rem;
+  display: inline;
+  white-space: nowrap;
+}
+
+.yearText strong {
+  font-weight: 600;
+  color: var(--warning-orange);
+}
+
 
 /* Tablet styles */
 @media (max-width: 1024px) {
