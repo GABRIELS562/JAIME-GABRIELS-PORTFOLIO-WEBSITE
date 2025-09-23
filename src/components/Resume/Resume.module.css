@@ -81,14 +81,21 @@
   left: 100%;
 }
 
-.primaryButton:hover,
-.primaryButton:focus {
+.primaryButton:hover:not(:disabled),
+.primaryButton:focus:not(:disabled) {
   background: var(--accent-gold);
   transform: translateY(-2px) scale(1.02);
   box-shadow: var(--shadow-lg);
   color: var(--primary-dark);
   border-color: var(--accent-gold);
   cursor: pointer;
+}
+
+.primaryButton:disabled {
+  background: var(--accent-warm);
+  opacity: 0.8;
+  cursor: wait;
+  transform: none;
 }
 
 .primaryButton.downloading {
@@ -138,12 +145,14 @@
 }
 
 .spinner {
+  display: inline-block;
   width: 16px;
   height: 16px;
-  border: 2px solid transparent;
-  border-top: 2px solid currentColor;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
   border-radius: 50%;
   animation: spin 1s linear infinite;
+  margin-right: 8px;
 }
 
 @keyframes spin {
