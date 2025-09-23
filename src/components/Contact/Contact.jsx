@@ -42,7 +42,7 @@ const Contact = () => {
             <span className={styles.contactAction}>→</span>
           </a>
 
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
+          <a href="https://www.linkedin.com/in/jaime-gabriels-643132386" target="_blank" rel="noopener noreferrer" className={styles.contactItem}>
             <div className={styles.contactContent}>
               <div className={styles.contactIcon}>
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">

@@ -74,12 +74,13 @@ const Projects = () => {
       title: "DNA Analysis LIMS",
       description: (
         <>
-          <p>Full-stack Laboratory Information Management System processing 200+ forensic DNA samples through a 12-stage analysis pipeline.</p>
+          <p>Laboratory Information Management System demonstrating forensic DNA sample processing workflow with 12-stage pipeline simulation.</p>
           <ul style={{ marginTop: '0.8rem', marginBottom: '1rem', paddingLeft: '1.2rem' }}>
-            <li>Automated sample workflow from collection to reporting</li>
-            <li>Real-time monitoring with Prometheus/Grafana dashboards</li>
-            <li>Jenkins CI/CD pipeline with local Docker registry</li>
-            <li>Production deployment on K3s with PostgreSQL</li>
+            <li>Working DNA sample tracking system with PostgreSQL</li>
+            <li>Real-time dashboard with live data simulation</li>
+            <li>Jenkins CI/CD pipeline with Docker registry</li>
+            <li>Kubernetes deployment on K3s cluster</li>
+            <li>React frontend with Node.js backend</li>
           </ul>
         </>
       ),
@@ -95,12 +96,13 @@ const Projects = () => {
       title: "Zero Downtime Pipeline",
       description: (
         <>
-          <p>Enterprise financial trading and pharmaceutical manufacturing systems with TRUE zero-downtime deployments via 2-replica high availability.</p>
+          <p>Enterprise financial trading and pharmaceutical manufacturing systems with high availability deployment patterns with rolling updates and health checks.</p>
           <ul style={{ marginTop: '0.8rem', marginBottom: '1rem', paddingLeft: '1.2rem' }}>
-            <li>Finance: Real-time trading platform with portfolio analytics</li>
-            <li>Pharma: FDA-compliant batch tracking with GMP validation</li>
-            <li>100% uptime during rolling updates via ArgoCD GitOps</li>
-            <li>Proven &lt;60 second recovery from production incidents</li>
+            <li>Finance and Pharma Flask applications</li>
+            <li>Blue-green deployment configuration</li>
+            <li>Multi-application dashboard</li>
+            <li>GitOps implementation with ArgoCD</li>
+            <li>Rolling update strategies</li>
           </ul>
         </>
       ),
@@ -117,12 +119,12 @@ const Projects = () => {
       title: "Digital Evidence Pipeline (DEP)",
       description: (
         <>
-          <p>Forensic-grade compliance monitoring applying DNA laboratory chain-of-custody principles to DevOps infrastructure. Demonstrates cryptographic audit trails, real-time compliance scoring (FDA/SOX/GMP), and immutable evidence collection suitable for regulated industries.</p>
+          <p>Monitoring system demonstrating how forensic laboratory principles can be applied to DevOps infrastructure. Shows conceptual approach to compliance tracking and evidence-based system monitoring.</p>
           <ul style={{ marginTop: '0.8rem', marginBottom: '1rem', paddingLeft: '1.2rem' }}>
-            <li>Blockchain-style audit trail with SHA256 hashing</li>
-            <li>Compliance scoring algorithms for regulatory standards</li>
-            <li>Tamper-proof evidence collection methodology</li>
-            <li>Court-admissible documentation standards</li>
+            <li>Infrastructure monitoring with forensic-inspired approach</li>
+            <li>Basic compliance metrics endpoint</li>
+            <li>Conceptual framework for evidence-based monitoring</li>
+            <li>Demonstrates application of forensic thinking to DevOps</li>
           </ul>
         </>
       ),
@@ -196,6 +198,19 @@ const Projects = () => {
       {/* Projects Section */}
       <div className={styles.projectsContainer}>
         <h3 className={styles.projectsTitle}>Projects</h3>
+
+        {/* Multi-Server Infrastructure Section */}
+        <div className={styles.infrastructureSection}>
+          <div className={styles.infrastructureNotice}>
+            <h3 className={styles.infrastructureTitle}>🏗️ Multi-Server Infrastructure</h3>
+            <p className={styles.infrastructureText}>
+              <strong>Working Systems:</strong> Live applications deployed across 3-server architecture with monitoring, CI/CD automation, and modern DevOps practices.
+            </p>
+            <p className={styles.infrastructureText}>
+              <strong>Real Implementation:</strong> Functional systems demonstrating practical application of cloud-native technologies and infrastructure management.
+            </p>
+          </div>
+        </div>
 
         {/* Architecture Overview Card */}
         <div className={styles.architectureCard}>

@@ -68,7 +68,7 @@ const Technologies = () => {
     <section id="technologies" className={styles.technologies}>
       <div className={styles.container}>
         <h2 className={styles.title}>Technology Stack</h2>
-        <p className={styles.subtitle}>Currently developing skills across the DevOps pipeline</p>
+        <p className={styles.subtitle}>Building expertise across the DevOps pipeline through practical implementation</p>
         
         <div className={styles.categoriesGrid}>
           {groupedTechnologies.map(group => (

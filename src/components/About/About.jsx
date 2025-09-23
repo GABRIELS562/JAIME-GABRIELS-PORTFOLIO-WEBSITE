@@ -43,7 +43,7 @@ const About = () => {
           <h2>About Me</h2>
           <div className={styles.intro}>
             <p className={styles.highlight}>
-              Forensic Scientist transitioning to DevOps Engineer. Bringing scientific rigor and analytical thinking to modern infrastructure challenges.
+              Senior Forensic Scientist leveraging 15 years of analytical expertise and regulatory compliance experience in DevOps engineering. Bringing proven problem-solving skills and systematic methodologies to modern infrastructure challenges.
             </p>
           </div>
           

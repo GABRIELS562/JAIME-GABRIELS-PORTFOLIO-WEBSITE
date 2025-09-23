@@ -12,6 +12,7 @@ import Resume from '../components/Resume/Resume';
 import Technologies from '../components/Technologies/Technologies';
 import Contact from '../components/Contact/Contact';
 import ThemeToggle from '../components/ThemeToggle/ThemeToggle';
+import ProfessionalApproach from '../components/ProfessionalApproach/ProfessionalApproach';
 
 const App = () => (
   <div>
@@ -37,6 +38,9 @@ const App = () => (
     </main>
     <ErrorBoundary>
       <Contact />
+    </ErrorBoundary>
+    <ErrorBoundary>
+      <ProfessionalApproach />
     </ErrorBoundary>
     <Footer />
   </div>

@@ -43,7 +43,7 @@ JAIME-GABRIELS-PORTFOLIO-WEBSITE/
 │   │   ├── projects/           # Project architecture diagrams
 │   │   └── *.png              # Profile and background images
 │   ├── merged-background-video.mp4  # Interactive 3D character video
-│   ├── Bar-Gutman-Devops-RESUME.pdf # Professional resume
+│   ├── Jaime-Gabriels-DevOps-Resume.pdf # Professional resume
 │   └── index.html
 ├── src/
 │   ├── components/
@@ -225,7 +225,7 @@ Comprehensive responsive design with multiple breakpoints:
 
 ## 📞 Connect With Me
 
-- **LinkedIn**: [Jaime Gabriels](https://linkedin.com/in/jaime-gabriels)
+- **LinkedIn**: [Jaime Gabriels](https://linkedin.com/in/jaime-gabriels-643132386)
 - **GitHub**: [@GABRIELS562](https://github.com/GABRIELS562)
 - **Email**: Available in resume
 - **Portfolio**: Live demo available at deployment URL

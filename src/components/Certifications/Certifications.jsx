@@ -28,8 +28,8 @@ const Certifications = () => {
       color: "#326ce5"
     },
     {
-      name: "Linux Foundation Certified System Administrator (LFCS)",
-      year: "Pending - December 2025",
+      name: "Certified Kubernetes Security Specialist (CKS)",
+      year: "Pending - February 2026",
       icon: "https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black",
       color: "#FCC624"
     }
