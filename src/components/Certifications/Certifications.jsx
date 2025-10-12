@@ -23,7 +23,7 @@ const Certifications = () => {
     },
     {
       name: "Certified Kubernetes Administrator (CKA)",
-      year: "Pending - November 2025",
+      year: "Pending - December 2025",
       icon: "https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=flat&logo=kubernetes&logoColor=white",
       color: "#326ce5"
     },

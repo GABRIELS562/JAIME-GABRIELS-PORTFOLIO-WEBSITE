@@ -79,7 +79,7 @@ const Resume = () => {
         </button>
         <div className={styles.fileInfo}>
           <span className={styles.fileSize}>PDF • 2 Pages</span>
-          <span className={styles.lastUpdated}>Updated January 2025</span>
+          <span className={styles.lastUpdated}>Updated October 2025</span>
         </div>
 
         {/* Fallback direct link for browsers that block downloads */}
