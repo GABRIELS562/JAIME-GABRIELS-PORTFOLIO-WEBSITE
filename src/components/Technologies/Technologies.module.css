@@ -14,7 +14,7 @@
   color: var(--text-primary);
   margin: 0 auto;
   max-width: 1000px;
-  padding: 2.5rem 2rem;
+  padding: 2rem;
   transition: all 0.3s ease;
 }
 
@@ -28,22 +28,63 @@
   font-size: 2.25rem;
   font-weight: 900;
   letter-spacing: -0.03em;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
-.subtitle {
+/* Toggle Button */
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: var(--background-elevated);
+  border: 1px solid var(--border-primary);
+  border-radius: 2rem;
   color: var(--text-secondary);
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
+.toggleBtn:hover {
+  background: var(--background-card);
+  border-color: var(--accent-warm);
+  color: var(--text-primary);
+}
+
+.toggleText {
+  transition: opacity 0.2s ease;
+}
+
+.toggleIcon {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.toggleIcon.expanded {
+  transform: rotate(180deg);
+}
+
+/* Collapsible Tech Cloud */
 .techCloud {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.techCloud.expanded {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 1.5rem;
 }
 
 .categoryGroup {
@@ -125,11 +166,16 @@
   }
 
   .container {
-    padding: 2rem 1.5rem;
+    padding: 1.75rem 1.5rem;
   }
 
   .title {
     font-size: 2rem;
+  }
+
+  .toggleBtn {
+    font-size: 0.85rem;
+    padding: 0.625rem 1.25rem;
   }
 
   .categoryLabel {
@@ -166,12 +212,17 @@
     font-size: 1.8rem;
   }
 
-  .subtitle {
-    margin-bottom: 1.5rem;
+  .toggleBtn {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
   }
 
   .techCloud {
     gap: 1.25rem;
+  }
+
+  .techCloud.expanded {
+    margin-top: 1.25rem;
   }
 
   .categoryGroup {
@@ -216,13 +267,17 @@
     font-size: 1.5rem;
   }
 
-  .subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 1.25rem;
+  .toggleBtn {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.875rem;
   }
 
   .techCloud {
     gap: 1rem;
+  }
+
+  .techCloud.expanded {
+    margin-top: 1rem;
   }
 
   .categoryLabel {

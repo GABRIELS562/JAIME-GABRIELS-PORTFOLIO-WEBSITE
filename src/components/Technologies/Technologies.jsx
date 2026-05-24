@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Technologies.module.css';
 import ScrollReveal from '../ScrollReveal/ScrollReveal';
 
 const Technologies = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const technologies = [
     // Foundation
     { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', category: 'foundation' },
@@ -60,9 +62,21 @@ const Technologies = () => {
       <ScrollReveal animation="fadeUp" duration={600}>
         <div className={styles.container}>
           <h2 className={styles.title}>Tech Stack</h2>
-          <p className={styles.subtitle}>Tools I work with</p>
 
-          <div className={styles.techCloud}>
+          <button
+            className={styles.toggleBtn}
+            onClick={() => setIsExpanded(!isExpanded)}
+            aria-expanded={isExpanded}
+          >
+            <span className={styles.toggleText}>
+              {isExpanded ? 'Hide details' : `View ${technologies.length}+ tools I work with`}
+            </span>
+            <span className={`${styles.toggleIcon} ${isExpanded ? styles.expanded : ''}`}>
+              ▼
+            </span>
+          </button>
+
+          <div className={`${styles.techCloud} ${isExpanded ? styles.expanded : ''}`}>
             {categories.map((cat) => {
               const catTechs = technologies.filter(t => t.category === cat.id);
               if (catTechs.length === 0) return null;
