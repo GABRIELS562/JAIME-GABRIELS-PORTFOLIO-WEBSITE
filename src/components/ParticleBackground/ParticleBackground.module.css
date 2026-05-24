@@ -31,57 +31,9 @@
   }
 }
 
-/* Geometric shapes */
-.shape {
-  position: absolute;
-  border: 1px solid rgba(216, 196, 182, 0.2);
-  animation: rotate linear infinite;
-}
-
-.shape1 {
-  width: 100px;
-  height: 100px;
-  top: 15%;
-  left: 10%;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation-duration: 25s;
-}
-
-.shape2 {
-  width: 80px;
-  height: 80px;
-  top: 60%;
-  right: 15%;
-  border-radius: 50%;
-  animation-duration: 20s;
-  animation-direction: reverse;
-}
-
-.shape3 {
-  width: 60px;
-  height: 60px;
-  bottom: 20%;
-  left: 20%;
-  transform: rotate(45deg);
-  animation-duration: 30s;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(180deg) scale(1.1);
-  }
-  100% {
-    transform: rotate(360deg) scale(1);
-  }
-}
-
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .particle,
-  .shape {
+  .particle {
     animation: none;
   }
 }
@@ -89,8 +41,4 @@
 /* Light theme adjustments */
 :global([data-theme="light"]) .particle {
   background: radial-gradient(circle, rgba(62, 88, 121, 0.4) 0%, transparent 70%);
-}
-
-:global([data-theme="light"]) .shape {
-  border-color: rgba(62, 88, 121, 0.15);
 }

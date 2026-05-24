@@ -35,10 +35,6 @@ const ParticleBackground = ({ particleCount = 30 }) => {
           }}
         />
       ))}
-      {/* Floating geometric shapes */}
-      <div className={`${styles.shape} ${styles.shape1}`} />
-      <div className={`${styles.shape} ${styles.shape2}`} />
-      <div className={`${styles.shape} ${styles.shape3}`} />
     </div>
   );
 };
