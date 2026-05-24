@@ -109,7 +109,7 @@
 .bottomSection:hover,
 .bottomSection:focus-within {
   box-shadow: var(--shadow-xl);
-  transform: perspective(1000px) rotateX(6deg) translateY(-8px) scale(1.02);
+  transform: translateY(-6px) scale(1.01);
   opacity: 1;
 }
 

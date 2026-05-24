@@ -16,6 +16,7 @@ import ProfessionalApproach from '../components/ProfessionalApproach/Professiona
 import Terminal from '../components/Terminal/Terminal';
 import TerminalToggle from '../components/TerminalToggle/TerminalToggle';
 import LiveStatus from '../components/LiveStatus/LiveStatus';
+import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 
 const App = () => {
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
@@ -77,6 +78,7 @@ const App = () => {
         isOpen={isTerminalOpen}
         onClose={() => setIsTerminalOpen(false)}
       />
+      <ScrollToTop />
     </div>
   );
 };

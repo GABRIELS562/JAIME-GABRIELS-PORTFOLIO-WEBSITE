@@ -84,21 +84,29 @@
 }
 
 .link.active {
-  color: var(--accent-warm);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--accent-warm) 0%, var(--accent-gold) 100%);
+  box-shadow: 0 4px 15px rgba(216, 196, 182, 0.4);
+  transform: translateY(-1px);
 }
 
 .link.active::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -6px;
   left: 50%;
   transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background: var(--accent-warm);
   border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-warm);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.7; transform: translateX(-50%) scale(1.2); }
 }
 
 /* Remove theme-specific overrides since we're using the same bubble style */

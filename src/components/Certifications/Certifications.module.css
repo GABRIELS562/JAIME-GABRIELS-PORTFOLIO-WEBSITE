@@ -22,7 +22,7 @@
 
 .certificationsCard:hover {
   box-shadow: var(--shadow-xl);
-  transform: perspective(1000px) rotateX(3deg) translateY(-4px) scale(1.01);
+  transform: translateY(-4px) scale(1.005);
 }
 
 .sectionTitle {

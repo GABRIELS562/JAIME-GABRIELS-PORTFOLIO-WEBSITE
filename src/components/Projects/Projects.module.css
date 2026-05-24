@@ -20,7 +20,7 @@
 
 .pipelineCard:hover {
   box-shadow: var(--shadow-xl);
-  transform: perspective(1000px) rotateX(3deg) translateY(-4px) scale(1.01);
+  transform: translateY(-4px) scale(1.005);
 }
 
 .sectionTitle {
@@ -222,8 +222,8 @@
 
 .card:hover,
 .card:focus-within {
-  box-shadow: var(--shadow-xl), 0 0 40px rgba(16, 185, 129, 0.15);
-  transform: perspective(1000px) rotateX(5deg) translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-xl), 0 0 30px rgba(16, 185, 129, 0.12);
+  transform: translateY(-6px) scale(1.01);
 }
 
 .card::before {
@@ -629,9 +629,9 @@
 }
 
 .architectureCard:hover {
-  box-shadow: var(--shadow-xl), 0 0 30px rgba(255, 255, 255, 0.2);
-  transform: translateY(-4px) scale(1.01);
-  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-xl), 0 0 25px rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px) scale(1.005);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .architectureLink {

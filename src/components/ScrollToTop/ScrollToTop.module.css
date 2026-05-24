@@ -1,0 +1,103 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--background-card);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 90;
+  box-shadow: var(--shadow-lg);
+  padding: 0;
+}
+
+.scrollToTop.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.scrollToTop:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: var(--shadow-xl), 0 0 20px rgba(216, 196, 182, 0.3);
+  background: var(--accent-warm);
+}
+
+.scrollToTop:hover .arrow {
+  color: var(--primary-dark);
+}
+
+.scrollToTop:active {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.progressRing {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progressBg {
+  stroke: var(--border-primary);
+}
+
+.progressCircle {
+  stroke: var(--accent-warm);
+  transition: stroke-dasharray 0.2s ease;
+}
+
+.arrow {
+  color: var(--text-primary);
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.scrollToTop:hover .arrow {
+  transform: translateY(-2px);
+}
+
+/* Light theme */
+[data-theme="light"] .scrollToTop {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .scrollToTop:hover {
+  background: var(--accent-warm);
+}
+
+/* Mobile positioning */
+@media (max-width: 768px) {
+  .scrollToTop {
+    bottom: 90px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollToTop {
+    bottom: 85px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .arrow {
+    width: 16px;
+    height: 16px;
+  }
+}
