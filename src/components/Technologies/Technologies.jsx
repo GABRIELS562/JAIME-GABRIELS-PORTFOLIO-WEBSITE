@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Technologies.module.css';
+import ScrollReveal from '../ScrollReveal/ScrollReveal';
 
 const Technologies = () => {
   const technologies = [
@@ -67,35 +68,44 @@ const Technologies = () => {
   return (
     <section id="technologies" className={styles.technologies}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Technology Stack</h2>
-        <p className={styles.subtitle}>Building expertise across the DevOps pipeline through practical implementation</p>
-        
+        <ScrollReveal animation="fadeUp" duration={600}>
+          <h2 className={styles.title}>Technology Stack</h2>
+          <p className={styles.subtitle}>Building expertise across the DevOps pipeline through practical implementation</p>
+        </ScrollReveal>
+
         <div className={styles.categoriesGrid}>
-          {groupedTechnologies.map(group => (
-            <div key={group.category} className={styles.categorySection}>
-              <h3 className={styles.categoryTitle}>{group.label}</h3>
-              <div className={styles.techGrid}>
-                {group.techs.map((tech, index) => (
-                  <div key={index} className={`${styles.techItem} ${styles[tech.category]}`}>
-                    <div className={styles.iconWrapper}>
-                      <img 
-                        src={tech.icon} 
-                        alt={tech.name}
-                        className={styles.icon}
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.nextSibling.style.display = 'flex';
-                        }}
-                      />
-                      <div className={styles.iconFallback} style={{ display: 'none' }}>
-                        {tech.name.charAt(0)}
+          {groupedTechnologies.map((group, groupIndex) => (
+            <ScrollReveal
+              key={group.category}
+              animation="fadeUp"
+              duration={600}
+              delay={groupIndex * 100}
+            >
+              <div className={styles.categorySection}>
+                <h3 className={styles.categoryTitle}>{group.label}</h3>
+                <div className={styles.techGrid}>
+                  {group.techs.map((tech, index) => (
+                    <div key={index} className={`${styles.techItem} ${styles[tech.category]}`}>
+                      <div className={styles.iconWrapper}>
+                        <img
+                          src={tech.icon}
+                          alt={tech.name}
+                          className={styles.icon}
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'flex';
+                          }}
+                        />
+                        <div className={styles.iconFallback} style={{ display: 'none' }}>
+                          {tech.name.charAt(0)}
+                        </div>
                       </div>
+                      <span className={styles.label}>{tech.name}</span>
                     </div>
-                    <span className={styles.label}>{tech.name}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

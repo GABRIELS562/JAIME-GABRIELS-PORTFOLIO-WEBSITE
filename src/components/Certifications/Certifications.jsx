@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Certifications.module.css';
+import ScrollReveal from '../ScrollReveal/ScrollReveal';
 
 const Certifications = () => {
   const certifications = [
@@ -58,10 +59,12 @@ const Certifications = () => {
 
   return (
     <section id="certifications" className={styles.certificationsSection}>
+      <ScrollReveal animation="fadeUp" duration={700}>
       <div className={styles.certificationsCard}>
         <h2 className={styles.sectionTitle}>Certifications & Education</h2>
-        
+
         <div className={styles.content}>
+          <ScrollReveal animation="fadeLeft" duration={600} delay={100}>
           <div className={styles.certificationItem}>
             <h3>Certifications</h3>
             <div className={styles.compactGrid}>
@@ -84,7 +87,9 @@ const Certifications = () => {
               ))}
             </div>
           </div>
-          
+          </ScrollReveal>
+
+          <ScrollReveal animation="fadeRight" duration={600} delay={200}>
           <div className={styles.educationItem}>
             <h3>Education</h3>
             <div className={styles.compactGrid}>
@@ -96,8 +101,10 @@ const Certifications = () => {
               ))}
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </div>
+      </ScrollReveal>
     </section>
   );
 };

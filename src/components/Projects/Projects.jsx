@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Projects.module.css';
 import { LiveStatusBadge } from '../LiveStatus/LiveStatus';
+import ScrollReveal from '../ScrollReveal/ScrollReveal';
 
 const Projects = () => {
   // Pipeline state
@@ -145,6 +146,7 @@ const Projects = () => {
   return (
     <section id="projects">
       {/* Pipeline Section */}
+      <ScrollReveal animation="fadeUp" duration={800}>
       <div className={styles.pipelineHeader}>
         <div className={styles.pipelineCard}>
           <h2 className={styles.sectionTitle}>Learning Journey & Projects</h2>
@@ -190,7 +192,7 @@ const Projects = () => {
           </div>
           
           <div className={styles.compactProgress}>
-            <div 
+            <div
               className={styles.compactProgressFill}
               style={{
                 width: `${((activeStage + 1) / pipelineStages.length) * 100}%`
@@ -199,15 +201,17 @@ const Projects = () => {
           </div>
         </div>
       </div>
+      </ScrollReveal>
 
       {/* Projects Section */}
       <div className={styles.projectsContainer}>
         <h3 className={styles.projectsTitle}>Projects</h3>
 
         {/* Multi-Server Infrastructure Section */}
+        <ScrollReveal animation="fadeUp" duration={700} delay={100}>
         <div className={styles.infrastructureSection}>
           <div className={styles.infrastructureNotice}>
-            <h3 className={styles.infrastructureTitle}>🏗️ Multi-Server Infrastructure</h3>
+            <h3 className={styles.infrastructureTitle}>Multi-Server Infrastructure</h3>
             <p className={styles.infrastructureText}>
               <strong>Working Systems:</strong> Live applications deployed across 3-server architecture with monitoring, CI/CD automation, and modern DevOps practices.
             </p>
@@ -216,8 +220,10 @@ const Projects = () => {
             </p>
           </div>
         </div>
+        </ScrollReveal>
 
         {/* Architecture Overview Card */}
+        <ScrollReveal animation="scale" duration={700} delay={200}>
         <div className={styles.architectureCard}>
           <a
             href="https://github.com/GABRIELS562/Architecture-"
@@ -229,15 +235,17 @@ const Projects = () => {
               <div className={styles.architectureTextWrapper}>
                 <span className={styles.architectureText}><strong>View Complete Architecture</strong></span>
                 <span className={styles.architectureSubtext}>
-                  Projects running across 3 servers • Architecture documentation available in project repositories
+                  Projects running across 3 servers - Architecture documentation available in project repositories
                 </span>
               </div>
             </div>
           </a>
         </div>
+        </ScrollReveal>
 
         {projects.map((project, index) => (
-          <div key={index} className={styles.card}>
+          <ScrollReveal key={index} animation="fadeUp" duration={700} delay={index * 150}>
+          <div className={styles.card}>
             <div className={styles.content}>
               <div className={styles.titleRow}>
                 <h3 className={styles.title}>{project.title}</h3>
@@ -270,6 +278,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
+          </ScrollReveal>
         ))}
       </div>
     </section>

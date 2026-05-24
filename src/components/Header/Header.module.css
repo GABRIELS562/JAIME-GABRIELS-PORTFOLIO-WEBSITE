@@ -66,8 +66,9 @@
 }
 
 .name {
-  animation: glow 3s ease-in-out infinite alternate;
-  background: var(--gradient-primary);
+  animation: glow 3s ease-in-out infinite alternate, gradientShift 8s ease infinite;
+  background: linear-gradient(135deg, var(--accent-warm), var(--accent-gold), var(--info-teal), var(--accent-warm));
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -79,6 +80,15 @@
   position: relative;
   text-shadow: 0 0 40px rgba(216, 196, 182, 0.5);
   z-index: 3;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .title {

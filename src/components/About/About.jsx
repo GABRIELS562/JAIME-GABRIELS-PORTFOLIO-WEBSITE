@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './About.module.css';
+import ScrollReveal from '../ScrollReveal/ScrollReveal';
 
 const About = () => {
   return (
     <section id="about" className={styles.aboutSection}>
       <div className={styles.topSection}>
+        <ScrollReveal animation="fadeLeft" duration={800}>
         <div className={styles.videoContainer}>
           <video 
             className={styles.backgroundVideo}
@@ -39,6 +41,8 @@ const About = () => {
             </div>
           </div>
         </div>
+        </ScrollReveal>
+        <ScrollReveal animation="fadeRight" duration={800} delay={200}>
         <div className={styles.aboutSummary}>
           <h2>About Me</h2>
           <div className={styles.intro}>
@@ -50,12 +54,13 @@ const About = () => {
           <div className={styles.transition}>
             <h3>Why DevOps?</h3>
             <p className={styles.text}>
-              <strong>Forensics → DevOps:</strong> Same analytical rigor, different systems. 
+              <strong>Forensics → DevOps:</strong> Same analytical rigor, different systems.
               From tracing evidence to tracing code pipelines, both demand precision and systematic problem-solving.
             </p>
           </div>
-          
+
         </div>
+        </ScrollReveal>
       </div>
 
     </section>
