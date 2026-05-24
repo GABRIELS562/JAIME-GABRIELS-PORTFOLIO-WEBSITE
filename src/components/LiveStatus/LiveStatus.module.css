@@ -1,0 +1,309 @@
+/* Live Status Badge (for individual projects) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.badge.checking {
+  background: rgba(107, 114, 128, 0.2);
+  color: #9ca3af;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.badge.online {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.badge.offline {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.checking .dot {
+  background: #9ca3af;
+  animation: blink 1s infinite;
+}
+
+.online .dot {
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.offline .dot {
+  background: #ef4444;
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.text {
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+}
+
+.latency {
+  font-size: 10px;
+  opacity: 0.8;
+  margin-left: 2px;
+}
+
+/* Infrastructure Status Bar */
+.statusBar {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 999;
+}
+
+.statusButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(13, 17, 23, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  color: #c9d1d9;
+  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.statusButton:hover {
+  background: rgba(22, 27, 34, 0.95);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.statusDot.allOnline {
+  background: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  animation: pulse 2s infinite;
+}
+
+.statusDot.partial {
+  background: #f59e0b;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+.statusText {
+  letter-spacing: 0.3px;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.chevron.expanded {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+  background: rgba(13, 17, 23, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 11px;
+  font-weight: 600;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lastChecked {
+  font-size: 10px;
+  font-weight: 400;
+  color: #6e7681;
+  text-transform: none;
+}
+
+.serverRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #c9d1d9;
+  transition: background 0.15s ease;
+}
+
+.serverRow:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.serverDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.serverDot.online {
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.serverDot.checking {
+  background: #6b7280;
+  animation: blink 1s infinite;
+}
+
+.serverDot.offline {
+  background: #ef4444;
+}
+
+.serverDot.slow {
+  background: #f59e0b;
+}
+
+.serverName {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.serverStatus {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #8b949e;
+}
+
+.dropdownFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  color: #6e7681;
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .statusButton {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #24292f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .dropdown {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .dropdownHeader,
+[data-theme="light"] .serverRow {
+  color: #24292f;
+}
+
+[data-theme="light"] .serverStatus,
+[data-theme="light"] .lastChecked,
+[data-theme="light"] .dropdownFooter {
+  color: #57606a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statusBar {
+    top: 12px;
+    left: 12px;
+  }
+
+  .statusButton {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .dropdown {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statusBar {
+    top: 8px;
+    left: 8px;
+  }
+
+  .statusText {
+    display: none;
+  }
+
+  .statusButton {
+    padding: 8px 10px;
+  }
+}

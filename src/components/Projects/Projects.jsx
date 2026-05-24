@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Projects.module.css';
+import { LiveStatusBadge } from '../LiveStatus/LiveStatus';
 
 const Projects = () => {
   // Pipeline state
@@ -72,6 +73,7 @@ const Projects = () => {
   const projects = [
     {
       title: "DNA Analysis LIMS",
+      liveUrl: "https://lims.jagdevops.co.za",
       description: (
         <>
           <p>Laboratory Information Management System demonstrating forensic DNA sample processing workflow with 12-stage pipeline simulation.</p>
@@ -88,12 +90,16 @@ const Projects = () => {
       links: [
         { text: "GitHub", url: "https://github.com/GABRIELS562/JAG-LABSCIENTIFIC-DNA", newTab: true },
         { text: "Live Demo", url: "https://lims.jagdevops.co.za/", newTab: true },
-        { text: "Documentation", url: "https://github.com/GABRIELS562/JAG-LABSCIENTIFIC-DNA", newTab: true },
-        { text: "Screenshots", url: "https://github.com/GABRIELS562/JAG-LABSCIENTIFIC-DNA#screenshots", newTab: true }
+        { text: "Documentation", url: "https://github.com/GABRIELS562/JAG-LABSCIENTIFIC-DNA", newTab: true }
       ]
     },
     {
       title: "Zero Downtime Pipeline",
+      liveUrl: "https://finance.jagdevops.co.za",
+      liveUrls: [
+        { name: "Finance", url: "https://finance.jagdevops.co.za" },
+        { name: "Pharma", url: "https://pharma.jagdevops.co.za" }
+      ],
       description: (
         <>
           <p>Enterprise financial trading and pharmaceutical manufacturing systems with high availability deployment patterns with rolling updates and health checks.</p>
@@ -111,12 +117,12 @@ const Projects = () => {
         { text: "GitHub", url: "https://github.com/GABRIELS562/zero-downtime-pipeline", newTab: true },
         { text: "Live: Finance", url: "https://finance.jagdevops.co.za/", newTab: true },
         { text: "Live: Pharma", url: "https://pharma.jagdevops.co.za/", newTab: true },
-        { text: "Documentation", url: "https://github.com/GABRIELS562/zero-downtime-pipeline", newTab: true },
-        { text: "Screenshots", url: "https://github.com/GABRIELS562/zero-downtime-pipeline#screenshots", newTab: true }
+        { text: "Documentation", url: "https://github.com/GABRIELS562/zero-downtime-pipeline", newTab: true }
       ]
     },
     {
       title: "Digital Evidence Pipeline (DEP)",
+      liveUrl: null, // No public URL - internal system
       description: (
         <>
           <p>Monitoring system demonstrating how forensic laboratory principles can be applied to DevOps infrastructure. Shows conceptual approach to compliance tracking and evidence-based system monitoring.</p>
@@ -131,8 +137,7 @@ const Projects = () => {
       techStack: ["Python", "Docker", "AWS EC2", "Cryptography", "Prometheus"],
       links: [
         { text: "GitHub", url: "https://github.com/GABRIELS562/digital-evidence-pipeline", newTab: true },
-        { text: "Documentation", url: "https://github.com/GABRIELS562/digital-evidence-pipeline", newTab: true },
-        { text: "Screenshots", url: "https://github.com/GABRIELS562/digital-evidence-pipeline#screenshots", newTab: true }
+        { text: "Documentation", url: "https://github.com/GABRIELS562/digital-evidence-pipeline", newTab: true }
       ]
     }
   ];
@@ -234,7 +239,12 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div key={index} className={styles.card}>
             <div className={styles.content}>
-              <h3 className={styles.title}>{project.title}</h3>
+              <div className={styles.titleRow}>
+                <h3 className={styles.title}>{project.title}</h3>
+                {project.liveUrl && (
+                  <LiveStatusBadge url={project.liveUrl} name={project.title} />
+                )}
+              </div>
               <div className={styles.description}>{project.description}</div>
               {project.techStack && (
                 <div className={styles.techStack}>

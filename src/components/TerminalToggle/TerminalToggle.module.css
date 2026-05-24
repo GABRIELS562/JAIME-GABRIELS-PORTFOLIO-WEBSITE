@@ -1,0 +1,139 @@
+/* Terminal Toggle Button */
+.toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #c9d1d9;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.toggle:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, #161b22 0%, #21262d 100%);
+  border-color: rgba(63, 185, 80, 0.5);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(63, 185, 80, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: #3fb950;
+}
+
+.toggle:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.toggle.active {
+  background: linear-gradient(135deg, #238636 0%, #2ea043 100%);
+  border-color: #3fb950;
+  color: #ffffff;
+  box-shadow:
+    0 4px 15px rgba(46, 160, 67, 0.4),
+    0 0 30px rgba(63, 185, 80, 0.3);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.toggle:hover .icon {
+  transform: translateX(2px);
+}
+
+.label {
+  letter-spacing: 0.5px;
+}
+
+/* Pulse animation for attention */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow:
+      0 4px 15px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 0 0 0 rgba(63, 185, 80, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 4px 15px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 0 0 8px rgba(63, 185, 80, 0);
+  }
+}
+
+/* Add pulse on first visit - remove after interaction */
+.toggle:not(:hover):not(.active) {
+  animation: pulse 2s ease-in-out 3;
+  animation-delay: 5s;
+}
+
+/* Keyboard hint */
+.toggle::after {
+  content: 'Ctrl + `';
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #484f58;
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.toggle:hover::after {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .toggle {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .toggle::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle {
+    bottom: 12px;
+    right: 12px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .label {
+    display: none;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,280 @@
+/* Terminal Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Terminal Window */
+.terminal {
+  width: 100%;
+  max-width: 900px;
+  height: 80vh;
+  max-height: 700px;
+  background: #0d1117;
+  border-radius: 12px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 0 80px rgba(16, 185, 129, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Title Bar (macOS style) */
+.titleBar {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, #2d333b 0%, #22272e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.closeBtn,
+.minimizeBtn,
+.maximizeBtn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.closeBtn {
+  background: #ff5f56;
+}
+
+.closeBtn:hover {
+  background: #ff3b30;
+}
+
+.minimizeBtn {
+  background: #ffbd2e;
+}
+
+.minimizeBtn:hover {
+  background: #ff9500;
+}
+
+.maximizeBtn {
+  background: #27c93f;
+}
+
+.maximizeBtn:hover {
+  background: #28cd41;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  color: #8b949e;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.titleSpacer {
+  width: 52px;
+}
+
+/* Terminal Content */
+.content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #0d1117;
+  cursor: text;
+}
+
+/* Scrollbar */
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #161b22;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
+
+/* Output Lines */
+.inputLine,
+.outputLine {
+  margin-bottom: 4px;
+}
+
+.inputLine pre,
+.outputLine pre {
+  margin: 0;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.inputLine pre {
+  color: #58a6ff;
+}
+
+.outputLine pre {
+  color: #c9d1d9;
+}
+
+/* Input Form */
+.inputForm {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.prompt {
+  color: #3fb950;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f0f6fc;
+  font-family: inherit;
+  font-size: 14px;
+  caret-color: #58a6ff;
+  padding: 0;
+}
+
+.input::placeholder {
+  color: #484f58;
+}
+
+/* Blinking cursor effect */
+.input:focus {
+  outline: none;
+}
+
+/* Selection */
+.content ::selection {
+  background: rgba(88, 166, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terminal {
+    height: 90vh;
+    max-height: none;
+    border-radius: 0;
+  }
+
+  .overlay {
+    padding: 0;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .inputLine pre,
+  .outputLine pre {
+    font-size: 12px;
+  }
+
+  .prompt {
+    font-size: 12px;
+  }
+
+  .input {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 11px;
+  }
+
+  .inputLine pre,
+  .outputLine pre {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .prompt {
+    font-size: 11px;
+  }
+
+  .input {
+    font-size: 11px;
+  }
+}
+
+/* ASCII Art Colors */
+.outputLine pre {
+  /* Make ASCII art and boxes look good */
+}
+
+/* Status indicators in output */
+.outputLine pre:has(🟢) {
+  color: #3fb950;
+}
+
+/* Links in output */
+.outputLine a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.outputLine a:hover {
+  text-decoration: underline;
+}
