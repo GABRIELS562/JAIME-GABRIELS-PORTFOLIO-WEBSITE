@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './ScrollReveal.module.css';
 
 /**
@@ -62,33 +62,6 @@ const ScrollReveal = ({
       }}
     >
       {children}
-    </div>
-  );
-};
-
-/**
- * StaggerChildren - Wrapper that staggers animations of direct children
- */
-export const StaggerChildren = ({
-  children,
-  staggerDelay = 100,
-  animation = 'fadeUp',
-  duration = 600,
-  threshold = 0.1,
-  className = ''
-}) => {
-  return (
-    <div className={className}>
-      {React.Children.map(children, (child, index) => (
-        <ScrollReveal
-          animation={animation}
-          delay={index * staggerDelay}
-          duration={duration}
-          threshold={threshold}
-        >
-          {child}
-        </ScrollReveal>
-      ))}
     </div>
   );
 };
