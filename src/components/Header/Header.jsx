@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Header.module.css';
 import devopsImage from '../../assets/devops-infinity.png';
 import devopsImageLight from '../../assets/devops-infinity-light.png';
+import ParticleBackground from '../ParticleBackground/ParticleBackground';
 
 const Header = () => {
   const [theme, setTheme] = useState('dark');
@@ -142,6 +143,7 @@ const Header = () => {
       backgroundImage: `url(${backgroundImage})`,
       backgroundBlendMode: 'multiply'
     }}>
+      <ParticleBackground particleCount={25} />
       <p className={styles.greeting}>
         {greetingDisplayed}
         {shouldShowCursor && greetingDisplayed.length < greeting.length && <span className={styles.cursor}>|</span>}

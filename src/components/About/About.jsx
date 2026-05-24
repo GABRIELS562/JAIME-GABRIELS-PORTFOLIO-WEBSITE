@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section id="about" className={styles.aboutSection}>
       <div className={styles.topSection}>
-        <ScrollReveal animation="fadeLeft" duration={800}>
+        <ScrollReveal animation="fadeLeft" duration={800} style={{ flex: 1, minWidth: 0 }}>
         <div className={styles.videoContainer}>
           <video 
             className={styles.backgroundVideo}
@@ -42,7 +42,7 @@ const About = () => {
           </div>
         </div>
         </ScrollReveal>
-        <ScrollReveal animation="fadeRight" duration={800} delay={200}>
+        <ScrollReveal animation="fadeRight" duration={800} delay={200} style={{ flex: 1, minWidth: 0 }}>
         <div className={styles.aboutSummary}>
           <h2>About Me</h2>
           <div className={styles.intro}>
