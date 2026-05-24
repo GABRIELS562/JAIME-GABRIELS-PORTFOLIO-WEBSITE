@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        APP_PATH = '/home/jaime/apps/JAIME-GABRIELS-PORTFOLIO-WEBSITE'
+        DEPLOY_PATH = '/home/jaime/apps/JAIME-GABRIELS-PORTFOLIO-WEBSITE/build'
         CONTAINER_NAME = 'jagdevops-portfolio'
     }
 
@@ -11,24 +11,24 @@ pipeline {
     }
 
     stages {
-        stage('Pull Latest') {
-            steps {
-                sh '''
-                    cd ${APP_PATH}
-                    git stash || true
-                    git pull origin master
-                '''
-            }
-        }
-
         stage('Build with Docker') {
             steps {
                 sh '''
                     docker run --rm \
-                        -v ${APP_PATH}:/app \
+                        -v ${WORKSPACE}:/app \
                         -w /app \
                         node:18-alpine \
                         sh -c "npm install && npm run build"
+                '''
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                    sudo rm -rf ${DEPLOY_PATH}/*
+                    sudo cp -r ${WORKSPACE}/build/* ${DEPLOY_PATH}/
+                    sudo chown -R jaime:jaime ${DEPLOY_PATH}
                 '''
             }
         }
