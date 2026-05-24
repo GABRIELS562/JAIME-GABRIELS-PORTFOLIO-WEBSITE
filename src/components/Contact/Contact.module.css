@@ -94,11 +94,6 @@
   font-size: 1rem;
 }
 
-.contactValue {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-}
-
 /* Tablet styles */
 @media (max-width: 1024px) {
   .contactSection {

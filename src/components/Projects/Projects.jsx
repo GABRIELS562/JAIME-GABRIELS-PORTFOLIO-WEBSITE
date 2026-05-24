@@ -8,12 +8,7 @@ const Projects = () => {
     {
       title: "DNA Analysis LIMS",
       liveUrl: "https://lims.jagdevops.co.za",
-      description: "Laboratory Information Management System with forensic DNA sample processing workflow. Full-stack application with CI/CD pipeline and Kubernetes deployment.",
-      highlights: [
-        "DNA sample tracking with PostgreSQL",
-        "Jenkins CI/CD with Docker registry",
-        "K3s Kubernetes deployment"
-      ],
+      description: "Full-stack laboratory system for forensic DNA sample tracking. PostgreSQL database, Jenkins CI/CD, K3s deployment.",
       techStack: ["React", "Node.js", "PostgreSQL", "K3s", "Docker", "Jenkins"],
       github: "https://github.com/GABRIELS562/JAG-LABSCIENTIFIC-DNA",
       live: "https://lims.jagdevops.co.za/"
@@ -21,12 +16,7 @@ const Projects = () => {
     {
       title: "Zero Downtime Pipeline",
       liveUrl: "https://finance.jagdevops.co.za",
-      description: "Enterprise applications demonstrating high availability deployment patterns with rolling updates, blue-green deployments, and GitOps workflow.",
-      highlights: [
-        "Blue-green deployment strategy",
-        "GitOps with ArgoCD",
-        "Multi-app orchestration"
-      ],
+      description: "High availability deployment with blue-green strategy, GitOps via ArgoCD, and multi-application orchestration.",
       techStack: ["Python", "Flask", "K3s", "ArgoCD", "Jenkins"],
       github: "https://github.com/GABRIELS562/zero-downtime-pipeline",
       live: "https://finance.jagdevops.co.za/"
@@ -34,12 +24,7 @@ const Projects = () => {
     {
       title: "Digital Evidence Pipeline",
       liveUrl: null,
-      description: "Infrastructure monitoring system applying forensic laboratory principles to DevOps. Demonstrates compliance tracking and evidence-based monitoring approach.",
-      highlights: [
-        "Forensic-inspired monitoring",
-        "Compliance metrics tracking",
-        "Prometheus integration"
-      ],
+      description: "Infrastructure monitoring applying forensic principles to DevOps. Compliance tracking with Prometheus integration.",
       techStack: ["Python", "Docker", "AWS EC2", "Prometheus"],
       github: "https://github.com/GABRIELS562/digital-evidence-pipeline",
       live: null
@@ -77,12 +62,6 @@ const Projects = () => {
               </div>
 
               <p className={styles.description}>{project.description}</p>
-
-              <ul className={styles.highlights}>
-                {project.highlights.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
 
               <div className={styles.techStack}>
                 {project.techStack.map((tech, i) => (

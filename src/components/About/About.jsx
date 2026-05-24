@@ -45,20 +45,12 @@ const About = () => {
         <ScrollReveal animation="fadeRight" duration={800} delay={200} style={{ flex: 1, minWidth: 0 }}>
         <div className={styles.aboutSummary}>
           <h2>About Me</h2>
-          <div className={styles.intro}>
-            <p className={styles.highlight}>
-              Senior Forensic Scientist leveraging 15 years of analytical expertise and regulatory compliance experience in DevOps engineering. Bringing proven problem-solving skills and systematic methodologies to modern infrastructure challenges.
-            </p>
-          </div>
-          
-          <div className={styles.transition}>
-            <h3>Why DevOps?</h3>
-            <p className={styles.text}>
-              <strong>Forensics → DevOps:</strong> Same analytical rigor, different systems.
-              From tracing evidence to tracing code pipelines, both demand precision and systematic problem-solving.
-            </p>
-          </div>
-
+          <p className={styles.highlight}>
+            15 years in forensic science. Now building infrastructure.
+          </p>
+          <p className={styles.text}>
+            Same analytical rigor, different systems. From tracing evidence to tracing pipelines—both demand precision and systematic thinking.
+          </p>
         </div>
         </ScrollReveal>
       </div>

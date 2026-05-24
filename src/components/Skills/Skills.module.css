@@ -14,7 +14,7 @@
   color: var(--text-primary);
   margin: 0 auto;
   max-width: 900px;
-  padding: 2.5rem 2rem;
+  padding: 2rem;
   transition: all 0.3s ease;
 }
 
@@ -28,119 +28,41 @@
   font-size: 2.25rem;
   font-weight: 900;
   letter-spacing: -0.03em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   text-align: center;
-}
-
-.sectionSubtitle {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
 .competenciesGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 0.75rem;
 }
 
-/* Skill Bar Styles */
 .skillItem {
-  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem 1rem;
   background: var(--background-elevated);
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   border: 1px solid var(--border-primary);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .skillItem:hover {
   border-color: var(--accent-warm);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.skillHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.6rem;
-}
-
-.skillIcon {
-  font-size: 1.2rem;
+  transform: translateX(4px);
 }
 
 .skillName {
   color: var(--text-primary);
   font-size: 0.95rem;
   font-weight: 600;
-  flex: 1;
-}
-
-.skillPercent {
-  color: var(--accent-warm);
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.skillBarBg {
-  height: 8px;
-  background: var(--background-primary);
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
-
-.skillBarFill {
-  height: 100%;
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--info-teal), var(--success-green));
-  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-.skillBarFill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
 }
 
 .skillTech {
-  display: block;
   color: var(--text-muted);
   font-size: 0.8rem;
-  margin-top: 0.5rem;
-}
-
-.moreInfo {
-  text-align: center;
-  margin-top: 2rem;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.moreInfo a {
-  color: var(--accent-warm);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.moreInfo a:hover {
-  color: var(--info-teal);
-  text-decoration: underline;
 }
 
 /* Tablet styles */
@@ -150,7 +72,7 @@
   }
 
   .skillsCard {
-    padding: 2rem 1.5rem;
+    padding: 1.75rem 1.5rem;
   }
 
   .sectionTitle {
@@ -158,11 +80,11 @@
   }
 
   .competenciesGrid {
-    gap: 1rem;
+    gap: 0.625rem;
   }
 
   .skillItem {
-    padding: 0.875rem 1rem;
+    padding: 0.75rem 0.875rem;
   }
 }
 
@@ -179,15 +101,16 @@
 
   .sectionTitle {
     font-size: 1.8rem;
+    margin-bottom: 1.25rem;
   }
 
   .competenciesGrid {
     grid-template-columns: 1fr;
-    gap: 0.875rem;
+    gap: 0.5rem;
   }
 
   .skillItem {
-    padding: 0.875rem 1rem;
+    padding: 0.75rem 1rem;
   }
 
   .skillName {
@@ -211,39 +134,18 @@
 
   .sectionTitle {
     font-size: 1.5rem;
-  }
-
-  .sectionSubtitle {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .skillItem {
-    padding: 0.75rem 0.875rem;
-  }
-
-  .skillIcon {
-    font-size: 1rem;
+    padding: 0.625rem 0.875rem;
   }
 
   .skillName {
     font-size: 0.85rem;
   }
 
-  .skillPercent {
-    font-size: 0.8rem;
-  }
-
-  .skillBarBg {
-    height: 6px;
-  }
-
   .skillTech {
     font-size: 0.7rem;
-  }
-
-  .moreInfo {
-    font-size: 0.8rem;
-    margin-top: 1.5rem;
   }
 }

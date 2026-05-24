@@ -92,24 +92,6 @@
   margin-bottom: 1rem;
 }
 
-.highlights {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.highlights li {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  padding: 0.25rem 0.75rem;
-  background: var(--background-elevated);
-  border-radius: 1rem;
-  border: 1px solid var(--border-primary);
-}
-
 .techStack {
   display: flex;
   flex-wrap: wrap;
@@ -234,15 +216,6 @@
     font-size: 0.9rem;
   }
 
-  .highlights {
-    gap: 0.4rem;
-  }
-
-  .highlights li {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.6rem;
-  }
-
   .links {
     flex-wrap: wrap;
   }
@@ -286,10 +259,6 @@
 
   .description {
     font-size: 0.85rem;
-  }
-
-  .highlights li {
-    font-size: 0.75rem;
   }
 
   .techBadge {
