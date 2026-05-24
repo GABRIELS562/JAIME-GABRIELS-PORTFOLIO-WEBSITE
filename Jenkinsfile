@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        NODE_VERSION = '18'
-        DEPLOY_PATH = '/var/www/jagdevops.com'
+        APP_PATH = '/home/jaime/apps/JAIME-GABRIELS-PORTFOLIO-WEBSITE'
+        CONTAINER_NAME = 'jagdevops-portfolio'
     }
 
     triggers {
@@ -11,40 +11,32 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Install Dependencies') {
+        stage('Pull Latest') {
             steps {
                 sh '''
-                    export NVM_DIR="$HOME/.nvm"
-                    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-                    nvm use ${NODE_VERSION} || nvm install ${NODE_VERSION}
-                    npm ci
+                    cd ${APP_PATH}
+                    git stash || true
+                    git pull origin master
                 '''
             }
         }
 
-        stage('Build') {
+        stage('Build with Docker') {
             steps {
                 sh '''
-                    export NVM_DIR="$HOME/.nvm"
-                    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-                    nvm use ${NODE_VERSION}
-                    npm run build
+                    docker run --rm \
+                        -v ${APP_PATH}:/app \
+                        -w /app \
+                        node:18-alpine \
+                        sh -c "npm install && npm run build"
                 '''
             }
         }
 
-        stage('Deploy') {
+        stage('Restart Container') {
             steps {
                 sh '''
-                    sudo rm -rf ${DEPLOY_PATH}/*
-                    sudo cp -r build/* ${DEPLOY_PATH}/
-                    sudo chown -R www-data:www-data ${DEPLOY_PATH}
+                    docker restart ${CONTAINER_NAME}
                 '''
             }
         }
