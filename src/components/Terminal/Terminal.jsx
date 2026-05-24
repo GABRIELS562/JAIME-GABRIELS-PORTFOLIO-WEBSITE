@@ -567,10 +567,10 @@ Just kidding - this is a portfolio terminal! 😄`;
         break;
 
       case 'ping':
-        output = `PING ${arg || 'jagdevops.co.za'} (192.168.50.100): 56 data bytes
-64 bytes from 192.168.50.100: icmp_seq=0 ttl=64 time=0.042 ms
-64 bytes from 192.168.50.100: icmp_seq=1 ttl=64 time=0.038 ms
-64 bytes from 192.168.50.100: icmp_seq=2 ttl=64 time=0.041 ms
+        output = `PING ${arg || 'jagdevops.co.za'} (203.0.113.50): 56 data bytes
+64 bytes from 203.0.113.50: icmp_seq=0 ttl=64 time=0.042 ms
+64 bytes from 203.0.113.50: icmp_seq=1 ttl=64 time=0.038 ms
+64 bytes from 203.0.113.50: icmp_seq=2 ttl=64 time=0.041 ms
 --- ${arg || 'jagdevops.co.za'} ping statistics ---
 3 packets transmitted, 3 packets received, 0.0% packet loss`;
         break;

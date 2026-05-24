@@ -23,11 +23,12 @@ Each component follows a consistent pattern:
 Main components rendered in order (see `src/pages/App.jsx`):
 - ThemeToggle - Dark/light mode switcher
 - Navigation - Fixed nav with smooth scrolling
-- Header - Hero section
-- About, Certifications, Projects, Resume, Technologies - Main content sections
-- Contact - Contact form with validation
-- ProfessionalApproach - Additional section
+- Header - Hero section with ParticleBackground
+- About, Skills, Certifications, Projects, Resume, Technologies - Main content sections
+- Contact - Contact info with social links
 - Footer
+- Terminal - Interactive CLI portfolio (toggle via TerminalToggle)
+- ScrollToTop - Floating scroll button
 
 All main content sections are wrapped in ErrorBoundary components.
 
