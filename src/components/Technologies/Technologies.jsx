@@ -37,7 +37,7 @@ const Technologies = () => {
 
     // Security
     { name: 'Vault', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vault/vault-original.svg', category: 'security' },
-    { name: 'SOPS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mozilla/mozilla-original.svg', category: 'security' },
+    { name: 'SOPS', icon: 'https://raw.githubusercontent.com/getsops/sops/main/logo/logo.svg', category: 'security' },
     { name: 'Trivy', icon: 'https://aquasecurity.github.io/trivy/latest/imgs/logo.png', category: 'security' },
 
     // Web/App Dev

@@ -13,7 +13,6 @@ import Technologies from '../components/Technologies/Technologies';
 import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import ThemeToggle from '../components/ThemeToggle/ThemeToggle';
-import ProfessionalApproach from '../components/ProfessionalApproach/ProfessionalApproach';
 import Terminal from '../components/Terminal/Terminal';
 import TerminalToggle from '../components/TerminalToggle/TerminalToggle';
 import LiveStatus from '../components/LiveStatus/LiveStatus';
@@ -67,9 +66,6 @@ const App = () => {
       </main>
       <ErrorBoundary>
         <Contact />
-      </ErrorBoundary>
-      <ErrorBoundary>
-        <ProfessionalApproach />
       </ErrorBoundary>
       <Footer />
 
