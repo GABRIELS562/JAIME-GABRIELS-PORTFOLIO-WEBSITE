@@ -1,104 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Resume.module.css';
 
 const Resume = () => {
-  const [isDownloading, setIsDownloading] = useState(false);
-
-  const handleDownload = async () => {
-    try {
-      setIsDownloading(true);
-
-      // Use process.env.PUBLIC_URL for production compatibility
-      const pdfUrl = process.env.PUBLIC_URL + '/Jaime-Gabriels-DevOps-Resume.pdf';
-
-      // Method 1: Try fetch and blob download (most reliable)
-      try {
-        const response = await fetch(pdfUrl);
-        if (response.ok) {
-          const blob = await response.blob();
-          const url = window.URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = url;
-          link.download = 'Jaime-Gabriels-DevOps-Resume.pdf';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          window.URL.revokeObjectURL(url);
-          return;
-        }
-      } catch (fetchError) {
-        console.log('Fetch method failed, trying fallback...', fetchError);
-      }
-
-      // Method 2: Fallback to direct link
-      const link = document.createElement('a');
-      link.href = pdfUrl;
-      link.download = 'Jaime-Gabriels-DevOps-Resume.pdf';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-    } catch (error) {
-      console.error('Download error:', error);
-      // Last resort: open in new tab
-      window.open(process.env.PUBLIC_URL + '/Jaime-Gabriels-DevOps-Resume.pdf', '_blank');
-    } finally {
-      setTimeout(() => setIsDownloading(false), 2000);
-    }
+  const handleRequestCV = () => {
+    const subject = encodeURIComponent('CV Request - DevOps Engineer Position');
+    const body = encodeURIComponent(
+      'Hi Jaime,\n\nI came across your portfolio and would like to request a copy of your CV.\n\n[Please include details about the opportunity or your company]\n\nThank you!'
+    );
+    window.location.href = `mailto:info@jagdevops.com?subject=${subject}&body=${body}`;
   };
 
   return (
     <section id="resume" className={styles.resume}>
-      <h2 className={styles.title}>Professional Resume</h2>
+      <h2 className={styles.title}>Resume</h2>
       <p className={styles.subtitle}>
-        Download my comprehensive resume detailing my career transition from forensic science to DevOps engineering,
-        including hands-on technical projects, certifications, and 15+ years of analytical experience in regulated environments.
+        15+ years of analytical experience in regulated environments, now transitioning to DevOps.
+        Certified in AWS, Azure, Kubernetes, and Terraform.
       </p>
       <div className={styles.buttonContainer}>
         <button
-          onClick={handleDownload}
+          onClick={handleRequestCV}
           className={styles.primaryButton}
           type="button"
-          disabled={isDownloading}
         >
-          {isDownloading ? (
-            <>
-              <span className={styles.spinner}></span>
-              Downloading...
-            </>
-          ) : (
-            <>
-              <svg className={styles.downloadIcon} viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-              </svg>
-              Download CV (PDF)
-            </>
-          )}
+          <svg className={styles.icon} viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.819L12 10.09l9.545-6.269h.819c.904 0 1.636.732 1.636 1.636z"/>
+          </svg>
+          Request CV
         </button>
-        <div className={styles.fileInfo}>
-          <span className={styles.fileSize}>PDF • 2 Pages</span>
-          <span className={styles.lastUpdated}>Updated October 2025</span>
-        </div>
-
-        {/* Fallback direct link for browsers that block downloads */}
-        <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-          <a
-            href={process.env.PUBLIC_URL + '/Jaime-Gabriels-DevOps-Resume.pdf'}
-            download="Jaime-Gabriels-DevOps-Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontSize: '0.9rem',
-              color: 'var(--text-secondary)',
-              textDecoration: 'underline',
-              opacity: 0.8
-            }}
-          >
-            Having trouble? Click here for direct download
-          </a>
-        </div>
+        <p className={styles.note}>
+          I'll respond with a tailored CV within 24 hours
+        </p>
       </div>
     </section>
   );
