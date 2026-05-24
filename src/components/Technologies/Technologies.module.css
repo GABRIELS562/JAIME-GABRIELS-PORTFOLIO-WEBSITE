@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 2rem 4rem;
+  padding: 0 2rem 3rem;
 }
 
 .container {
@@ -12,170 +12,140 @@
   border-radius: 2.5rem;
   box-shadow: var(--shadow-lg);
   color: var(--text-primary);
-  font-family: Inter, "DM Sans", "Segoe UI", Arial, sans-serif;
   margin: 0 auto;
-  max-width: 1100px;
-  padding: 3rem 2.5rem;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-width: 1000px;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
 }
 
+.container:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px) scale(1.005);
+}
 
 .title {
   color: var(--text-primary);
   font-size: 2.25rem;
   font-weight: 900;
   letter-spacing: -0.03em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   text-align: center;
 }
 
 .subtitle {
   color: var(--text-secondary);
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 400;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-.categoriesGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+.techCloud {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.categorySection {
-  text-align: center;
-}
-
-.categoryTitle {
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
-  text-align: center;
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-.categoryTitle::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 2px;
-  background: var(--success-green);
-  border-radius: 1px;
-}
-
-.techGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+.categoryGroup {
+  display: flex;
+  align-items: center;
   gap: 1rem;
-  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.categoryLabel {
+  color: var(--cat-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  min-width: 90px;
+  padding: 0.25rem 0;
+  border-left: 3px solid var(--cat-color);
+  padding-left: 0.75rem;
+}
+
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex: 1;
 }
 
 .techItem {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 1rem 0.5rem;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
   background: var(--background-elevated);
-  border-radius: 1rem;
+  border-radius: 2rem;
   border: 1px solid var(--border-primary);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  min-width: 85px;
+  transition: all 0.25s ease;
+  cursor: default;
 }
 
 .techItem:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--cat-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--cat-color);
   background: var(--background-card);
 }
 
-.iconWrapper {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.5rem;
-}
-
 .icon {
-  width: 100%;
-  height: 100%;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .iconFallback {
-  width: 100%;
-  height: 100%;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--success-green);
-  color: white;
+  background: var(--cat-color);
+  color: var(--primary-dark);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 0.7rem;
   border-radius: 50%;
 }
 
 .label {
   color: var(--text-primary);
   font-size: 0.8rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 1.2;
-}
-
-/* Consistent hover colors */
-.foundation:hover,
-.web:hover,
-.cloud:hover,
-.cicd:hover,
-.monitoring:hover {
-  border-color: var(--success-green);
-  background: linear-gradient(135deg, var(--success-green), rgba(16, 185, 129, 0.1));
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 /* Tablet styles */
 @media (max-width: 1024px) {
   .technologies {
-    padding: 2rem 1.5rem 3rem;
+    padding: 0 1.5rem 2.5rem;
   }
-  
+
   .container {
-    margin: 0 2rem;
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.5rem;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
-  .subtitle {
-    font-size: 1.05rem;
-    margin-bottom: 2.5rem;
+
+  .categoryLabel {
+    min-width: 80px;
+    font-size: 0.7rem;
   }
-  
-  .categoriesGrid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+
+  .techItem {
+    padding: 0.4rem 0.75rem;
   }
-  
-  .techGrid {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 0.8rem;
+
+  .icon {
+    width: 18px;
+    height: 18px;
   }
-  
-  .iconWrapper {
-    width: 35px;
-    height: 35px;
-  }
-  
+
   .label {
     font-size: 0.75rem;
   }
@@ -184,48 +154,49 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .technologies {
-    padding: 2rem 1rem 3rem;
+    padding: 0 1rem 2rem;
   }
-  
+
   .container {
     border-radius: 1.5rem;
-    margin: 0 1rem;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.25rem;
   }
-  
+
   .title {
     font-size: 1.8rem;
   }
-  
+
   .subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
-  
-  .categoriesGrid {
-    gap: 1.5rem;
+
+  .techCloud {
+    gap: 1.25rem;
   }
-  
-  .categoryTitle {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+
+  .categoryGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
-  
-  .techGrid {
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-    gap: 0.6rem;
+
+  .categoryLabel {
+    min-width: auto;
   }
-  
+
+  .techRow {
+    gap: 0.4rem;
+  }
+
   .techItem {
-    padding: 0.8rem 0.4rem;
-    min-width: 70px;
+    padding: 0.35rem 0.625rem;
   }
-  
-  .iconWrapper {
-    width: 30px;
-    height: 30px;
+
+  .icon {
+    width: 16px;
+    height: 16px;
   }
-  
+
   .label {
     font-size: 0.7rem;
   }
@@ -234,48 +205,39 @@
 /* Small mobile styles */
 @media (max-width: 480px) {
   .technologies {
-    padding: 1.5rem 0.5rem 2.5rem;
+    padding: 0 0.5rem 1.5rem;
   }
-  
+
   .container {
-    margin: 0 0.5rem;
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1rem;
   }
-  
+
   .title {
-    font-size: 1.6rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.5rem;
   }
-  
+
   .subtitle {
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .categoriesGrid {
-    gap: 1.2rem;
-  }
-  
-  .categoryTitle {
     font-size: 0.9rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.25rem;
   }
-  
-  .techGrid {
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-    gap: 0.5rem;
+
+  .techCloud {
+    gap: 1rem;
   }
-  
+
+  .categoryLabel {
+    font-size: 0.65rem;
+  }
+
   .techItem {
-    padding: 0.6rem 0.3rem;
-    min-width: 60px;
+    padding: 0.3rem 0.5rem;
   }
-  
-  .iconWrapper {
-    width: 25px;
-    height: 25px;
+
+  .icon {
+    width: 14px;
+    height: 14px;
   }
-  
+
   .label {
     font-size: 0.65rem;
   }

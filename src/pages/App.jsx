@@ -10,6 +10,7 @@ import Certifications from '../components/Certifications/Certifications';
 import Projects from '../components/Projects/Projects';
 import Resume from '../components/Resume/Resume';
 import Technologies from '../components/Technologies/Technologies';
+import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import ThemeToggle from '../components/ThemeToggle/ThemeToggle';
 import ProfessionalApproach from '../components/ProfessionalApproach/ProfessionalApproach';
@@ -47,6 +48,9 @@ const App = () => {
       <main>
         <ErrorBoundary>
           <About />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Skills />
         </ErrorBoundary>
         <ErrorBoundary>
           <Certifications />

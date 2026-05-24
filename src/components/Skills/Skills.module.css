@@ -1,0 +1,249 @@
+.skillsSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+}
+
+.skillsCard {
+  background: var(--background-card);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 2.5rem;
+  box-shadow: var(--shadow-lg);
+  color: var(--text-primary);
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.skillsCard:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px) scale(1.005);
+}
+
+.sectionTitle {
+  color: var(--text-primary);
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.sectionSubtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.competenciesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* Skill Bar Styles */
+.skillItem {
+  padding: 1rem 1.25rem;
+  background: var(--background-elevated);
+  border-radius: 1rem;
+  border: 1px solid var(--border-primary);
+  transition: all 0.3s ease;
+}
+
+.skillItem:hover {
+  border-color: var(--accent-warm);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.skillHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.skillIcon {
+  font-size: 1.2rem;
+}
+
+.skillName {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.skillPercent {
+  color: var(--accent-warm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.skillBarBg {
+  height: 8px;
+  background: var(--background-primary);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skillBarFill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--info-teal), var(--success-green));
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.skillBarFill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.skillTech {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.moreInfo {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.moreInfo a {
+  color: var(--accent-warm);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.moreInfo a:hover {
+  color: var(--info-teal);
+  text-decoration: underline;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .skillsSection {
+    padding: 0 1.5rem 2.5rem;
+  }
+
+  .skillsCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .competenciesGrid {
+    gap: 1rem;
+  }
+
+  .skillItem {
+    padding: 0.875rem 1rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .skillsSection {
+    padding: 0 1rem 2rem;
+  }
+
+  .skillsCard {
+    border-radius: 1.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .competenciesGrid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .skillItem {
+    padding: 0.875rem 1rem;
+  }
+
+  .skillName {
+    font-size: 0.9rem;
+  }
+
+  .skillTech {
+    font-size: 0.75rem;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .skillsSection {
+    padding: 0 0.5rem 1.5rem;
+  }
+
+  .skillsCard {
+    padding: 1.25rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .skillItem {
+    padding: 0.75rem 0.875rem;
+  }
+
+  .skillIcon {
+    font-size: 1rem;
+  }
+
+  .skillName {
+    font-size: 0.85rem;
+  }
+
+  .skillPercent {
+    font-size: 0.8rem;
+  }
+
+  .skillBarBg {
+    height: 6px;
+  }
+
+  .skillTech {
+    font-size: 0.7rem;
+  }
+
+  .moreInfo {
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+  }
+}

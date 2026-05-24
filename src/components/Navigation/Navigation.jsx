@@ -7,10 +7,11 @@ const Navigation = () => {
 
   const navItems = [
     { id: 'about', label: 'About' },
-    { id: 'certifications', label: 'Certifications' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'certifications', label: 'Certs' },
     { id: 'projects', label: 'Projects' },
     { id: 'resume', label: 'Resume' },
-    { id: 'technologies', label: 'Technologies' },
+    { id: 'technologies', label: 'Tech' },
     { id: 'contact', label: 'Contact' }
   ];
 

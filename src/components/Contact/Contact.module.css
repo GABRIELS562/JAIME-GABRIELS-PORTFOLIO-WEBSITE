@@ -28,7 +28,7 @@
 .contactCard:hover,
 .contactCard:focus-within {
   box-shadow: var(--shadow-xl);
-  transform: perspective(1000px) rotateX(6deg) translateY(-8px) scale(1.02);
+  transform: translateY(-4px) scale(1.005);
 }
 
 .contactTitle {
