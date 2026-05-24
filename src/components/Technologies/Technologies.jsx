@@ -69,7 +69,7 @@ const Technologies = () => {
             aria-expanded={isExpanded}
           >
             <span className={styles.toggleText}>
-              {isExpanded ? 'Hide details' : `View ${technologies.length}+ tools I work with`}
+              {isExpanded ? 'Hide' : 'View tools I work with'}
             </span>
             <span className={`${styles.toggleIcon} ${isExpanded ? styles.expanded : ''}`}>
               ▼

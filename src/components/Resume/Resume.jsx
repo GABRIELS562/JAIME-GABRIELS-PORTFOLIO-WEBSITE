@@ -13,10 +13,6 @@ const Resume = () => {
   return (
     <section id="resume" className={styles.resume}>
       <h2 className={styles.title}>Resume</h2>
-      <p className={styles.subtitle}>
-        15+ years of analytical experience in regulated environments, now transitioning to DevOps.
-        Certified in AWS, Azure, Kubernetes, and Terraform.
-      </p>
       <div className={styles.buttonContainer}>
         <button
           onClick={handleRequestCV}
@@ -28,9 +24,7 @@ const Resume = () => {
           </svg>
           Request CV
         </button>
-        <p className={styles.note}>
-          I'll respond with a tailored CV within 24 hours
-        </p>
+        <p className={styles.note}>I'll respond with CV</p>
       </div>
     </section>
   );
