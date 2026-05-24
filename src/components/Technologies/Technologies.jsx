@@ -21,9 +21,10 @@ const Technologies = () => {
     { name: 'Kubernetes', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg', category: 'container' },
     { name: 'Helm', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/helm/helm-original.svg', category: 'container' },
 
-    // CI/CD
+    // CI/CD & GitOps
     { name: 'Jenkins', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg', category: 'cicd' },
     { name: 'ArgoCD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg', category: 'cicd' },
+    { name: 'GitLab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg', category: 'cicd' },
     { name: 'GitHub Actions', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', category: 'cicd' },
 
     // Monitoring
@@ -33,6 +34,8 @@ const Technologies = () => {
 
     // Security
     { name: 'Vault', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vault/vault-original.svg', category: 'security' },
+    { name: 'SOPS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mozilla/mozilla-original.svg', category: 'security' },
+    { name: 'Trivy', icon: 'https://aquasecurity.github.io/trivy/latest/imgs/logo.png', category: 'security' },
 
     // Web/App Dev
     { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: 'web' },
@@ -44,7 +47,7 @@ const Technologies = () => {
   const categories = [
     { id: 'cloud', label: 'Cloud & IaC', color: '#FF9900' },
     { id: 'container', label: 'Containers', color: '#326ce5' },
-    { id: 'cicd', label: 'CI/CD', color: '#D24939' },
+    { id: 'cicd', label: 'CI/CD & GitOps', color: '#D24939' },
     { id: 'monitoring', label: 'Monitoring', color: '#E6522C' },
     { id: 'security', label: 'Security', color: '#FFEC6E' },
     { id: 'foundation', label: 'Foundation', color: '#10B981' },
@@ -56,7 +59,7 @@ const Technologies = () => {
       <ScrollReveal animation="fadeUp" duration={600}>
         <div className={styles.container}>
           <h2 className={styles.title}>Tech Stack</h2>
-          <p className={styles.subtitle}>Tools I work with daily</p>
+          <p className={styles.subtitle}>Tools I work with</p>
 
           <div className={styles.techCloud}>
             {categories.map((cat) => {
