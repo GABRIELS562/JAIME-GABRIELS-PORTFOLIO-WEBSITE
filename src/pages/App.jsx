@@ -40,11 +40,15 @@ const App = () => {
 
   return (
     <div>
+      {/* Skip link for accessibility */}
+      <a href="#main" className="skip-link">
+        Skip to main content
+      </a>
       <LiveStatus />
       <ThemeToggle />
       <Navigation />
       <Header />
-      <main>
+      <main id="main">
         <ErrorBoundary>
           <About />
         </ErrorBoundary>

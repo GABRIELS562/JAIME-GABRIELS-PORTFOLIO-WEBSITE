@@ -156,24 +156,24 @@
   }
 
   .contactItem {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
-    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem 1rem;
+    text-align: center;
   }
 
   .contactIcon {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
   }
 
   .contactLabel {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .contactValue {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -198,20 +198,20 @@
   }
 
   .contactItem {
-    padding: 0.875rem 1rem;
-    gap: 0.875rem;
+    padding: 1rem;
+    gap: 0.5rem;
   }
 
   .contactIcon {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
   }
 
   .contactLabel {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   .contactValue {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 }
