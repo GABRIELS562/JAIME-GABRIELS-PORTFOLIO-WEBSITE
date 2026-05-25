@@ -5,8 +5,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,12 +30,13 @@
   max-width: 900px;
   height: 80vh;
   max-height: 700px;
-  background: #0d1117;
-  border-radius: 12px;
+  background: #0f172a;
+  border-radius: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
   box-shadow:
-    0 25px 50px -12px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    0 0 80px rgba(16, 185, 129, 0.15);
+    0 25px 50px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(6, 182, 212, 0.2),
+    0 0 100px rgba(6, 182, 212, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -54,13 +55,13 @@
   }
 }
 
-/* Title Bar (macOS style) */
+/* Title Bar */
 .titleBar {
   display: flex;
   align-items: center;
-  padding: 12px 16px;
-  background: linear-gradient(180deg, #2d333b 0%, #22272e 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 18px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2);
   user-select: none;
 }
 
@@ -72,42 +73,45 @@
 .closeBtn,
 .minimizeBtn,
 .maximizeBtn {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
 }
 
 .closeBtn {
-  background: #ff5f56;
+  background: #ef4444;
 }
 
 .closeBtn:hover {
-  background: #ff3b30;
+  background: #dc2626;
+  transform: scale(1.1);
 }
 
 .minimizeBtn {
-  background: #ffbd2e;
+  background: #f59e0b;
 }
 
 .minimizeBtn:hover {
-  background: #ff9500;
+  background: #d97706;
+  transform: scale(1.1);
 }
 
 .maximizeBtn {
-  background: #27c93f;
+  background: #10b981;
 }
 
 .maximizeBtn:hover {
-  background: #28cd41;
+  background: #059669;
+  transform: scale(1.1);
 }
 
 .title {
   flex: 1;
   text-align: center;
-  color: #8b949e;
+  color: #64748b;
   font-size: 13px;
   font-weight: 500;
 }
@@ -119,10 +123,10 @@
 /* Terminal Content */
 .content {
   flex: 1;
-  padding: 16px;
+  padding: 20px;
   overflow-y: auto;
   overflow-x: hidden;
-  background: #0d1117;
+  background: #0f172a;
   cursor: text;
 }
 
@@ -132,22 +136,22 @@
 }
 
 .content::-webkit-scrollbar-track {
-  background: #161b22;
+  background: #1e293b;
 }
 
 .content::-webkit-scrollbar-thumb {
-  background: #30363d;
+  background: #334155;
   border-radius: 4px;
 }
 
 .content::-webkit-scrollbar-thumb:hover {
-  background: #484f58;
+  background: #475569;
 }
 
 /* Output Lines */
 .inputLine,
 .outputLine {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .inputLine pre,
@@ -155,31 +159,31 @@
   margin: 0;
   font-family: inherit;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-word;
 }
 
 .inputLine pre {
-  color: #58a6ff;
+  color: #06b6d4;
 }
 
 .outputLine pre {
-  color: #c9d1d9;
+  color: #e2e8f0;
 }
 
 /* Input Form */
 .inputForm {
   display: flex;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .prompt {
-  color: #3fb950;
+  color: #10b981;
   font-size: 14px;
-  font-weight: 500;
-  margin-right: 8px;
+  font-weight: 600;
+  margin-right: 10px;
   white-space: nowrap;
 }
 
@@ -188,15 +192,15 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #f0f6fc;
+  color: #f1f5f9;
   font-family: inherit;
   font-size: 14px;
-  caret-color: #58a6ff;
+  caret-color: #06b6d4;
   padding: 0;
 }
 
 .input::placeholder {
-  color: #484f58;
+  color: #475569;
 }
 
 /* Blinking cursor effect */
@@ -206,7 +210,7 @@
 
 /* Selection */
 .content ::selection {
-  background: rgba(88, 166, 255, 0.3);
+  background: rgba(6, 182, 212, 0.3);
 }
 
 /* Responsive */
@@ -222,20 +226,20 @@
   }
 
   .content {
-    padding: 12px;
+    padding: 14px;
   }
 
   .inputLine pre,
   .outputLine pre {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .prompt {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .input {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -246,35 +250,27 @@
 
   .inputLine pre,
   .outputLine pre {
-    font-size: 11px;
-    line-height: 1.4;
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .prompt {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .input {
-    font-size: 11px;
+    font-size: 12px;
   }
-}
-
-/* ASCII Art Colors */
-.outputLine pre {
-  /* Make ASCII art and boxes look good */
-}
-
-/* Status indicators in output */
-.outputLine pre:has(🟢) {
-  color: #3fb950;
 }
 
 /* Links in output */
 .outputLine a {
-  color: #58a6ff;
+  color: #06b6d4;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .outputLine a:hover {
+  color: #22d3ee;
   text-decoration: underline;
 }
