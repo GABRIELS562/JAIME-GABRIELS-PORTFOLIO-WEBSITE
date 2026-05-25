@@ -274,3 +274,38 @@
   color: #22d3ee;
   text-decoration: underline;
 }
+
+/* Landscape mobile - optimize for horizontal viewing */
+@media (max-height: 500px) and (orientation: landscape) {
+  .terminal {
+    height: 95vh;
+    max-height: none;
+    border-radius: 8px;
+  }
+
+  .overlay {
+    padding: 0.5rem;
+  }
+
+  .titleBar {
+    padding: 8px 14px;
+  }
+
+  .content {
+    padding: 10px 14px;
+  }
+
+  .inputLine pre,
+  .outputLine pre {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .prompt {
+    font-size: 12px;
+  }
+
+  .input {
+    font-size: 12px;
+  }
+}

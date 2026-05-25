@@ -2,12 +2,17 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 10px;
   position: fixed;
-  right: 1.5rem;
-  top: 1.5rem;
+  right: 1rem;
+  top: 1rem;
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .themeToggle:hover {
@@ -81,26 +86,21 @@
 
 /* Tablet styles */
 @media (max-width: 1024px) {
-  .themeToggle {
-    right: 1.2rem;
-    top: 1.2rem;
-  }
-  
   .toggleTrack {
     width: 54px;
     height: 27px;
     border-radius: 13.5px;
   }
-  
+
   .toggleThumb {
     width: 23px;
     height: 23px;
   }
-  
+
   .thumbLight {
     left: 29px;
   }
-  
+
   .iconContainer {
     width: 14px;
     height: 14px;
@@ -109,26 +109,21 @@
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .themeToggle {
-    right: 1rem;
-    top: 1rem;
-  }
-  
   .toggleTrack {
     width: 50px;
     height: 25px;
     border-radius: 12.5px;
   }
-  
+
   .toggleThumb {
     width: 21px;
     height: 21px;
   }
-  
+
   .thumbLight {
     left: 27px;
   }
-  
+
   .iconContainer {
     width: 12px;
     height: 12px;
@@ -138,25 +133,53 @@
 /* Small mobile styles */
 @media (max-width: 480px) {
   .themeToggle {
-    right: 0.8rem;
-    top: 0.8rem;
+    right: 0.5rem;
+    top: 0.5rem;
   }
-  
+
   .toggleTrack {
     width: 46px;
     height: 23px;
     border-radius: 11.5px;
   }
-  
+
   .toggleThumb {
     width: 19px;
     height: 19px;
   }
-  
+
   .thumbLight {
     left: 25px;
   }
-  
+
+  .iconContainer {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .themeToggle {
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+
+  .toggleTrack {
+    width: 46px;
+    height: 23px;
+    border-radius: 11.5px;
+  }
+
+  .toggleThumb {
+    width: 19px;
+    height: 19px;
+  }
+
+  .thumbLight {
+    left: 25px;
+  }
+
   .iconContainer {
     width: 10px;
     height: 10px;

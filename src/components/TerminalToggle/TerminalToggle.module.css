@@ -203,3 +203,30 @@
     display: none;
   }
 }
+
+/* Landscape mobile - compact positioning */
+@media (max-height: 500px) and (orientation: landscape) {
+  .toggle {
+    bottom: 12px;
+    right: 12px;
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+
+  .label {
+    display: none;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hint {
+    display: none;
+  }
+
+  .toggle::after {
+    display: none;
+  }
+}
