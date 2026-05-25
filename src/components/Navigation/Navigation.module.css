@@ -78,15 +78,15 @@
 
 .link:hover,
 .link:focus {
-  color: var(--accent-warm);
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.1);
   transform: translateY(-2px) scale(1.05);
 }
 
 .link.active {
-  color: var(--text-primary);
-  background: linear-gradient(135deg, var(--accent-warm) 0%, var(--accent-gold) 100%);
-  box-shadow: 0 4px 15px rgba(216, 196, 182, 0.4);
+  color: var(--primary-dark);
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-cyan-bright) 100%);
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4);
   transform: translateY(-1px);
 }
 
@@ -98,9 +98,9 @@
   transform: translateX(-50%);
   width: 6px;
   height: 6px;
-  background: var(--accent-warm);
+  background: var(--accent-cyan);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent-warm);
+  box-shadow: 0 0 10px var(--accent-cyan);
   animation: pulse 2s infinite;
 }
 
