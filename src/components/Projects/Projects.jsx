@@ -25,12 +25,12 @@ const Projects = () => {
     },
     {
       title: "Forensic Evidence Collector",
-      liveUrl: null,
+      liveUrl: "https://dashboard.jagdevops.co.za",
       description: "Compliance automation platform with tamper-evident audit trails. Implements blockchain-style SHA-256 hash chains for evidence integrity verification. Includes real-time Command Center dashboard with Chart.js visualizations and Prometheus metrics integration.",
       techStack: ["Python 3.11", "SQLite", "Docker", "Prometheus", "Chart.js", "Nginx"],
       highlights: ["Hash Chain Integrity", "Real-time Dashboard", "Compliance Automation"],
       github: "https://github.com/GABRIELS562/digital-evidence-pipeline",
-      live: null
+      live: "https://dashboard.jagdevops.co.za/"
     }
   ];
 

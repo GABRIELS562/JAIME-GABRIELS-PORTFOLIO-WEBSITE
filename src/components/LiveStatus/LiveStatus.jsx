@@ -60,8 +60,8 @@ export const LiveStatusBadge = ({ url, name }) => {
 const LiveStatus = () => {
   const [servers, setServers] = useState({
     lims: { status: 'checking', name: 'LIMS', url: 'https://lims.jagdevops.co.za' },
-    finance: { status: 'checking', name: 'Finance', url: 'https://finance.jagdevops.co.za' },
-    pharma: { status: 'checking', name: 'Pharma', url: 'https://pharma.jagdevops.co.za' }
+    eshop: { status: 'checking', name: 'eShop', url: 'https://eshop.jagdevops.co.za' },
+    dashboard: { status: 'checking', name: 'Dashboard', url: 'https://dashboard.jagdevops.co.za' }
   });
   const [isExpanded, setIsExpanded] = useState(false);
   const [lastChecked, setLastChecked] = useState(null);
