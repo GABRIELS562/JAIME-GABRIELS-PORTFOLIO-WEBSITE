@@ -8,24 +8,27 @@ const Projects = () => {
     {
       title: "DNA Analysis LIMS",
       liveUrl: "https://lims.jagdevops.co.za",
-      description: "Full-stack laboratory system for forensic DNA sample tracking. PostgreSQL database, Jenkins CI/CD, K3s deployment.",
-      techStack: ["React", "Node.js", "PostgreSQL", "K3s", "Docker", "Jenkins"],
+      description: "Production laboratory information management system for forensic DNA sample tracking. Features secure authentication, real-time sample workflows, and automated reporting. Deployed on K3s with GitHub Actions CI/CD and Cloudflare Tunnel for secure public access.",
+      techStack: ["React 18", "Vite", "Node.js", "PostgreSQL", "K3s", "GitHub Actions", "Cloudflare"],
+      highlights: ["Production System", "CI/CD Pipeline", "Secure Tunnel"],
       github: "https://github.com/GABRIELS562/JAG-LABSCIENTIFIC-DNA",
       live: "https://lims.jagdevops.co.za/"
     },
     {
-      title: "Zero Downtime Pipeline",
-      liveUrl: "https://finance.jagdevops.co.za",
-      description: "High availability deployment with blue-green strategy, GitOps via ArgoCD, and multi-application orchestration.",
-      techStack: ["Python", "Flask", "K3s", "ArgoCD", "Jenkins"],
-      github: "https://github.com/GABRIELS562/zero-downtime-pipeline",
-      live: "https://finance.jagdevops.co.za/"
+      title: "Cloud-Native eShop",
+      liveUrl: "https://eshop.jagdevops.co.za",
+      description: "14-service microservices e-commerce platform demonstrating polyglot architecture. Services built in Go, C#, Node.js, Python, and Java communicate via gRPC. Full observability stack with OpenTelemetry, Prometheus metrics, and distributed tracing.",
+      techStack: ["Kubernetes", "gRPC", "Go", "C#", "Python", "Redis", "RabbitMQ", "OpenTelemetry"],
+      highlights: ["14 Microservices", "Polyglot Stack", "Full Observability"],
+      github: "https://github.com/GABRIELS562/eshop-microservices",
+      live: "https://eshop.jagdevops.co.za/"
     },
     {
-      title: "Digital Evidence Pipeline",
+      title: "Forensic Evidence Collector",
       liveUrl: null,
-      description: "Infrastructure monitoring applying forensic principles to DevOps. Compliance tracking with Prometheus integration.",
-      techStack: ["Python", "Docker", "AWS EC2", "Prometheus"],
+      description: "Compliance automation platform with tamper-evident audit trails. Implements blockchain-style SHA-256 hash chains for evidence integrity verification. Includes real-time Command Center dashboard with Chart.js visualizations and Prometheus metrics integration.",
+      techStack: ["Python 3.11", "SQLite", "Docker", "Prometheus", "Chart.js", "Nginx"],
+      highlights: ["Hash Chain Integrity", "Real-time Dashboard", "Compliance Automation"],
       github: "https://github.com/GABRIELS562/digital-evidence-pipeline",
       live: null
     }
@@ -37,7 +40,7 @@ const Projects = () => {
         <div className={styles.header}>
           <h2 className={styles.sectionTitle}>Projects</h2>
           <p className={styles.sectionSubtitle}>
-            Live applications deployed across multi-server infrastructure
+            Production systems running on multi-server Kubernetes infrastructure
           </p>
           <a
             href="https://github.com/GABRIELS562/Architecture-"
@@ -62,6 +65,14 @@ const Projects = () => {
               </div>
 
               <p className={styles.description}>{project.description}</p>
+
+              {project.highlights && (
+                <div className={styles.highlights}>
+                  {project.highlights.map((highlight, i) => (
+                    <span key={i} className={styles.highlightBadge}>{highlight}</span>
+                  ))}
+                </div>
+              )}
 
               <div className={styles.techStack}>
                 {project.techStack.map((tech, i) => (

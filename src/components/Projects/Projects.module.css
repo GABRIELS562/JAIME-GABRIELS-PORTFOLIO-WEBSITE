@@ -92,6 +92,40 @@
   margin-bottom: 1rem;
 }
 
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlightBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.75rem;
+  background: linear-gradient(135deg, var(--accent-warm) 0%, var(--accent-warm-dark, #c4a77d) 100%);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.highlightBadge::before {
+  content: '✓';
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.highlightBadge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 .techStack {
   display: flex;
   flex-wrap: wrap;
@@ -216,6 +250,11 @@
     font-size: 0.9rem;
   }
 
+  .highlightBadge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
   .links {
     flex-wrap: wrap;
   }
@@ -264,6 +303,15 @@
   .techBadge {
     font-size: 0.7rem;
     padding: 0.15rem 0.5rem;
+  }
+
+  .highlightBadge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .highlightBadge::before {
+    font-size: 0.55rem;
   }
 
   .link {
