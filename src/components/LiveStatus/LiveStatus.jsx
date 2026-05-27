@@ -148,7 +148,7 @@ const LiveStatus = () => {
           ))}
 
           <div className={styles.dropdownFooter}>
-            <span>3-Server Architecture</span>
+            <span>2-Server Architecture</span>
             <span>K3s + Prometheus + Grafana</span>
           </div>
         </div>
