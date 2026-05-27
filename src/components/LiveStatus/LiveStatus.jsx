@@ -61,7 +61,7 @@ const LiveStatus = () => {
   const [servers, setServers] = useState({
     lims: { status: 'checking', name: 'LIMS', url: 'https://lims.jagdevops.co.za' },
     eshop: { status: 'checking', name: 'eShop', url: 'https://eshop.jagdevops.co.za' },
-    dashboard: { status: 'checking', name: 'Dashboard', url: 'https://dashboard.jagdevops.co.za' }
+    dashboard: { status: 'checking', name: 'Dashboard', url: 'https://dashboards.jagdevops.co.za' }
   });
   const [isExpanded, setIsExpanded] = useState(false);
   const [lastChecked, setLastChecked] = useState(null);
