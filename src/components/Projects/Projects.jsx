@@ -20,7 +20,7 @@ const Projects = () => {
       description: "14-service microservices e-commerce platform demonstrating polyglot architecture. Services built in Go, C#, Node.js, Python, and Java communicate via gRPC. Full observability stack with OpenTelemetry, Prometheus metrics, and distributed tracing.",
       techStack: ["Kubernetes", "gRPC", "Go", "C#", "Python", "Redis", "RabbitMQ", "OpenTelemetry"],
       highlights: ["14 Microservices", "Polyglot Stack", "Full Observability"],
-      github: "https://github.com/GABRIELS562/eshop-microservices",
+      github: "https://github.com/GABRIELS562/eshop-platform-infra",
       live: "https://eshop.jagdevops.co.za/"
     },
     {
@@ -29,7 +29,7 @@ const Projects = () => {
       description: "Compliance automation platform with tamper-evident audit trails. Implements blockchain-style SHA-256 hash chains for evidence integrity verification. Includes real-time Command Center dashboard with Chart.js visualizations and Prometheus metrics integration.",
       techStack: ["Python 3.11", "SQLite", "Docker", "Prometheus", "Chart.js", "Nginx"],
       highlights: ["Hash Chain Integrity", "Real-time Dashboard", "Compliance Automation"],
-      github: "https://github.com/GABRIELS562/digital-evidence-pipeline",
+      github: "https://github.com/GABRIELS562/forensic-evidence-collector",
       live: "https://dashboards.jagdevops.co.za/"
     }
   ];

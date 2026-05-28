@@ -20,28 +20,28 @@ const Terminal = ({ isOpen, onClose }) => {
       url: 'https://lims.jagdevops.co.za',
       github: 'https://github.com/GABRIELS562/JAG-LABSCIENTIFIC-DNA',
       status: 'running',
-      stack: ['React 18', 'Node.js', 'PostgreSQL', 'K3s', 'Docker', 'Jenkins'],
-      metrics: { uptime: '99.9%', version: '3.0.0', samples_per_hour: '120+' }
+      stack: ['React 18', 'Node.js', 'PostgreSQL', 'K3s', 'GitHub Actions', 'ArgoCD'],
+      metrics: { uptime: '99.9%', workflows: 6, environments: 3 }
     },
-    'finance': {
-      name: 'zero-downtime-finance',
+    'eshop': {
+      name: 'eshop-platform-infra',
       type: 'directory',
-      description: 'High-Availability Trading Platform',
-      url: 'https://finance.jagdevops.co.za',
-      github: 'https://github.com/GABRIELS562/zero-downtime-pipeline',
+      description: 'Cloud-Native Microservices E-Commerce Platform',
+      url: 'https://eshop.jagdevops.co.za',
+      github: 'https://github.com/GABRIELS562/eshop-platform-infra',
       status: 'running',
-      stack: ['Python', 'FastAPI', 'K3s', 'ArgoCD', 'Prometheus'],
-      metrics: { latency: '7.94ms', replicas: 2, volume: '193/sec' }
+      stack: ['Kubernetes', 'gRPC', 'Go', 'C#', 'Python', 'ArgoCD', 'OpenTelemetry'],
+      metrics: { services: 14, argocd_apps: 17, protocols: 'gRPC' }
     },
-    'pharma': {
-      name: 'pharma-manufacturing',
+    'forensic': {
+      name: 'forensic-evidence-collector',
       type: 'directory',
-      description: 'FDA 21 CFR Part 11 Compliant Manufacturing System',
-      url: 'https://pharma.jagdevops.co.za',
-      github: 'https://github.com/GABRIELS562/zero-downtime-pipeline',
+      description: 'Tamper-Evident Compliance Audit Trail System',
+      url: 'https://dashboards.jagdevops.co.za',
+      github: 'https://github.com/GABRIELS562/forensic-evidence-collector',
       status: 'running',
-      stack: ['Python', 'Flask', 'Nginx', 'K3s', 'ArgoCD'],
-      metrics: { gmp_compliance: '94%', replicas: 2 }
+      stack: ['Python 3.11', 'SQLite', 'Docker', 'Prometheus', 'SHA-256'],
+      metrics: { evidence_blocks: '8500+', chain_integrity: '100%', db_size: '1GB' }
     }
   };
 
@@ -74,9 +74,9 @@ const Terminal = ({ isOpen, onClose }) => {
   Welcome to Jaime Gabriels' DevOps Portfolio Terminal
   Type 'help' to see available commands
 
-  [System] 3 production servers online
+  [System] 2 production servers online
   [System] 3 live applications running
-  [System] 18 Grafana dashboards active
+  [System] 17 ArgoCD applications synced
 ` }
       ]);
     }
