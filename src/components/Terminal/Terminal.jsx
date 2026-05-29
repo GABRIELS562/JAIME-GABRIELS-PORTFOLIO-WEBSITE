@@ -569,6 +569,30 @@ f6g7h8i9j0k1   hashicorp/vault:1.15       Up 5 days    vault`;
             </div>
           ))}
 
+          {/* Clickable command suggestions */}
+          {history.length <= 1 && (
+            <div className={styles.suggestions}>
+              {['projects', 'skills', 'certs', 'kubectl get pods', 'neofetch'].map(cmd => (
+                <button
+                  key={cmd}
+                  className={styles.suggestionBtn}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const newHistory = [...history, { type: 'input', content: `${PROMPT} ${cmd}` }];
+                    const output = executeCommand(cmd);
+                    if (output) {
+                      newHistory.push({ type: 'output', content: output });
+                    }
+                    setHistory(newHistory);
+                    setCommandHistory([...commandHistory, cmd]);
+                  }}
+                >
+                  {cmd}
+                </button>
+              ))}
+            </div>
+          )}
+
           <form onSubmit={handleSubmit} className={styles.inputForm}>
             <span className={styles.prompt}>{PROMPT}</span>
             <input

@@ -275,6 +275,38 @@
   text-decoration: underline;
 }
 
+/* Command Suggestions */
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.suggestionBtn {
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: #06b6d4;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.suggestionBtn:hover {
+  background: rgba(6, 182, 212, 0.2);
+  border-color: #06b6d4;
+  transform: translateY(-1px);
+}
+
+.suggestionBtn:active {
+  transform: translateY(0);
+}
+
 /* Landscape mobile - optimize for horizontal viewing */
 @media (max-height: 500px) and (orientation: landscape) {
   .terminal {
