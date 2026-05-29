@@ -55,11 +55,14 @@ const Terminal = ({ isOpen, onClose }) => {
   };
 
   const certifications = [
+    { name: 'Certified Kubernetes Administrator (CKA)', status: 'certified', year: '2025' },
+    { name: 'Certified Kubernetes Security (CKS)', status: 'certified', year: '2026' },
     { name: 'AWS Solutions Architect Associate', status: 'certified', year: '2025' },
+    { name: 'AWS Cloud Practitioner', status: 'certified', year: '2025' },
+    { name: 'AWS GenAI Practitioner', status: 'certified', year: '2025' },
     { name: 'HashiCorp Terraform Associate', status: 'certified', year: '2025' },
-    { name: 'PCAP Python Programming', status: 'certified', year: '2024' },
-    { name: 'Certified Kubernetes Administrator (CKA)', status: 'pending', year: 'Dec 2025' },
-    { name: 'Certified Kubernetes Security (CKS)', status: 'pending', year: 'Feb 2026' }
+    { name: 'Microsoft Azure Fundamentals (AZ-900)', status: 'certified', year: '2025' },
+    { name: 'PCAP Python Programming', status: 'certified', year: '2024' }
   ];
 
   // Initialize with welcome message

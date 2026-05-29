@@ -46,7 +46,7 @@ const About = () => {
         <div className={styles.aboutSummary}>
           <h2>About Me</h2>
           <p className={styles.highlight}>
-            15 years in forensic science. Now building infrastructure.
+            Forensic scientist turned infrastructure engineer.
           </p>
           <p className={styles.text}>
             Same analytical rigor, different systems. From tracing evidence to tracing pipelines—both demand precision and systematic thinking.
