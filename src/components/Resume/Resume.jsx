@@ -7,7 +7,7 @@ const Resume = () => {
     const body = encodeURIComponent(
       'Hi Jaime,\n\nI came across your portfolio and would like to request a copy of your CV.\n\n[Please include details about the opportunity or your company]\n\nThank you!'
     );
-    window.location.href = `mailto:info@jagdevops.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:contact@jagdevops.com?subject=${subject}&body=${body}`;
   };
 
   return (
