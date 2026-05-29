@@ -13,7 +13,7 @@
   box-shadow: var(--shadow-lg);
   color: var(--text-primary);
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 800px;
   padding: 2rem;
   transition: all 0.3s ease;
 }
@@ -25,70 +25,54 @@
 
 .sectionTitle {
   color: var(--text-primary);
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 900;
   letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.competenciesGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+.stackRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
-.skillItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.875rem 1rem;
+.techBadge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
   background: var(--background-elevated);
-  border-radius: 0.75rem;
   border: 1px solid var(--border-primary);
+  border-radius: 2rem;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
   transition: all 0.2s ease;
 }
 
-.skillItem:hover {
+.techBadge:hover {
+  background: var(--background-card);
   border-color: var(--accent-warm);
-  transform: translateX(4px);
+  transform: translateY(-2px);
 }
 
-.skillName {
-  color: var(--text-primary);
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.skillTech {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-}
-
-/* Tablet styles */
+/* Tablet */
 @media (max-width: 1024px) {
   .skillsSection {
     padding: 0 1.5rem 2.5rem;
   }
 
   .skillsCard {
-    padding: 1.75rem 1.5rem;
+    padding: 1.75rem;
   }
 
   .sectionTitle {
-    font-size: 2rem;
-  }
-
-  .competenciesGrid {
-    gap: 0.625rem;
-  }
-
-  .skillItem {
-    padding: 0.75rem 0.875rem;
+    font-size: 1.8rem;
   }
 }
 
-/* Mobile styles */
+/* Mobile */
 @media (max-width: 768px) {
   .skillsSection {
     padding: 0 1rem 2rem;
@@ -100,29 +84,17 @@
   }
 
   .sectionTitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-bottom: 1.25rem;
   }
 
-  .competenciesGrid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-
-  .skillItem {
-    padding: 0.75rem 1rem;
-  }
-
-  .skillName {
-    font-size: 0.9rem;
-  }
-
-  .skillTech {
-    font-size: 0.75rem;
+  .techBadge {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.875rem;
   }
 }
 
-/* Small mobile styles */
+/* Small mobile */
 @media (max-width: 480px) {
   .skillsSection {
     padding: 0 0.5rem 1.5rem;
@@ -133,19 +105,11 @@
   }
 
   .sectionTitle {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
   }
 
-  .skillItem {
-    padding: 0.625rem 0.875rem;
-  }
-
-  .skillName {
-    font-size: 0.85rem;
-  }
-
-  .skillTech {
-    font-size: 0.7rem;
+  .techBadge {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.75rem;
   }
 }
