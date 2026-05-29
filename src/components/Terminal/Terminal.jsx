@@ -55,7 +55,7 @@ const Terminal = ({ isOpen, onClose }) => {
   Type 'help' to see available commands
 
   → 3 live applications
-  → 17 ArgoCD apps synced
+  → 18 ArgoCD apps synced
 ` }
       ]);
     }
@@ -346,7 +346,6 @@ Type 'cat <project>' for details or 'open <project>' to visit`;
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │  [x] CKA  - Certified Kubernetes Administrator          2025    │
-│  [x] CKS  - Certified Kubernetes Security Specialist    2026    │
 │  [x] AWS  - Solutions Architect Associate               2025    │
 │  [x] AWS  - Cloud Practitioner                          2025    │
 │  [x] AWS  - GenAI Practitioner                          2025    │

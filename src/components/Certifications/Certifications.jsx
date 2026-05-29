@@ -9,10 +9,6 @@ const Certifications = () => {
       icon: "https://img.shields.io/badge/CKA-326CE5?style=flat&logo=kubernetes&logoColor=white"
     },
     {
-      name: "CKS",
-      icon: "https://img.shields.io/badge/CKS-326CE5?style=flat&logo=kubernetes&logoColor=white"
-    },
-    {
       name: "AWS SAA",
       icon: "https://img.shields.io/badge/AWS_SAA-232F3E?style=flat&logo=amazonaws&logoColor=white"
     },
