@@ -54,8 +54,8 @@ const Terminal = ({ isOpen, onClose }) => {
   Welcome to Jaime Gabriels' DevOps Portfolio Terminal
   Type 'help' to see available commands
 
-  [System] 3 live applications deployed
-  [System] 17 ArgoCD applications synced
+  → 3 live applications
+  → 17 ArgoCD apps synced
 ` }
       ]);
     }
