@@ -54,8 +54,7 @@ const Terminal = ({ isOpen, onClose }) => {
   Welcome to Jaime Gabriels' DevOps Portfolio Terminal
   Type 'help' to see available commands
 
-  [System] 2 production servers online
-  [System] 3 live applications running
+  [System] 3 live applications deployed
   [System] 17 ArgoCD applications synced
 ` }
       ]);
@@ -160,9 +159,9 @@ jaime-gabriels
 +ssssssssshmydMMMMMMMNddddyssssssss+  Shell: bash 5.2
 /sssssssshNMMMyhhyyyyhmNMMMNhssssss/  Terminal: jagdevops-portfolio
 .ssssssssdMMMNhsssssssshNMMMdssssss.
-+sssshhhyNMMNyssssssssyyNMMMysssss+   Infrastructure:
-ossyNMMMNyMMhssssssssshmmmmhssssso     Server1: K3s Cluster (17 apps)
-ossyNMMMNyMMhssssssssshmmmmhssssso     Server2: Monitoring + Docker
++sssshhhyNMMNyssssssssyyNMMMysssss+
+ossyNMMMNyMMhssssssssshmmmmhssssso
+ossyNMMMNyMMhssssssssshmmmmhssssso
 +sssshhhyNMMNyssssssssyyNMMMysssss+
 .ssssssssdMMMNhsssssssshNMMMdssssss.  Certifications: 8 active
 /sssssssshNMMMyhhyyyyhdNMMMNhssssss/  Live Apps: 3 production
@@ -405,7 +404,7 @@ develop     lims-develop-frontend     ClusterIP   10.43.194.224   80/TCP
 develop     lims-develop-backend      ClusterIP   10.43.12.46     3001/TCP`;
         } else if (arg.includes('get nodes')) {
           output = `NAME      STATUS   ROLES                  AGE    VERSION
-server1   Ready    control-plane,master   271d   v1.29.5+k3s1`;
+k3s-node   Ready    control-plane,master   271d   v1.29.5+k3s1`;
         } else if (arg.includes('get apps') || arg.includes('get applications')) {
           output = `NAME                      SYNC     HEALTH   NAMESPACE
 frontend                  Synced   Healthy  eshop
