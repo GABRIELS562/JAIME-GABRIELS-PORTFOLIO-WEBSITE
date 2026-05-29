@@ -15,7 +15,6 @@ const Terminal = ({ isOpen, onClose }) => {
   const projects = {
     'lims': {
       name: 'JAG-LABSCIENTIFIC-DNA',
-      type: 'directory',
       description: 'DNA Laboratory Information Management System',
       url: 'https://lims.jagdevops.co.za',
       github: 'https://github.com/GABRIELS562/JAG-LABSCIENTIFIC-DNA',
@@ -25,7 +24,6 @@ const Terminal = ({ isOpen, onClose }) => {
     },
     'eshop': {
       name: 'eshop-platform-infra',
-      type: 'directory',
       description: 'Cloud-Native Microservices E-Commerce Platform',
       url: 'https://eshop.jagdevops.co.za',
       github: 'https://github.com/GABRIELS562/eshop-platform-infra',
@@ -35,7 +33,6 @@ const Terminal = ({ isOpen, onClose }) => {
     },
     'forensic': {
       name: 'forensic-evidence-collector',
-      type: 'directory',
       description: 'Tamper-Evident Compliance Audit Trail System',
       url: 'https://dashboards.jagdevops.co.za',
       github: 'https://github.com/GABRIELS562/forensic-evidence-collector',
@@ -44,26 +41,6 @@ const Terminal = ({ isOpen, onClose }) => {
       metrics: { evidence_blocks: '8500+', chain_integrity: '100%', db_size: '1GB' }
     }
   };
-
-  const skills = {
-    'cloud': ['AWS', 'Terraform', 'Ansible'],
-    'containers': ['Docker', 'Kubernetes', 'K3s', 'Helm'],
-    'cicd': ['Jenkins', 'ArgoCD', 'GitHub Actions'],
-    'monitoring': ['Prometheus', 'Grafana', 'Loki', 'Alertmanager'],
-    'languages': ['Python', 'JavaScript', 'Bash', 'HCL'],
-    'databases': ['PostgreSQL', 'Redis']
-  };
-
-  const certifications = [
-    { name: 'Certified Kubernetes Administrator (CKA)', status: 'certified', year: '2025' },
-    { name: 'Certified Kubernetes Security (CKS)', status: 'certified', year: '2026' },
-    { name: 'AWS Solutions Architect Associate', status: 'certified', year: '2025' },
-    { name: 'AWS Cloud Practitioner', status: 'certified', year: '2025' },
-    { name: 'AWS GenAI Practitioner', status: 'certified', year: '2025' },
-    { name: 'HashiCorp Terraform Associate', status: 'certified', year: '2025' },
-    { name: 'Microsoft Azure Fundamentals (AZ-900)', status: 'certified', year: '2025' },
-    { name: 'PCAP Python Programming', status: 'certified', year: '2024' }
-  ];
 
   // Initialize with welcome message
   useEffect(() => {
@@ -119,19 +96,17 @@ Available commands:
   NAVIGATION
     ls [dir]        List directory contents
     cat <file>      Display file contents
-    cd <dir>        Change directory (simulated)
+    pwd             Print working directory
 
   SYSTEM INFO
     whoami          Display user information
     hostname        Show hostname
     uname -a        System information
-    uptime          System uptime
     neofetch        System info with ASCII art
 
   DEVOPS
     kubectl get pods    Show running applications
     docker ps           List containers
-    systemctl status    Service status
 
   PORTFOLIO
     projects        List all projects
@@ -144,9 +119,8 @@ Available commands:
     clear           Clear terminal
     history         Command history
     exit            Close terminal
-    help            Show this help
 
-  Try: ls -la projects | cat lims | kubectl get pods
+  Try: ls projects | cat lims | kubectl get pods
 `;
         break;
 
@@ -154,12 +128,9 @@ Available commands:
         output = `
 jaime-gabriels
 ├── Role: DevOps Engineer
-├── Background: 15+ years Forensic DNA Analysis
-├── Education: BSc Biotechnology, MSc Business Leadership
-├── Location: South Africa
-└── Specialty: Applying forensic rigor to infrastructure
-
-"From analyzing DNA evidence to building resilient infrastructure"
+├── Location: Cape Town, South Africa
+├── Background: Forensic Science -> Infrastructure
+└── Focus: Kubernetes, GitOps, Observability
 `;
         break;
 
@@ -173,15 +144,10 @@ jaime-gabriels
 
       case 'uname':
         if (arg.includes('-a')) {
-          output = 'Linux jagdevops 6.17.0-29-generic #29~24.04.1-Ubuntu SMP x86_64 GNU/Linux';
+          output = 'Linux jagdevops 6.1.0-k3s1 #1 SMP x86_64 GNU/Linux';
         } else {
           output = 'Linux';
         }
-        break;
-
-      case 'uptime':
-        output = ` 19:50:42 up 1 day,  3:51,  2 users,  load average: 2.46, 1.54, 1.19
-Server1: K3s Production | Server2: Monitoring Stack | Server3: Automation`;
         break;
 
       case 'neofetch':
@@ -189,20 +155,20 @@ Server1: K3s Production | Server2: Monitoring Stack | Server3: Automation`;
         .-/+oossssoo+/-.              jaime@jagdevops
     \`:+ssssssssssssssssss+:\`          ----------------
   -+ssssssssssssssssssyyssss+-        OS: Ubuntu 24.04 LTS
-.ossssssssssssssssssdMMMNysssso.      Kernel: 6.17.0-29-generic
+.ossssssssssssssssssdMMMNysssso.      Kernel: 6.1.0-k3s1
 /ssssssssssshdmmNNmmyNMMMMhssssss/    Uptime: Production since 2024
-+ssssssssshmydMMMMMMMNddddyssssssss+  Shell: bash 5.2.21
++ssssssssshmydMMMMMMMNddddyssssssss+  Shell: bash 5.2
 /sssssssshNMMMyhhyyyyhmNMMMNhssssss/  Terminal: jagdevops-portfolio
 .ssssssssdMMMNhsssssssshNMMMdssssss.
 +sssshhhyNMMNyssssssssyyNMMMysssss+   Infrastructure:
-ossyNMMMNyMMhssssssssshmmmmhssssso     Server1: K3s + Jenkins + Registry
-ossyNMMMNyMMhssssssssshmmmmhssssso     Server2: Prometheus + Grafana + Loki
-+sssshhhyNMMNyssssssssyyNMMMysssss+    Server3: n8n + Automation
-.ssssssssdMMMNhsssssssshNMMMdssssss.   AWS EC2: Forensic Compliance
-/sssssssshNMMMyhhyyyyhdNMMMNhssssss/
-+sssssssssdmydMMMMMMMMddddyssssssss+  Certifications: 3 active, 2 pending
-/ssssssssssshdmNNNNmyNMMMMhssssss/    Live Apps: 3 production
-.ossssssssssssssssssdMMMNysssso.      Dashboards: 18 Grafana
+ossyNMMMNyMMhssssssssshmmmmhssssso     Server1: K3s Cluster (17 apps)
+ossyNMMMNyMMhssssssssshmmmmhssssso     Server2: Monitoring + Docker
++sssshhhyNMMNyssssssssyyNMMMysssss+
+.ssssssssdMMMNhsssssssshNMMMdssssss.  Certifications: 8 active
+/sssssssshNMMMyhhyyyyhdNMMMNhssssss/  Live Apps: 3 production
++sssssssssdmydMMMMMMMMddddyssssssss+
+/ssssssssssshdmNNNNmyNMMMMhssssss/
+.ossssssssssssssssssdMMMNysssso.
   -+sssssssssssssssssyyyssss+-
     \`:+ssssssssssssssssss+:\`
         .-/+oossssoo+/-.
@@ -212,24 +178,20 @@ ossyNMMMNyMMhssssssssshmmmmhssssso     Server2: Prometheus + Grafana + Loki
       case 'ls':
         if (arg.includes('projects') || arg === '-la projects') {
           output = `total 3
-drwxr-xr-x  jaime devops  4096 May 24 19:50 .
-drwxr-xr-x  jaime devops  4096 May 24 19:50 ..
-drwxr-xr-x  jaime devops  4096 May 24 17:38 lims/        [LIVE] DNA Analysis System
-drwxr-xr-x  jaime devops  4096 Sep 23 08:14 finance/     [LIVE] Trading Platform
-drwxr-xr-x  jaime devops  4096 Sep 23 08:14 pharma/      [LIVE] Manufacturing System`;
+drwxr-xr-x  jaime devops  4096 May 29 10:00 lims/      [LIVE] DNA Analysis LIMS
+drwxr-xr-x  jaime devops  4096 May 29 10:00 eshop/     [LIVE] 14 Microservices
+drwxr-xr-x  jaime devops  4096 May 29 10:00 forensic/  [LIVE] Evidence Collector`;
         } else if (arg.includes('-la') || arg.includes('-l')) {
           output = `total 24
-drwxr-xr-x  jaime devops  4096 May 24 19:50 .
-drwxr-xr-x  jaime devops  4096 May 24 19:50 ..
--rw-r--r--  jaime devops   512 May 24 19:50 .bashrc
--rw-r--r--  jaime devops   256 May 24 19:50 .profile
-drwxr-xr-x  jaime devops  4096 May 24 19:50 projects/
-drwxr-xr-x  jaime devops  4096 May 24 19:50 skills/
-drwxr-xr-x  jaime devops  4096 May 24 19:50 certs/
--rw-r--r--  jaime devops  1024 May 24 19:50 resume.pdf
--rw-r--r--  jaime devops   128 May 24 19:50 contact.txt`;
+drwxr-xr-x  jaime devops  4096 May 29 10:00 .
+drwxr-xr-x  jaime devops  4096 May 29 10:00 ..
+-rw-r--r--  jaime devops   512 May 29 10:00 .bashrc
+drwxr-xr-x  jaime devops  4096 May 29 10:00 projects/
+drwxr-xr-x  jaime devops  4096 May 29 10:00 certs/
+-rw-r--r--  jaime devops  1024 May 29 10:00 resume.pdf
+-rw-r--r--  jaime devops   128 May 29 10:00 contact.txt`;
         } else {
-          output = 'projects/  skills/  certs/  resume.pdf  contact.txt';
+          output = 'projects/  certs/  resume.pdf  contact.txt';
         }
         break;
 
@@ -237,80 +199,78 @@ drwxr-xr-x  jaime devops  4096 May 24 19:50 certs/
         if (arg === 'lims' || arg === 'projects/lims') {
           const p = projects.lims;
           output = `
-╔══════════════════════════════════════════════════════════════════╗
-║  ${p.name}
-╠══════════════════════════════════════════════════════════════════╣
-║  ${p.description}
-║
-║  STATUS:    🟢 ${p.status.toUpperCase()}
-║  URL:       ${p.url}
-║  GITHUB:    ${p.github}
-║
-║  STACK:     ${p.stack.join(' | ')}
-║
-║  METRICS:
-║    • Uptime:           ${p.metrics.uptime}
-║    • Version:          ${p.metrics.version}
-║    • Samples/hour:     ${p.metrics.samples_per_hour}
-║
-║  FEATURES:
-║    • 12-stage DNA processing pipeline
-║    • Forensic chain-of-custody tracking
-║    • Real-time dashboard with PostgreSQL
-║    • Jenkins CI/CD → Docker → K3s deployment
-║    • PWA with offline capability
-╚══════════════════════════════════════════════════════════════════╝`;
-        } else if (arg === 'finance' || arg === 'projects/finance') {
-          const p = projects.finance;
+══════════════════════════════════════════════════════════════
+  ${p.name}
+══════════════════════════════════════════════════════════════
+  ${p.description}
+
+  STATUS:    [LIVE] ${p.status.toUpperCase()}
+  URL:       ${p.url}
+  GITHUB:    ${p.github}
+
+  STACK:     ${p.stack.join(' | ')}
+
+  METRICS:
+    - Uptime:       ${p.metrics.uptime}
+    - CI Workflows: ${p.metrics.workflows}
+    - Environments: ${p.metrics.environments} (prod/dev/test)
+
+  FEATURES:
+    - Full CI/CD with GitHub Actions
+    - ArgoCD GitOps deployment
+    - HPA autoscaling
+    - Vault secrets management
+══════════════════════════════════════════════════════════════`;
+        } else if (arg === 'eshop' || arg === 'projects/eshop') {
+          const p = projects.eshop;
           output = `
-╔══════════════════════════════════════════════════════════════════╗
-║  ${p.name}
-╠══════════════════════════════════════════════════════════════════╣
-║  ${p.description}
-║
-║  STATUS:    🟢 ${p.status.toUpperCase()}
-║  URL:       ${p.url}
-║  GITHUB:    ${p.github}
-║
-║  STACK:     ${p.stack.join(' | ')}
-║
-║  METRICS:
-║    • Latency:          ${p.metrics.latency}
-║    • Replicas:         ${p.metrics.replicas} (High Availability)
-║    • Volume:           ${p.metrics.volume}
-║
-║  FEATURES:
-║    • Live market data API (AAPL, GOOGL, MSFT, AMZN)
-║    • Sub-10ms trading latency
-║    • ArgoCD GitOps with <60s recovery
-║    • SOX Section 404 compliance monitoring
-║    • Zero-downtime rolling deployments
-╚══════════════════════════════════════════════════════════════════╝`;
-        } else if (arg === 'pharma' || arg === 'projects/pharma') {
-          const p = projects.pharma;
+══════════════════════════════════════════════════════════════
+  ${p.name}
+══════════════════════════════════════════════════════════════
+  ${p.description}
+
+  STATUS:    [LIVE] ${p.status.toUpperCase()}
+  URL:       ${p.url}
+  GITHUB:    ${p.github}
+
+  STACK:     ${p.stack.join(' | ')}
+
+  METRICS:
+    - Microservices: ${p.metrics.services}
+    - ArgoCD Apps:   ${p.metrics.argocd_apps}
+    - Protocol:      ${p.metrics.protocols}
+
+  FEATURES:
+    - Polyglot architecture (Go, C#, Python, Node, Java)
+    - Full observability with OpenTelemetry
+    - Redis + RabbitMQ + PostgreSQL
+    - Network policies for zero-trust
+══════════════════════════════════════════════════════════════`;
+        } else if (arg === 'forensic' || arg === 'projects/forensic') {
+          const p = projects.forensic;
           output = `
-╔══════════════════════════════════════════════════════════════════╗
-║  ${p.name}
-╠══════════════════════════════════════════════════════════════════╣
-║  ${p.description}
-║
-║  STATUS:    🟢 ${p.status.toUpperCase()}
-║  URL:       ${p.url}
-║  GITHUB:    ${p.github}
-║
-║  STACK:     ${p.stack.join(' | ')}
-║
-║  METRICS:
-║    • GMP Compliance:   ${p.metrics.gmp_compliance}
-║    • Replicas:         ${p.metrics.replicas} (High Availability)
-║
-║  FEATURES:
-║    • FDA 21 CFR Part 11 compliant
-║    • Real-time equipment temperature monitoring
-║    • Reactor operations logging
-║    • Automated compliance scoring
-║    • Integrated with Grafana monitoring
-╚══════════════════════════════════════════════════════════════════╝`;
+══════════════════════════════════════════════════════════════
+  ${p.name}
+══════════════════════════════════════════════════════════════
+  ${p.description}
+
+  STATUS:    [LIVE] ${p.status.toUpperCase()}
+  URL:       ${p.url}
+  GITHUB:    ${p.github}
+
+  STACK:     ${p.stack.join(' | ')}
+
+  METRICS:
+    - Evidence Blocks: ${p.metrics.evidence_blocks}
+    - Chain Integrity: ${p.metrics.chain_integrity}
+    - Database Size:   ${p.metrics.db_size}
+
+  FEATURES:
+    - SHA-256 blockchain-style hash chains
+    - Tamper-evident audit trails
+    - Prometheus metrics endpoint
+    - Real-time Command Center dashboard
+══════════════════════════════════════════════════════════════`;
         } else if (arg === 'contact.txt' || arg === 'contact') {
           output = `
 # Contact Information
@@ -318,12 +278,12 @@ drwxr-xr-x  jaime devops  4096 May 24 19:50 certs/
 Email:    contact@jagdevops.com
 LinkedIn: linkedin.com/in/jaime-gabriels-643132386
 GitHub:   github.com/GABRIELS562
-Website:  jagdevops.com
+Website:  jagdevops.co.za
 
 # Live Infrastructure
 LIMS:     lims.jagdevops.co.za
-Finance:  finance.jagdevops.co.za
-Pharma:   pharma.jagdevops.co.za
+eShop:    eshop.jagdevops.co.za
+Forensic: dashboards.jagdevops.co.za
 `;
         } else if (arg === 'resume.pdf') {
           output = `[Binary file - use 'open resume' to download]`;
@@ -332,20 +292,11 @@ Pharma:   pharma.jagdevops.co.za
 export PS1="\\[\\e[32m\\]\\u@jagdevops\\[\\e[0m\\]:\\[\\e[34m\\]\\w\\[\\e[0m\\]\\$ "
 alias k='kubectl'
 alias d='docker'
-alias tf='terraform'
-alias g='git'
-
-# Production shortcuts
-alias lims='curl -s https://lims.jagdevops.co.za/api/health'
-alias finance='curl -s https://finance.jagdevops.co.za/health'
-alias pharma='curl -s https://pharma.jagdevops.co.za/health'`;
+alias tf='terraform'`;
         } else {
-          output = `cat: ${arg || '<file>'}: No such file or directory`;
+          output = `cat: ${arg || '<file>'}: No such file or directory
+Try: cat lims | cat eshop | cat forensic`;
         }
-        break;
-
-      case 'cd':
-        output = `Changed directory to ${arg || '~'}`;
         break;
 
       case 'projects':
@@ -354,17 +305,17 @@ alias pharma='curl -s https://pharma.jagdevops.co.za/health'`;
 │                    PRODUCTION PROJECTS                          │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  🧬 LIMS DNA Analysis          🟢 LIVE                          │
-│     └─ lims.jagdevops.co.za                                     │
-│     └─ 12-stage pipeline | 120+ samples/hr | v3.0.0             │
+│  [LIMS] DNA Analysis System                                     │
+│     URL: lims.jagdevops.co.za                                   │
+│     Stack: React, Node.js, PostgreSQL, K3s, ArgoCD              │
 │                                                                 │
-│  💹 Finance Trading Platform   🟢 LIVE                          │
-│     └─ finance.jagdevops.co.za                                  │
-│     └─ <8ms latency | 2 replicas | ArgoCD GitOps                │
+│  [ESHOP] Cloud-Native Microservices                             │
+│     URL: eshop.jagdevops.co.za                                  │
+│     Stack: 14 services, gRPC, Go/C#/Python, OpenTelemetry       │
 │                                                                 │
-│  💊 Pharma Manufacturing       🟢 LIVE                          │
-│     └─ pharma.jagdevops.co.za                                   │
-│     └─ FDA 21 CFR Part 11 | GMP 94% | 2 replicas                │
+│  [FORENSIC] Evidence Collector                                  │
+│     URL: dashboards.jagdevops.co.za                             │
+│     Stack: Python, SHA-256 hash chains, Prometheus              │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 
@@ -374,34 +325,16 @@ Type 'cat <project>' for details or 'open <project>' to visit`;
       case 'skills':
         output = `
 ┌─────────────────────────────────────────────────────────────────┐
-│                    TECHNICAL SKILLS                             │
+│                         STACK                                   │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  CLOUD & IaC                                                    │
-│  ├── AWS          ████████████████████░░  (SAA Certified)       │
-│  ├── Terraform    ████████████████████░░  (Certified)           │
-│  └── Ansible      ████████████████░░░░░░                        │
-│                                                                 │
-│  CONTAINERS & ORCHESTRATION                                     │
-│  ├── Docker       ████████████████████░░                        │
-│  ├── Kubernetes   ████████████████░░░░░░  (CKA Pending)         │
-│  ├── K3s          ████████████████████░░                        │
-│  └── Helm         ████████████████░░░░░░                        │
-│                                                                 │
-│  CI/CD & GITOPS                                                 │
-│  ├── Jenkins      ████████████████████░░                        │
-│  ├── ArgoCD       ████████████████████░░                        │
-│  └── GitHub Actions ██████████████░░░░░░                        │
-│                                                                 │
-│  MONITORING                                                     │
-│  ├── Prometheus   ████████████████████░░                        │
-│  ├── Grafana      ████████████████████░░                        │
-│  └── Loki         ████████████████░░░░░░                        │
-│                                                                 │
-│  LANGUAGES                                                      │
-│  ├── Python       ████████████████████░░  (PCAP Certified)      │
-│  ├── JavaScript   ████████████████░░░░░░                        │
-│  └── Bash         ████████████████████░░                        │
+│  ORCHESTRATION    Kubernetes | OpenShift | Docker | Helm        │
+│  CI/CD            GitHub Actions | GitLab CI | ArgoCD           │
+│  IaC              Terraform | Ansible                           │
+│  CLOUD            AWS | Azure                                   │
+│  OBSERVABILITY    Prometheus | Grafana | Loki | OpenTelemetry   │
+│  SECURITY         Vault | SonarQube | Trivy | Nexus             │
+│  LANGUAGES        Python | Go | Node.js | Bash                  │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘`;
         break;
@@ -413,12 +346,14 @@ Type 'cat <project>' for details or 'open <project>' to visit`;
 │                    CERTIFICATIONS                               │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  ✅ AWS Solutions Architect Associate        2025               │
-│  ✅ HashiCorp Terraform Associate            2025               │
-│  ✅ PCAP Python Programming                  2024               │
-│                                                                 │
-│  🔄 Certified Kubernetes Administrator       Dec 2025           │
-│  🔄 Certified Kubernetes Security (CKS)      Feb 2026           │
+│  [x] CKA  - Certified Kubernetes Administrator          2025    │
+│  [x] CKS  - Certified Kubernetes Security Specialist    2026    │
+│  [x] AWS  - Solutions Architect Associate               2025    │
+│  [x] AWS  - Cloud Practitioner                          2025    │
+│  [x] AWS  - GenAI Practitioner                          2025    │
+│  [x] TF   - HashiCorp Terraform Associate               2025    │
+│  [x] AZ   - Microsoft Azure Fundamentals (AZ-900)       2025    │
+│  [x] PY   - PCAP Python Programming                     2024    │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘`;
         break;
@@ -426,97 +361,97 @@ Type 'cat <project>' for details or 'open <project>' to visit`;
       case 'contact':
         output = `
 ┌─────────────────────────────────────────────────────────────────┐
-│                    CONTACT                                      │
+│                       CONTACT                                   │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  📧 Email:     contact@jagdevops.com                            │
-│  💼 LinkedIn:  linkedin.com/in/jaime-gabriels-643132386         │
-│  🐙 GitHub:    github.com/GABRIELS562                           │
-│  🌐 Website:   jagdevops.com                                    │
+│  Email:     contact@jagdevops.com                               │
+│  LinkedIn:  linkedin.com/in/jaime-gabriels-643132386            │
+│  GitHub:    github.com/GABRIELS562                              │
+│  Website:   jagdevops.co.za                                     │
 │                                                                 │
-│  LIVE INFRASTRUCTURE:                                           │
-│  ├── lims.jagdevops.co.za                                       │
-│  ├── finance.jagdevops.co.za                                    │
-│  └── pharma.jagdevops.co.za                                     │
+│  LIVE SITES:                                                    │
+│    lims.jagdevops.co.za                                         │
+│    eshop.jagdevops.co.za                                        │
+│    dashboards.jagdevops.co.za                                   │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘`;
         break;
 
       case 'kubectl':
         if (arg.includes('get pods') || arg.includes('get po')) {
-          output = `NAMESPACE   NAME                              READY   STATUS    RESTARTS   AGE
-default     lims-frontend-7f8d4c6b9-x2k5j     1/1     Running   0          29h
-default     lims-backend-5c9f8d7a6-m3n8p      1/1     Running   0          29h
-default     finance-app-56495469d6-b84tx      2/2     Running   1          3d10h
-default     finance-app-56495469d6-zsb5b      2/2     Running   1          3d10h
-default     pharma-app-67446f5dd9-8dx87       2/2     Running   1          3d10h
-default     pharma-app-67446f5dd9-wbdjm       2/2     Running   1          3d10h
-default     pharma-frontend-7fdd56f4ff-9h92k  2/2     Running   1          3d10h
-default     postgres-6b5b5699f7-j9z7m         1/1     Running   1          3d20h`;
+          output = `NAMESPACE     NAME                                    READY   STATUS    AGE
+eshop         frontend-79d8dcf86c-xrx75               1/1     Running   2d
+eshop         cartservice-558c66b7c7-xx49z            1/1     Running   2d
+eshop         checkoutservice-85fdc885c6-7ltjf        1/1     Running   2d
+eshop         productcatalogservice-7d8b9554b4-ltd2s  1/1     Running   2d
+eshop         currencyservice-7968b878fb-hlqmm        1/1     Running   2d
+eshop         paymentservice-fcfcc95c4-pl987          1/1     Running   2d
+eshop         shippingservice-7c8d7f9c7d-qbc5z        1/1     Running   2d
+eshop         emailservice-56844ff8dc-226kv           1/1     Running   2d
+eshop         recommendationservice-6b84766858-p8sdb  1/1     Running   2d
+eshop         adservice-78ffd66756-pq4xj              1/1     Running   2d
+eshop         redis-cart-6b45d46547-gsvqf             1/1     Running   3d
+develop       lims-develop-frontend-7dc65855cf-pglqb  1/1     Running   4d
+develop       lims-develop-backend-858769bc5c-pffkr   1/1     Running   4d
+develop       lims-develop-postgresql-0               1/1     Running   4d
+argocd        argocd-server-64d5fcbd58-b6n6p          1/1     Running   260d`;
         } else if (arg.includes('get svc') || arg.includes('get services')) {
-          output = `NAME              TYPE        CLUSTER-IP      PORT(S)          AGE
-lims-frontend     ClusterIP   10.43.89.123    80/TCP           29h
-lims-backend      ClusterIP   10.43.156.78    3001/TCP         29h
-finance-app       NodePort    10.43.194.224   8000:30003/TCP   3d10h
-pharma-app        NodePort    10.43.12.46     8000:30002/TCP   3d10h`;
+          output = `NAMESPACE   NAME                      TYPE        CLUSTER-IP      PORT(S)
+eshop       frontend                  ClusterIP   10.43.89.123    80/TCP
+eshop       cartservice               ClusterIP   10.43.156.78    7070/TCP
+eshop       checkoutservice           ClusterIP   10.43.45.67     5050/TCP
+eshop       productcatalogservice     ClusterIP   10.43.12.34     3550/TCP
+develop     lims-develop-frontend     ClusterIP   10.43.194.224   80/TCP
+develop     lims-develop-backend      ClusterIP   10.43.12.46     3001/TCP`;
         } else if (arg.includes('get nodes')) {
-          output = `NAME          STATUS   ROLES           AGE    VERSION
-server1       Ready    control-plane   271d   v1.29.15
-server2       Ready    <none>          271d   v1.29.15`;
+          output = `NAME      STATUS   ROLES                  AGE    VERSION
+server1   Ready    control-plane,master   271d   v1.29.5+k3s1`;
+        } else if (arg.includes('get apps') || arg.includes('get applications')) {
+          output = `NAME                      SYNC     HEALTH   NAMESPACE
+frontend                  Synced   Healthy  eshop
+cartservice               Synced   Healthy  eshop
+checkoutservice           Synced   Healthy  eshop
+productcatalogservice     Synced   Healthy  eshop
+currencyservice           Synced   Healthy  eshop
+paymentservice            Synced   Healthy  eshop
+shippingservice           Synced   Healthy  eshop
+emailservice              Synced   Healthy  eshop
+recommendationservice     Synced   Healthy  eshop
+adservice                 Synced   Healthy  eshop
+redis-cart                Synced   Healthy  eshop
+lims                      Synced   Healthy  develop`;
         } else {
-          output = `kubectl: command requires arguments. Try 'kubectl get pods'`;
+          output = `Try: kubectl get pods | kubectl get svc | kubectl get apps`;
         }
         break;
 
       case 'docker':
         if (arg.includes('ps')) {
-          output = `CONTAINER ID   IMAGE                    STATUS         NAMES
-a1b2c3d4e5f6   lims-frontend:latest     Up 29 hours    lims-frontend
-b2c3d4e5f6g7   lims-backend:latest      Up 29 hours    lims-backend
-c3d4e5f6g7h8   postgres:16              Up 29 hours    lims-postgres
-d4e5f6g7h8i9   prom/prometheus:latest   Up 10 hours    portfolio-prometheus
-e5f6g7h8i9j0   grafana/grafana:latest   Up 29 hours    portfolio-grafana
-f6g7h8i9j0k1   grafana/loki:latest      Up 29 hours    portfolio-loki
-g7h8i9j0k1l2   jenkins/jenkins:lts      Up 28 hours    jenkins`;
+          output = `CONTAINER ID   IMAGE                      STATUS       NAMES
+a1b2c3d4e5f6   forensic-collector:latest  Up 5 days    forensic-collector
+b2c3d4e5f6g7   nginx:alpine               Up 5 days    dashboard-server
+c3d4e5f6g7h8   prom/prometheus:latest     Up 5 days    prometheus
+d4e5f6g7h8i9   grafana/grafana:latest     Up 5 days    grafana
+e5f6g7h8i9j0   grafana/loki:latest        Up 5 days    loki
+f6g7h8i9j0k1   hashicorp/vault:1.15       Up 5 days    vault`;
         } else {
-          output = `docker: command requires arguments. Try 'docker ps'`;
-        }
-        break;
-
-      case 'systemctl':
-        if (arg.includes('status')) {
-          output = `● jagdevops.service - JAG DevOps Infrastructure
-     Loaded: loaded (/etc/systemd/system/jagdevops.service; enabled)
-     Active: active (running) since Fri 2026-05-23 15:59:00 UTC; 1 day ago
-   Main PID: 1234 (docker)
-      Tasks: 47
-     Memory: 2.1G
-        CPU: 4h 23min
-     CGroup: /system.slice/jagdevops.service
-             ├─ jenkins (running)
-             ├─ prometheus (running)
-             ├─ grafana (running)
-             └─ k3s (running)
-
-May 24 19:50:42 server1 systemd[1]: jagdevops.service: All systems operational`;
-        } else {
-          output = `systemctl: try 'systemctl status'`;
+          output = `Try: docker ps`;
         }
         break;
 
       case 'open':
         if (arg === 'lims') {
           window.open('https://lims.jagdevops.co.za', '_blank');
-          output = `Opening https://lims.jagdevops.co.za in browser...`;
-        } else if (arg === 'finance') {
-          window.open('https://finance.jagdevops.co.za', '_blank');
-          output = `Opening https://finance.jagdevops.co.za in browser...`;
-        } else if (arg === 'pharma') {
-          window.open('https://pharma.jagdevops.co.za', '_blank');
-          output = `Opening https://pharma.jagdevops.co.za in browser...`;
+          output = `Opening https://lims.jagdevops.co.za ...`;
+        } else if (arg === 'eshop') {
+          window.open('https://eshop.jagdevops.co.za', '_blank');
+          output = `Opening https://eshop.jagdevops.co.za ...`;
+        } else if (arg === 'forensic') {
+          window.open('https://dashboards.jagdevops.co.za', '_blank');
+          output = `Opening https://dashboards.jagdevops.co.za ...`;
         } else if (arg === 'github') {
           window.open('https://github.com/GABRIELS562', '_blank');
-          output = `Opening https://github.com/GABRIELS562 in browser...`;
+          output = `Opening GitHub profile...`;
         } else if (arg === 'linkedin') {
           window.open('https://linkedin.com/in/jaime-gabriels-643132386', '_blank');
           output = `Opening LinkedIn profile...`;
@@ -524,7 +459,7 @@ May 24 19:50:42 server1 systemd[1]: jagdevops.service: All systems operational`;
           window.open('/Jaime-Gabriels-DevOps-Resume.pdf', '_blank');
           output = `Downloading resume...`;
         } else {
-          output = `open: valid targets: lims, finance, pharma, github, linkedin, resume`;
+          output = `Usage: open <lims|eshop|forensic|github|linkedin|resume>`;
         }
         break;
 
@@ -542,53 +477,11 @@ May 24 19:50:42 server1 systemd[1]: jagdevops.service: All systems operational`;
         return null;
 
       case 'sudo':
-        output = `[sudo] password for jaime:
-Sorry, user jaime is not allowed to execute '${arg}' as root.
-Just kidding - this is a portfolio terminal! 😄`;
+        output = `[sudo] Nice try! This is a portfolio terminal.`;
         break;
 
       case 'rm':
-        if (arg.includes('-rf')) {
-          output = `Nice try! 🛡️ This portfolio is protected.`;
-        } else {
-          output = `rm: cannot remove '${arg}': Permission denied`;
-        }
-        break;
-
-      case 'vim':
-      case 'nano':
-      case 'vi':
-        output = `${command}: opening editor... just kidding, try 'cat' instead!`;
-        break;
-
-      case 'curl':
-        if (arg.includes('lims') || arg.includes('finance') || arg.includes('pharma')) {
-          output = `{"status":"healthy","message":"Visit the live site with 'open <project>'"}`;
-        } else {
-          output = `curl: try 'curl https://lims.jagdevops.co.za/api/health'`;
-        }
-        break;
-
-      case 'ping':
-        output = `PING ${arg || 'jagdevops.co.za'} (203.0.113.50): 56 data bytes
-64 bytes from 203.0.113.50: icmp_seq=0 ttl=64 time=0.042 ms
-64 bytes from 203.0.113.50: icmp_seq=1 ttl=64 time=0.038 ms
-64 bytes from 203.0.113.50: icmp_seq=2 ttl=64 time=0.041 ms
---- ${arg || 'jagdevops.co.za'} ping statistics ---
-3 packets transmitted, 3 packets received, 0.0% packet loss`;
-        break;
-
-      case 'htop':
-      case 'top':
-        output = `
-  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
- 1234 jaime     20   0 2048000 512000  32000 S   2.3   6.4   4:23.45 jenkins
- 2345 jaime     20   0 1024000 256000  16000 S   1.1   3.2   2:15.67 grafana
- 3456 jaime     20   0  512000 128000   8000 S   0.8   1.6   1:45.23 prometheus
- 4567 jaime     20   0  256000  64000   4000 S   0.3   0.8   0:30.12 loki
- 5678 jaime     20   0  128000  32000   2000 S   0.1   0.4   0:15.34 node-exporter
-
-Press 'q' to quit (just kidding, this is static)`;
+        output = `rm: permission denied (this portfolio is protected)`;
         break;
 
       case 'date':
@@ -597,19 +490,6 @@ Press 'q' to quit (just kidding, this is static)`;
 
       case 'echo':
         output = arg || '';
-        break;
-
-      case 'cowsay':
-        const message = arg || 'Moo! Hire Jaime!';
-        output = `
- ${'_'.repeat(message.length + 2)}
-< ${message} >
- ${'-'.repeat(message.length + 2)}
-        \\   ^__^
-         \\  (oo)\\_______
-            (__)\\       )\\/\\
-                ||----w |
-                ||     ||`;
         break;
 
       default:
@@ -660,7 +540,6 @@ Press 'q' to quit (just kidding, this is static)`;
       }
     } else if (e.key === 'Tab') {
       e.preventDefault();
-      // Basic tab completion
       const commands = ['help', 'whoami', 'ls', 'cat', 'projects', 'skills', 'certs', 'contact', 'kubectl', 'docker', 'open', 'clear', 'exit'];
       const match = commands.find(cmd => cmd.startsWith(currentInput));
       if (match) {
