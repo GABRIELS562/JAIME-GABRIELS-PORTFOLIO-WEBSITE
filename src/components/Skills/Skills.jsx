@@ -4,18 +4,21 @@ import ScrollReveal from '../ScrollReveal/ScrollReveal';
 
 const Skills = () => {
   const stack = [
+    "OpenShift",
     "Kubernetes",
     "Docker",
     "AWS",
     "Terraform",
     "ArgoCD",
+    "GitLab CI",
     "GitHub Actions",
+    "SonarQube",
+    "Nexus",
     "Prometheus",
     "Grafana",
     "Vault",
     "Python",
-    "Go",
-    "Node.js"
+    "Go"
   ];
 
   return (
