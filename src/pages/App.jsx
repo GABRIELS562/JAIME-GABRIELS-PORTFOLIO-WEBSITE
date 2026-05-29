@@ -9,7 +9,6 @@ import About from '../components/About/About';
 import Certifications from '../components/Certifications/Certifications';
 import Projects from '../components/Projects/Projects';
 import Resume from '../components/Resume/Resume';
-import Technologies from '../components/Technologies/Technologies';
 import Skills from '../components/Skills/Skills';
 import Contact from '../components/Contact/Contact';
 import ThemeToggle from '../components/ThemeToggle/ThemeToggle';
@@ -63,9 +62,6 @@ const App = () => {
         </ErrorBoundary>
         <ErrorBoundary>
           <Resume />
-        </ErrorBoundary>
-        <ErrorBoundary>
-          <Technologies />
         </ErrorBoundary>
       </main>
       <ErrorBoundary>

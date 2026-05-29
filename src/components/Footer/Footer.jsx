@@ -20,17 +20,16 @@ const Footer = () => {
       <div className={styles.footerContent}>
         <div className={styles.navLinksHorizontal}>
           <button onClick={() => scrollToSection('about')} className={styles.footerLink}>About</button>
-          <button onClick={() => scrollToSection('skills')} className={styles.footerLink}>Skills</button>
+          <button onClick={() => scrollToSection('skills')} className={styles.footerLink}>Stack</button>
           <button onClick={() => scrollToSection('certifications')} className={styles.footerLink}>Certs</button>
           <button onClick={() => scrollToSection('projects')} className={styles.footerLink}>Projects</button>
           <button onClick={() => scrollToSection('resume')} className={styles.footerLink}>Resume</button>
-          <button onClick={() => scrollToSection('technologies')} className={styles.footerLink}>Tech</button>
           <button onClick={() => scrollToSection('contact')} className={styles.footerLink}>Contact</button>
         </div>
       </div>
 
       <div className={styles.footerBottom}>
-        <p>&copy; 2025 Jaime Gabriels</p>
+        <p>&copy; 2026 Jaime Gabriels</p>
       </div>
     </footer>
   );
