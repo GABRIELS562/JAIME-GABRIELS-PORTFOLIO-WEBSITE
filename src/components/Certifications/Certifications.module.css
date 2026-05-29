@@ -13,7 +13,7 @@
   box-shadow: var(--shadow-lg);
   color: var(--text-primary);
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 800px;
   padding: 2.5rem 2rem;
   transition: all 0.3s ease;
 }
@@ -38,57 +38,27 @@
   gap: 2rem;
 }
 
-/* Certifications Grid */
-.certsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
-}
-
-.certItem {
+/* Certifications - Compact Badge Row */
+.certsRow {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  background: var(--background-elevated);
-  border-radius: 0.75rem;
-  border: 1px solid var(--border-primary);
-  transition: all 0.2s ease;
 }
 
-.certItem:hover {
-  border-color: var(--accent-warm);
-  transform: translateX(4px);
-  background: var(--background-card);
+.certBadge {
+  height: 22px;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+  cursor: default;
 }
 
-.certIcon {
-  height: 20px;
-  border-radius: 3px;
-  flex-shrink: 0;
+.certBadge:hover {
+  transform: scale(1.1);
 }
 
-.certInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  min-width: 0;
-}
-
-.certName {
-  color: var(--text-primary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.certYear {
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-/* Education Section */
+/* Education Section - Equal Weight */
 .educationSection {
   border-top: 1px solid var(--border-primary);
   padding-top: 1.5rem;
@@ -105,28 +75,25 @@
 }
 
 .educationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.educationBadge {
-  display: inline-block;
-  padding: 0.4rem 0.875rem;
-  background: var(--background-elevated);
-  border: 1px solid var(--border-primary);
-  border-radius: 2rem;
-  color: var(--text-secondary);
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.educationBadge:hover {
-  background: var(--background-card);
-  border-color: var(--accent-warm);
+.educationItem {
   color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.educationItem:last-child {
+  border-bottom: none;
 }
 
 /* Tablet styles */
@@ -141,18 +108,6 @@
 
   .sectionTitle {
     font-size: 2rem;
-  }
-
-  .certsGrid {
-    gap: 0.625rem;
-  }
-
-  .certItem {
-    padding: 0.625rem 0.875rem;
-  }
-
-  .certName {
-    font-size: 0.8rem;
   }
 }
 
@@ -172,26 +127,16 @@
     margin-bottom: 1.5rem;
   }
 
-  .certsGrid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+  .certsRow {
+    gap: 0.4rem;
   }
 
-  .certItem {
-    padding: 0.625rem 0.75rem;
+  .certBadge {
+    height: 20px;
   }
 
-  .certName {
-    font-size: 0.8rem;
-  }
-
-  .certYear {
-    font-size: 0.7rem;
-  }
-
-  .educationBadge {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.75rem;
+  .educationItem {
+    font-size: 0.9rem;
   }
 }
 
@@ -210,21 +155,8 @@
     margin-bottom: 1.25rem;
   }
 
-  .certItem {
-    padding: 0.5rem 0.625rem;
-    gap: 0.5rem;
-  }
-
-  .certIcon {
-    height: 16px;
-  }
-
-  .certName {
-    font-size: 0.75rem;
-  }
-
-  .certYear {
-    font-size: 0.65rem;
+  .certBadge {
+    height: 18px;
   }
 
   .educationSection {
@@ -235,8 +167,8 @@
     font-size: 0.85rem;
   }
 
-  .educationBadge {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.625rem;
+  .educationItem {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
   }
 }
